@@ -1,0 +1,3159 @@
+gid_2,gadm_name,state,state_name,fips,clean
+USA.2.14_1,Lake and Peninsula,AK,Alaska,02164,lake and peninsula
+USA.14.12_1,Clark,IL,Illinois,17023,clark
+USA.44.214_1,Starr,TX,Texas,48427,starr
+USA.21.9_1,Dorchester,MD,Maryland,24019,dorchester
+USA.4.29_1,Hempstead,AR,Arkansas,05057,hempstead
+USA.44.110_1,Hockley,TX,Texas,48219,hockley
+USA.34.47_1,Hoke,NC,North Carolina,37093,hoke
+USA.24.33_1,Kanabec,MN,Minnesota,27065,kanabec
+USA.43.16_1,Coffee,TN,Tennessee,47031,coffee
+USA.42.54_1,Roberts,SD,South Dakota,46109,roberts
+USA.39.33_1,Jefferson,PA,Pennsylvania,42065,jefferson
+USA.18.52_1,Henry,KY,Kentucky,21103,henry
+USA.33.23_1,Jefferson,NY,New York,36045,jefferson
+USA.28.56_1,Lincoln,NE,Nebraska,31111,lincoln
+USA.39.9_1,Bucks,PA,Pennsylvania,42017,bucks
+USA.37.26_1,Grady,OK,Oklahoma,40051,grady
+USA.44.59_1,Deaf Smith,TX,Texas,48117,deaf smith
+USA.28.41_1,Hamilton,NE,Nebraska,31081,hamilton
+USA.42.46_1,Meade,SD,South Dakota,46093,meade
+USA.32.12_1,Harding,NM,New Mexico,35021,harding
+USA.26.65_1,Mercer,MO,Missouri,29129,mercer
+USA.6.54_1,Rio Grande,CO,Colorado,08105,rio grande
+USA.11.15_1,Bryan,GA,Georgia,13029,bryan
+USA.44.69_1,Edwards,TX,Texas,48137,edwards
+USA.17.59_1,McPherson,KS,Kansas,20113,mcpherson
+USA.10.29_1,Holmes,FL,Florida,12059,holmes
+USA.27.38_1,Powder River,MT,Montana,30075,powder river
+USA.26.34_1,Douglas,MO,Missouri,29067,douglas
+USA.6.37_1,Las Animas,CO,Colorado,08071,las animas
+USA.14.48_1,Knox,IL,Illinois,17095,knox
+USA.13.5_1,Benewah,ID,Idaho,16009,benewah
+USA.28.32_1,Frontier,NE,Nebraska,31063,frontier
+USA.47.63_1,Hopewell,VA,Virginia,51670,hopewell
+USA.25.79_1,Wilkinson,MS,Mississippi,28157,wilkinson
+USA.11.43_1,Decatur,GA,Georgia,13087,decatur
+USA.25.49_1,Montgomery,MS,Mississippi,28097,montgomery
+USA.23.10_1,Benzie,MI,Michigan,26019,benzie
+USA.35.11_1,Dickey,ND,North Dakota,38021,dickey
+USA.18.65_1,Lee,KY,Kentucky,21129,lee
+USA.43.56_1,Marion,TN,Tennessee,47115,marion
+USA.43.85_1,Trousdale,TN,Tennessee,47169,trousdale
+USA.14.23_1,Edgar,IL,Illinois,17045,edgar
+USA.44.99_1,Hardeman,TX,Texas,48197,hardeman
+USA.41.40_1,Richland,SC,South Carolina,45079,richland
+USA.4.27_1,Grant,AR,Arkansas,05053,grant
+USA.16.30_1,Dickinson,IA,Iowa,19059,dickinson
+USA.1.34_1,Henry,AL,Alabama,01067,henry
+USA.18.102_1,Rockcastle,KY,Kentucky,21203,rockcastle
+USA.27.42_1,Richland,MT,Montana,30083,richland
+USA.17.56_1,Lyon,KS,Kansas,20111,lyon
+USA.34.71_1,Pender,NC,North Carolina,37141,pender
+USA.33.2_1,Allegany,NY,New York,36003,allegany
+USA.33.27_1,Livingston,NY,New York,36051,livingston
+USA.17.24_1,Edwards,KS,Kansas,20047,edwards
+USA.10.36_1,Leon,FL,Florida,12073,leon
+USA.43.63_1,Montgomery,TN,Tennessee,47125,montgomery
+USA.11.128_1,Stewart,GA,Georgia,13259,stewart
+USA.16.91_1,Warren,IA,Iowa,19181,warren
+USA.4.21_1,Desha,AR,Arkansas,05041,desha
+USA.17.31_1,Geary,KS,Kansas,20061,geary
+USA.47.36_1,Dickenson,VA,Virginia,51051,dickenson
+USA.33.33_1,Niagara,NY,New York,36063,niagara
+USA.43.57_1,Marshall,TN,Tennessee,47117,marshall
+USA.49.38_1,Pocahontas,WV,West Virginia,54075,pocahontas
+USA.27.51_1,Toole,MT,Montana,30101,toole
+USA.44.58_1,Dawson,TX,Texas,48115,dawson
+USA.4.64_1,Scott,AR,Arkansas,05127,scott
+USA.47.58_1,Hanover,VA,Virginia,51085,hanover
+USA.6.59_1,Sedgwick,CO,Colorado,08115,sedgwick
+USA.33.63_1,Yates,NY,New York,36123,yates
+USA.23.6_1,Arenac,MI,Michigan,26011,arenac
+USA.30.10_1,Sullivan,NH,New Hampshire,33019,sullivan
+USA.48.6_1,Clark,WA,Washington,53011,clark
+USA.28.10_1,Buffalo,NE,Nebraska,31019,buffalo
+USA.16.13_1,Calhoun,IA,Iowa,19025,calhoun
+USA.42.15_1,Corson,SD,South Dakota,46031,corson
+USA.8.3_1,Sussex,DE,Delaware,10005,sussex
+USA.14.37_1,Henry,IL,Illinois,17073,henry
+USA.34.13_1,Cabarrus,NC,North Carolina,37025,cabarrus
+USA.41.34_1,Marlboro,SC,South Carolina,45069,marlboro
+USA.15.50_1,Marion,IN,Indiana,18097,marion
+USA.31.3_1,Burlington,NJ,New Jersey,34005,burlington
+USA.23.56_1,Marquette,MI,Michigan,26103,marquette
+USA.5.1_1,Alameda,CA,California,06001,alameda
+USA.13.9_1,Bonner,ID,Idaho,16017,bonner
+USA.21.3_1,Baltimore,MD,Maryland,24005,baltimore
+USA.21.3_1,Baltimore,MD,Maryland,24510,baltimore
+USA.11.103_1,Montgomery,GA,Georgia,13209,montgomery
+USA.10.52_1,Pinellas,FL,Florida,12103,pinellas
+USA.36.61_1,Muskingum,OH,Ohio,39119,muskingum
+USA.43.95_1,Wilson,TN,Tennessee,47189,wilson
+USA.39.2_1,Allegheny,PA,Pennsylvania,42003,allegheny
+USA.50.21_1,Forest,WI,Wisconsin,55041,forest
+USA.23.42_1,Keweenaw,MI,Michigan,26083,keweenaw
+USA.44.188_1,Potter,TX,Texas,48375,potter
+USA.47.126_1,Washington,VA,Virginia,51191,washington
+USA.38.5_1,Columbia,OR,Oregon,41009,columbia
+USA.4.12_1,Cleburne,AR,Arkansas,05023,cleburne
+USA.50.5_1,Brown,WI,Wisconsin,55009,brown
+USA.14.13_1,Clay,IL,Illinois,17025,clay
+USA.18.19_1,Campbell,KY,Kentucky,21037,campbell
+USA.5.22_1,Mariposa,CA,California,06043,mariposa
+USA.41.29_1,Lancaster,SC,South Carolina,45057,lancaster
+USA.11.81_1,Jefferson,GA,Georgia,13163,jefferson
+USA.43.33_1,Hamilton,TN,Tennessee,47065,hamilton
+USA.50.58_1,Saint Croix,WI,Wisconsin,55109,saint croix
+USA.41.41_1,Saluda,SC,South Carolina,45081,saluda
+USA.19.23_1,Iberia,LA,Louisiana,22045,iberia
+USA.43.6_1,Bradley,TN,Tennessee,47011,bradley
+USA.47.60_1,Henrico,VA,Virginia,51087,henrico
+USA.4.46_1,Miller,AR,Arkansas,05091,miller
+USA.11.86_1,Lanier,GA,Georgia,13173,lanier
+USA.35.8_1,Burleigh,ND,North Dakota,38015,burleigh
+USA.18.92_1,Ohio,KY,Kentucky,21183,ohio
+USA.36.18_1,Cuyahoga,OH,Ohio,39035,cuyahoga
+USA.44.210_1,Shelby,TX,Texas,48419,shelby
+USA.25.30_1,Jackson,MS,Mississippi,28059,jackson
+USA.5.32_1,Plumas,CA,California,06063,plumas
+USA.2.18_1,Northwest Arctic,AK,Alaska,02188,northwest arctic
+USA.4.8_1,Carroll,AR,Arkansas,05015,carroll
+USA.14.89_1,Stark,IL,Illinois,17175,stark
+USA.41.12_1,Chester,SC,South Carolina,45023,chester
+USA.36.52_1,Marion,OH,Ohio,39101,marion
+USA.17.57_1,Marion,KS,Kansas,20115,marion
+USA.15.56_1,Morgan,IN,Indiana,18109,morgan
+USA.50.25_1,Iowa,WI,Wisconsin,55049,iowa
+USA.33.39_1,Oswego,NY,New York,36075,oswego
+USA.26.60_1,Macon,MO,Missouri,29121,macon
+USA.30.4_1,Coos,NH,New Hampshire,33007,coos
+USA.39.58_1,Susquehanna,PA,Pennsylvania,42115,susquehanna
+USA.44.246_1,Williamson,TX,Texas,48491,williamson
+USA.10.43_1,Miami-Dade,FL,Florida,12086,miami dade
+USA.4.18_1,Crittenden,AR,Arkansas,05035,crittenden
+USA.17.53_1,Lincoln,KS,Kansas,20105,lincoln
+USA.44.219_1,Swisher,TX,Texas,48437,swisher
+USA.2.21_1,Skagway-Yakutat-Angoon,AK,Alaska,02231,skagway yakutat angoon
+USA.16.65_1,Mills,IA,Iowa,19129,mills
+USA.32.8_1,Dona Ana,NM,New Mexico,35013,dona ana
+USA.4.59_1,Prairie,AR,Arkansas,05117,prairie
+USA.25.67_1,Sunflower,MS,Mississippi,28133,sunflower
+USA.18.23_1,Casey,KY,Kentucky,21045,casey
+USA.24.37_1,Lac qui Parle,MN,Minnesota,27073,lac qui parle
+USA.31.16_1,Passaic,NJ,New Jersey,34031,passaic
+USA.7.8_1,Windham,CT,Connecticut,09015,windham
+USA.14.80_1,Randolph,IL,Illinois,17157,randolph
+USA.43.87_1,Union,TN,Tennessee,47173,union
+USA.44.149_1,Live Oak,TX,Texas,48297,live oak
+USA.18.108_1,Spencer,KY,Kentucky,21215,spencer
+USA.47.10_1,Bath,VA,Virginia,51017,bath
+USA.18.95_1,Owsley,KY,Kentucky,21189,owsley
+USA.6.9_1,Chaffee,CO,Colorado,08015,chaffee
+USA.16.20_1,Clarke,IA,Iowa,19039,clarke
+USA.37.41_1,Lincoln,OK,Oklahoma,40081,lincoln
+USA.2.26_1,Yukon-Koyukuk,AK,Alaska,02290,yukon koyukuk
+USA.34.5_1,Ashe,NC,North Carolina,37009,ashe
+USA.5.26_1,Mono,CA,California,06051,mono
+USA.34.70_1,Pasquotank,NC,North Carolina,37139,pasquotank
+USA.27.4_1,Broadwater,MT,Montana,30007,broadwater
+USA.22.7_1,Hampden,MA,Massachusetts,25013,hampden
+USA.37.51_1,Muskogee,OK,Oklahoma,40101,muskogee
+USA.15.14_1,Daviess,IN,Indiana,18027,daviess
+USA.15.13_1,Crawford,IN,Indiana,18025,crawford
+USA.19.21_1,Franklin,LA,Louisiana,22041,franklin
+USA.39.51_1,Philadelphia,PA,Pennsylvania,42101,philadelphia
+USA.17.64_1,Morris,KS,Kansas,20127,morris
+USA.37.47_1,McClain,OK,Oklahoma,40087,mcclain
+USA.36.2_1,Allen,OH,Ohio,39003,allen
+USA.37.76_1,Woods,OK,Oklahoma,40151,woods
+USA.44.100_1,Hardin,TX,Texas,48199,hardin
+USA.19.49_1,Saint Landry,LA,Louisiana,22097,saint landry
+USA.14.19_1,De Kalb,IL,,,de kalb
+USA.28.4_1,Banner,NE,Nebraska,31007,banner
+USA.4.33_1,Izard,AR,Arkansas,05065,izard
+USA.11.21_1,Candler,GA,Georgia,13043,candler
+USA.38.33_1,Wasco,OR,Oregon,41065,wasco
+USA.14.58_1,Madison,IL,Illinois,17119,madison
+USA.25.81_1,Yalobusha,MS,Mississippi,28161,yalobusha
+USA.24.39_1,Lake of the Woods,MN,Minnesota,27077,lake of the woods
+USA.36.43_1,Lake,OH,Ohio,39085,lake
+USA.24.5_1,Benton,MN,Minnesota,27009,benton
+USA.4.51_1,Newton,AR,Arkansas,05101,newton
+USA.44.21_1,Brazos,TX,Texas,48041,brazos
+USA.11.117_1,Putnam,GA,Georgia,13237,putnam
+USA.44.144_1,Lee,TX,Texas,48287,lee
+USA.1.54_1,Pickens,AL,Alabama,01107,pickens
+USA.16.21_1,Clay,IA,Iowa,19041,clay
+USA.18.8_1,Boone,KY,Kentucky,21015,boone
+USA.22.9_1,Middlesex,MA,Massachusetts,25017,middlesex
+USA.44.31_1,Cameron,TX,Texas,48061,cameron
+USA.1.22_1,Cullman,AL,Alabama,01043,cullman
+USA.37.31_1,Haskell,OK,Oklahoma,40061,haskell
+USA.23.55_1,Manistee,MI,Michigan,26101,manistee
+USA.43.67_1,Overton,TN,Tennessee,47133,overton
+USA.41.26_1,Horry,SC,South Carolina,45051,horry
+USA.44.206_1,San Saba,TX,Texas,48411,san saba
+USA.37.61_1,Pittsburg,OK,Oklahoma,40121,pittsburg
+USA.26.26_1,Cole,MO,Missouri,29051,cole
+USA.19.22_1,Grant,LA,Louisiana,22043,grant
+USA.3.15_1,Yuma,AZ,Arizona,04027,yuma
+USA.42.32_1,Hughes,SD,South Dakota,46065,hughes
+USA.17.37_1,Greenwood,KS,Kansas,20073,greenwood
+USA.11.23_1,Catoosa,GA,Georgia,13047,catoosa
+USA.44.194_1,Red River,TX,Texas,48387,red river
+USA.26.19_1,Cass,MO,Missouri,29037,cass
+USA.42.37_1,Jones,SD,South Dakota,46075,jones
+USA.44.167_1,Mills,TX,Texas,48333,mills
+USA.11.143_1,Twiggs,GA,Georgia,13289,twiggs
+USA.34.16_1,Carteret,NC,North Carolina,37031,carteret
+USA.17.47_1,Kearny,KS,Kansas,20093,kearny
+USA.34.62_1,Montgomery,NC,North Carolina,37123,montgomery
+USA.35.52_1,Wells,ND,North Dakota,38103,wells
+USA.48.37_1,Whatcom,WA,Washington,53073,whatcom
+USA.26.45_1,Howard,MO,Missouri,29089,howard
+USA.47.2_1,Albemarle,VA,Virginia,51003,albemarle
+USA.2.5_1,Bristol Bay,AK,Alaska,02060,bristol bay
+USA.4.14_1,Columbia,AR,Arkansas,05027,columbia
+USA.11.90_1,Lincoln,GA,Georgia,13181,lincoln
+USA.37.58_1,Ottawa,OK,Oklahoma,40115,ottawa
+USA.37.33_1,Jackson,OK,Oklahoma,40065,jackson
+USA.34.99_1,Yadkin,NC,North Carolina,37197,yadkin
+USA.50.43_1,Milwaukee,WI,Wisconsin,55079,milwaukee
+USA.34.66_1,Northampton,NC,North Carolina,37131,northampton
+USA.15.18_1,Delaware,IN,Indiana,18035,delaware
+USA.48.38_1,Whitman,WA,Washington,53075,whitman
+USA.2.20_1,Sitka,AK,Alaska,02220,sitka
+USA.16.96_1,Winneshiek,IA,Iowa,19191,winneshiek
+USA.25.58_1,Pontotoc,MS,Mississippi,28115,pontotoc
+USA.51.23_1,Weston,WY,Wyoming,56045,weston
+USA.47.49_1,Galax,VA,Virginia,51640,galax
+USA.26.69_1,Monroe,MO,Missouri,29137,monroe
+USA.13.13_1,Camas,ID,Idaho,16025,camas
+USA.44.247_1,Wilson,TX,Texas,48493,wilson
+USA.49.2_1,Berkeley,WV,West Virginia,54003,berkeley
+USA.44.88_1,Goliad,TX,Texas,48175,goliad
+USA.47.106_1,Richmond,VA,Virginia,51159,richmond
+USA.47.106_1,Richmond,VA,Virginia,51760,richmond
+USA.44.101_1,Harris,TX,Texas,48201,harris
+USA.34.73_1,Person,NC,North Carolina,37145,person
+USA.33.61_1,Westchester,NY,New York,36119,westchester
+USA.4.31_1,Howard,AR,Arkansas,05061,howard
+USA.47.92_1,Orange,VA,Virginia,51137,orange
+USA.41.25_1,Hampton,SC,South Carolina,45049,hampton
+USA.34.87_1,Swain,NC,North Carolina,37173,swain
+USA.11.121_1,Richmond,GA,Georgia,13245,richmond
+USA.17.35_1,Gray,KS,Kansas,20069,gray
+USA.44.75_1,Fayette,TX,Texas,48149,fayette
+USA.24.77_1,Swift,MN,Minnesota,27151,swift
+USA.15.15_1,De Kalb,IN,,,de kalb
+USA.11.119_1,Rabun,GA,Georgia,13241,rabun
+USA.34.74_1,Pitt,NC,North Carolina,37147,pitt
+USA.18.17_1,Caldwell,KY,Kentucky,21033,caldwell
+USA.14.36_1,Henderson,IL,Illinois,17071,henderson
+USA.11.127_1,Stephens,GA,Georgia,13257,stephens
+USA.50.72_1,Waushara,WI,Wisconsin,55137,waushara
+USA.33.22_1,Herkimer,NY,New York,36043,herkimer
+USA.43.27_1,Gibson,TN,Tennessee,47053,gibson
+USA.50.3_1,Barron,WI,Wisconsin,55005,barron
+USA.35.36_1,Ramsey,ND,North Dakota,38071,ramsey
+USA.4.71_1,Van Buren,AR,Arkansas,05141,van buren
+USA.28.6_1,Boone,NE,Nebraska,31011,boone
+USA.1.37_1,Jefferson,AL,Alabama,01073,jefferson
+USA.49.27_1,McDowell,WV,West Virginia,54047,mcdowell
+USA.32.10_1,Grant,NM,New Mexico,35017,grant
+USA.14.2_1,Alexander,IL,Illinois,17003,alexander
+USA.17.50_1,Labette,KS,Kansas,20099,labette
+USA.37.29_1,Harmon,OK,Oklahoma,40057,harmon
+USA.13.41_1,Teton,ID,Idaho,16081,teton
+USA.27.26_1,Liberty,MT,Montana,30051,liberty
+USA.26.21_1,Chariton,MO,Missouri,29041,chariton
+USA.36.13_1,Clermont,OH,Ohio,39025,clermont
+USA.42.10_1,Campbell,SD,South Dakota,46021,campbell
+USA.10.58_1,Sarasota,FL,Florida,12115,sarasota
+USA.47.59_1,Harrisonburg,VA,Virginia,51660,harrisonburg
+USA.11.36_1,Columbia,GA,Georgia,13073,columbia
+USA.26.99_1,Scotland,MO,Missouri,29199,scotland
+USA.32.7_1,Debaca,NM,,,debaca
+USA.37.40_1,Le Flore,OK,Oklahoma,40079,le flore
+USA.26.25_1,Clinton,MO,Missouri,29049,clinton
+USA.16.35_1,Franklin,IA,Iowa,19069,franklin
+USA.23.21_1,Delta,MI,Michigan,26041,delta
+USA.10.13_1,Desoto,FL,Florida,12027,desoto
+USA.45.14_1,Millard,UT,Utah,49027,millard
+USA.37.38_1,Kiowa,OK,Oklahoma,40075,kiowa
+USA.28.46_1,Hooker,NE,Nebraska,31091,hooker
+USA.39.46_1,Montgomery,PA,Pennsylvania,42091,montgomery
+USA.17.4_1,Barber,KS,Kansas,20007,barber
+USA.15.35_1,Huntington,IN,Indiana,18069,huntington
+USA.15.58_1,Noble,IN,Indiana,18113,noble
+USA.42.13_1,Clay,SD,South Dakota,46027,clay
+USA.47.91_1,Nottoway,VA,Virginia,51135,nottoway
+USA.1.11_1,Chilton,AL,Alabama,01021,chilton
+USA.46.3_1,Caledonia,VT,Vermont,50005,caledonia
+USA.26.22_1,Christian,MO,Missouri,29043,christian
+USA.11.109_1,Oglethorpe,GA,Georgia,13221,oglethorpe
+USA.44.239_1,Washington,TX,Texas,48477,washington
+USA.36.37_1,Hocking,OH,Ohio,39073,hocking
+USA.15.43_1,Kosciusko,IN,Indiana,18085,kosciusko
+USA.31.15_1,Ocean,NJ,New Jersey,34029,ocean
+USA.11.80_1,Jeff Davis,GA,Georgia,13161,jeff davis
+USA.37.42_1,Logan,OK,Oklahoma,40083,logan
+USA.17.65_1,Morton,KS,Kansas,20129,morton
+USA.19.57_1,Vermilion,LA,Louisiana,22113,vermilion
+USA.15.71_1,Rush,IN,Indiana,18139,rush
+USA.46.11_1,Rutland,VT,Vermont,50021,rutland
+USA.18.6_1,Bath,KY,Kentucky,21011,bath
+USA.44.147_1,Limestone,TX,Texas,48293,limestone
+USA.35.5_1,Bottineau,ND,North Dakota,38009,bottineau
+USA.15.54_1,Monroe,IN,Indiana,18105,monroe
+USA.27.50_1,Teton,MT,Montana,30099,teton
+USA.42.24_1,Faulk,SD,South Dakota,46049,faulk
+USA.14.64_1,McHenry,IL,Illinois,17111,mchenry
+USA.46.1_1,Addison,VT,Vermont,50001,addison
+USA.34.63_1,Moore,NC,North Carolina,37125,moore
+USA.13.14_1,Canyon,ID,Idaho,16027,canyon
+USA.11.31_1,Clayton,GA,Georgia,13063,clayton
+USA.24.7_1,Blue Earth,MN,Minnesota,27013,blue earth
+USA.26.1_1,Adair,MO,Missouri,29001,adair
+USA.25.11_1,Claiborne,MS,Mississippi,28021,claiborne
+USA.13.32_1,Lincoln,ID,Idaho,16063,lincoln
+USA.23.49_1,Leelanau,MI,Michigan,26089,leelanau
+USA.37.53_1,Nowata,OK,Oklahoma,40105,nowata
+USA.16.72_1,Osceola,IA,Iowa,19143,osceola
+USA.18.39_1,Gallatin,KY,Kentucky,21077,gallatin
+USA.18.94_1,Owen,KY,Kentucky,21187,owen
+USA.47.35_1,Danville,VA,Virginia,51590,danville
+USA.19.8_1,Bossier,LA,Louisiana,22015,bossier
+USA.48.39_1,Yakima,WA,Washington,53077,yakima
+USA.42.36_1,Jerauld,SD,South Dakota,46073,jerauld
+USA.49.50_1,Wayne,WV,West Virginia,54099,wayne
+USA.26.75_1,Oregon,MO,Missouri,29149,oregon
+USA.6.36_1,Larimer,CO,Colorado,08069,larimer
+USA.50.59_1,Sauk,WI,Wisconsin,55111,sauk
+USA.35.4_1,Billings,ND,North Dakota,38007,billings
+USA.38.16_1,Jefferson,OR,Oregon,41031,jefferson
+USA.15.52_1,Martin,IN,Indiana,18101,martin
+USA.27.22_1,Jefferson,MT,Montana,30043,jefferson
+USA.21.22_1,Wicomico,MD,Maryland,24045,wicomico
+USA.37.13_1,Cimarron,OK,Oklahoma,40025,cimarron
+USA.50.24_1,Green Lake,WI,Wisconsin,55047,green lake
+USA.16.34_1,Floyd,IA,Iowa,19067,floyd
+USA.39.22_1,Dauphin,PA,Pennsylvania,42043,dauphin
+USA.36.87_1,Williams,OH,Ohio,39171,williams
+USA.25.28_1,Issaquena,MS,Mississippi,28055,issaquena
+USA.4.49_1,Montgomery,AR,Arkansas,05097,montgomery
+USA.6.8_1,Broomfield,CO,Colorado,08014,broomfield
+USA.29.14_1,Pershing,NV,Nevada,32027,pershing
+USA.23.85_1,Washtenaw,MI,Michigan,26161,washtenaw
+USA.44.103_1,Hartley,TX,Texas,48205,hartley
+USA.18.76_1,Marshall,KY,Kentucky,21157,marshall
+USA.41.32_1,Lexington,SC,South Carolina,45063,lexington
+USA.34.26_1,Cumberland,NC,North Carolina,37051,cumberland
+USA.31.4_1,Camden,NJ,New Jersey,34007,camden
+USA.18.2_1,Allen,KY,Kentucky,21003,allen
+USA.47.27_1,Chesterfield,VA,Virginia,51041,chesterfield
+USA.18.74_1,Magoffin,KY,Kentucky,21153,magoffin
+USA.28.1_1,Adams,NE,Nebraska,31001,adams
+USA.44.123_1,Jefferson,TX,Texas,48245,jefferson
+USA.19.19_1,East Feliciana,LA,Louisiana,22037,east feliciana
+USA.47.66_1,King and Queen,VA,Virginia,51097,king and queen
+USA.45.22_1,Summit,UT,Utah,49043,summit
+USA.19.61_1,West Baton Rouge,LA,Louisiana,22121,west baton rouge
+USA.44.96_1,Hall,TX,Texas,48191,hall
+USA.44.46_1,Comal,TX,Texas,48091,comal
+USA.49.41_1,Raleigh,WV,West Virginia,54081,raleigh
+USA.28.20_1,Cuming,NE,Nebraska,31039,cuming
+USA.44.91_1,Grayson,TX,Texas,48181,grayson
+USA.6.43_1,Montezuma,CO,Colorado,08083,montezuma
+USA.44.48_1,Concho,TX,Texas,48095,concho
+USA.37.32_1,Hughes,OK,Oklahoma,40063,hughes
+USA.50.47_1,Outagamie,WI,Wisconsin,55087,outagamie
+USA.14.97_1,Wayne,IL,Illinois,17191,wayne
+USA.14.4_1,Boone,IL,Illinois,17007,boone
+USA.35.27_1,McKenzie,ND,North Dakota,38053,mckenzie
+USA.25.29_1,Itawamba,MS,Mississippi,28057,itawamba
+USA.28.71_1,Platte,NE,Nebraska,31141,platte
+USA.39.23_1,Delaware,PA,Pennsylvania,42045,delaware
+USA.39.12_1,Cameron,PA,Pennsylvania,42023,cameron
+USA.27.13_1,Fallon,MT,Montana,30025,fallon
+USA.18.104_1,Russell,KY,Kentucky,21207,russell
+USA.17.29_1,Ford,KS,Kansas,20057,ford
+USA.26.85_1,Pulaski,MO,Missouri,29169,pulaski
+USA.10.62_1,Taylor,FL,Florida,12123,taylor
+USA.37.59_1,Pawnee,OK,Oklahoma,40117,pawnee
+USA.48.8_1,Cowlitz,WA,Washington,53015,cowlitz
+USA.26.13_1,Caldwell,MO,Missouri,29025,caldwell
+USA.30.5_1,Grafton,NH,New Hampshire,33009,grafton
+USA.43.88_1,Van Buren,TN,Tennessee,47175,van buren
+USA.44.170_1,Montgomery,TX,Texas,48339,montgomery
+USA.2.2_1,Aleutians West,AK,Alaska,02016,aleutians west
+USA.19.6_1,Beauregard,LA,Louisiana,22011,beauregard
+USA.6.47_1,Ouray,CO,Colorado,08091,ouray
+USA.43.75_1,Rutherford,TN,Tennessee,47149,rutherford
+USA.5.9_1,El Dorado,CA,California,06017,el dorado
+USA.51.8_1,Goshen,WY,Wyoming,56015,goshen
+USA.41.15_1,Colleton,SC,South Carolina,45029,colleton
+USA.1.58_1,Saint Clair,AL,Alabama,01115,saint clair
+USA.47.31_1,Covington,VA,Virginia,51580,covington
+USA.11.113_1,Pierce,GA,Georgia,13229,pierce
+USA.1.32_1,Greene,AL,Alabama,01063,greene
+USA.50.57_1,Rusk,WI,Wisconsin,55107,rusk
+USA.26.68_1,Moniteau,MO,Missouri,29135,moniteau
+USA.10.45_1,Nassau,FL,Florida,12089,nassau
+USA.11.126_1,Spalding,GA,Georgia,13255,spalding
+USA.51.7_1,Fremont,WY,Wyoming,56013,fremont
+USA.34.82_1,Sampson,NC,North Carolina,37163,sampson
+USA.37.50_1,Murray,OK,Oklahoma,40099,murray
+USA.17.28_1,Finney,KS,Kansas,20055,finney
+USA.11.51_1,Effingham,GA,Georgia,13103,effingham
+USA.5.30_1,Orange,CA,California,06059,orange
+USA.26.86_1,Putnam,MO,Missouri,29171,putnam
+USA.49.17_1,Harrison,WV,West Virginia,54033,harrison
+USA.39.61_1,Venango,PA,Pennsylvania,42121,venango
+USA.16.26_1,Davis,IA,Iowa,19051,davis
+USA.15.22_1,Floyd,IN,Indiana,18043,floyd
+USA.47.116_1,Southampton,VA,Virginia,51175,southampton
+USA.14.41_1,Jefferson,IL,Illinois,17081,jefferson
+USA.6.14_1,Crowley,CO,Colorado,08025,crowley
+USA.18.14_1,Breckinridge,KY,Kentucky,21027,breckinridge
+USA.50.60_1,Sawyer,WI,Wisconsin,55113,sawyer
+USA.35.1_1,Adams,ND,North Dakota,38001,adams
+USA.20.15_1,Washington,ME,Maine,23029,washington
+USA.25.65_1,Smith,MS,Mississippi,28129,smith
+USA.11.142_1,Turner,GA,Georgia,13287,turner
+USA.46.14_1,Windsor,VT,Vermont,50027,windsor
+USA.19.36_1,Orleans,LA,Louisiana,22071,orleans
+USA.13.16_1,Cassia,ID,Idaho,16031,cassia
+USA.38.13_1,Harney,OR,Oregon,41025,harney
+USA.4.25_1,Fulton,AR,Arkansas,05049,fulton
+USA.18.66_1,Leslie,KY,Kentucky,21131,leslie
+USA.18.61_1,Knox,KY,Kentucky,21121,knox
+USA.28.68_1,Perkins,NE,Nebraska,31135,perkins
+USA.4.62_1,Saint Francis,AR,Arkansas,05123,saint francis
+USA.5.31_1,Placer,CA,California,06061,placer
+USA.1.19_1,Coosa,AL,Alabama,01037,coosa
+USA.28.5_1,Blaine,NE,Nebraska,31009,blaine
+USA.22.3_1,Bristol,MA,Massachusetts,25005,bristol
+USA.44.102_1,Harrison,TX,Texas,48203,harrison
+USA.43.35_1,Hardeman,TN,Tennessee,47069,hardeman
+USA.44.161_1,McLennan,TX,Texas,48309,mclennan
+USA.28.30_1,Fillmore,NE,Nebraska,31059,fillmore
+USA.1.29_1,Fayette,AL,Alabama,01057,fayette
+USA.50.41_1,Marquette,WI,Wisconsin,55077,marquette
+USA.28.27_1,Dodge,NE,Nebraska,31053,dodge
+USA.50.10_1,Clark,WI,Wisconsin,55019,clark
+USA.4.68_1,Sharp,AR,Arkansas,05135,sharp
+USA.31.9_1,Hudson,NJ,New Jersey,34017,hudson
+USA.44.7_1,Atascosa,TX,Texas,48013,atascosa
+USA.25.24_1,Harrison,MS,Mississippi,28047,harrison
+USA.44.20_1,Brazoria,TX,Texas,48039,brazoria
+USA.19.46_1,Saint Helena,LA,Louisiana,22091,saint helena
+USA.4.74_1,Woodruff,AR,Arkansas,05147,woodruff
+USA.42.59_1,Sully,SD,South Dakota,46119,sully
+USA.17.72_1,Ottawa,KS,Kansas,20143,ottawa
+USA.11.13_1,Brantley,GA,Georgia,13025,brantley
+USA.25.70_1,Tippah,MS,Mississippi,28139,tippah
+USA.14.84_1,Saline,IL,Illinois,17165,saline
+USA.49.40_1,Putnam,WV,West Virginia,54079,putnam
+USA.34.34_1,Forsyth,NC,North Carolina,37067,forsyth
+USA.36.30_1,Guernsey,OH,Ohio,39059,guernsey
+USA.40.4_1,Providence,RI,Rhode Island,44007,providence
+USA.17.9_1,Chase,KS,Kansas,20017,chase
+USA.26.53_1,Laclede,MO,Missouri,29105,laclede
+USA.6.20_1,Eagle,CO,Colorado,08037,eagle
+USA.47.127_1,Waynesboro,VA,Virginia,51820,waynesboro
+USA.25.9_1,Chickasaw,MS,Mississippi,28017,chickasaw
+USA.41.36_1,Newberry,SC,South Carolina,45071,newberry
+USA.44.72_1,Erath,TX,Texas,48143,erath
+USA.27.3_1,Blaine,MT,Montana,30005,blaine
+USA.26.30_1,Dallas,MO,Missouri,29059,dallas
+USA.11.96_1,Marion,GA,Georgia,13197,marion
+USA.6.45_1,Morgan,CO,Colorado,08087,morgan
+USA.43.93_1,White,TN,Tennessee,47185,white
+USA.36.31_1,Hamilton,OH,Ohio,39061,hamilton
+USA.44.130_1,Kendall,TX,Texas,48259,kendall
+USA.39.27_1,Forest,PA,Pennsylvania,42053,forest
+USA.13.43_1,Valley,ID,Idaho,16085,valley
+USA.42.57_1,Spink,SD,South Dakota,46115,spink
+USA.37.30_1,Harper,OK,Oklahoma,40059,harper
+USA.24.75_1,Steele,MN,Minnesota,27147,steele
+USA.27.16_1,Gallatin,MT,Montana,30031,gallatin
+USA.19.9_1,Caddo,LA,Louisiana,22017,caddo
+USA.5.40_1,San Luis Obispo,CA,California,06079,san luis obispo
+USA.34.76_1,Randolph,NC,North Carolina,37151,randolph
+USA.23.20_1,Crawford,MI,Michigan,26039,crawford
+USA.11.68_1,Habersham,GA,Georgia,13137,habersham
+USA.44.148_1,Lipscomb,TX,Texas,48295,lipscomb
+USA.39.43_1,Mercer,PA,Pennsylvania,42085,mercer
+USA.19.29_1,Lafayette,LA,Louisiana,22055,lafayette
+USA.4.4_1,Benton,AR,Arkansas,05007,benton
+USA.14.44_1,Johnson,IL,Illinois,17087,johnson
+USA.34.83_1,Scotland,NC,North Carolina,37165,scotland
+USA.24.8_1,Brown,MN,Minnesota,27015,brown
+USA.33.54_1,Sullivan,NY,New York,36105,sullivan
+USA.34.41_1,Guilford,NC,North Carolina,37081,guilford
+USA.36.3_1,Ashland,OH,Ohio,39005,ashland
+USA.13.34_1,Minidoka,ID,Idaho,16067,minidoka
+USA.44.174_1,Nacogdoches,TX,Texas,48347,nacogdoches
+USA.10.8_1,Charlotte,FL,Florida,12015,charlotte
+USA.33.50_1,Schuyler,NY,New York,36097,schuyler
+USA.26.23_1,Clark,MO,Missouri,29045,clark
+USA.30.9_1,Strafford,NH,New Hampshire,33017,strafford
+USA.1.53_1,Perry,AL,Alabama,01105,perry
+USA.18.56_1,Jefferson,KY,Kentucky,21111,jefferson
+USA.13.22_1,Fremont,ID,Idaho,16043,fremont
+USA.34.85_1,Stokes,NC,North Carolina,37169,stokes
+USA.15.37_1,Jasper,IN,Indiana,18073,jasper
+USA.39.35_1,Lackawanna,PA,Pennsylvania,42069,lackawanna
+USA.34.17_1,Caswell,NC,North Carolina,37033,caswell
+USA.16.55_1,Kossuth,IA,Iowa,19109,kossuth
+USA.36.49_1,Lucas,OH,Ohio,39095,lucas
+USA.1.3_1,Barbour,AL,Alabama,01005,barbour
+USA.34.72_1,Perquimans,NC,North Carolina,37143,perquimans
+USA.1.44_1,Macon,AL,Alabama,01087,macon
+USA.42.62_1,Turner,SD,South Dakota,46125,turner
+USA.11.106_1,Muscogee,GA,Georgia,13215,muscogee
+USA.18.48_1,Harlan,KY,Kentucky,21095,harlan
+USA.33.8_1,Chemung,NY,New York,36015,chemung
+USA.18.46_1,Hancock,KY,Kentucky,21091,hancock
+USA.11.98_1,McIntosh,GA,Georgia,13191,mcintosh
+USA.39.1_1,Adams,PA,Pennsylvania,42001,adams
+USA.50.44_1,Monroe,WI,Wisconsin,55081,monroe
+USA.1.31_1,Geneva,AL,Alabama,01061,geneva
+USA.36.10_1,Carroll,OH,Ohio,39019,carroll
+USA.19.56_1,Union,LA,Louisiana,22111,union
+USA.42.34_1,Hyde,SD,South Dakota,46069,hyde
+USA.10.46_1,Okaloosa,FL,Florida,12091,okaloosa
+USA.11.25_1,Chatham,GA,Georgia,13051,chatham
+USA.33.6_1,Cayuga,NY,New York,36011,cayuga
+USA.39.16_1,Clarion,PA,Pennsylvania,42031,clarion
+USA.19.13_1,Catahoula,LA,Louisiana,22025,catahoula
+USA.44.253_1,Zapata,TX,Texas,48505,zapata
+USA.18.87_1,Montgomery,KY,Kentucky,21173,montgomery
+USA.5.6_1,Colusa,CA,California,06011,colusa
+USA.19.32_1,Livingston,LA,Louisiana,22063,livingston
+USA.44.87_1,Glasscock,TX,Texas,48173,glasscock
+USA.18.10_1,Boyd,KY,Kentucky,21019,boyd
+USA.6.17_1,Denver,CO,Colorado,08031,denver
+USA.11.159_1,Worth,GA,Georgia,13321,worth
+USA.44.42_1,Coleman,TX,Texas,48083,coleman
+USA.31.14_1,Morris,NJ,New Jersey,34027,morris
+USA.49.18_1,Jackson,WV,West Virginia,54035,jackson
+USA.39.10_1,Butler,PA,Pennsylvania,42019,butler
+USA.44.238_1,Ward,TX,Texas,48475,ward
+USA.38.18_1,Klamath,OR,Oregon,41035,klamath
+USA.28.22_1,Dakota,NE,Nebraska,31043,dakota
+USA.25.8_1,Carroll,MS,Mississippi,28015,carroll
+USA.26.44_1,Holt,MO,Missouri,29087,holt
+USA.17.69_1,Norton,KS,Kansas,20137,norton
+USA.28.54_1,Knox,NE,Nebraska,31107,knox
+USA.4.50_1,Nevada,AR,Arkansas,05099,nevada
+USA.49.24_1,Marion,WV,West Virginia,54049,marion
+USA.11.20_1,Camden,GA,Georgia,13039,camden
+USA.6.57_1,San Juan,CO,Colorado,08111,san juan
+USA.15.65_1,Porter,IN,Indiana,18127,porter
+USA.5.46_1,Sierra,CA,California,06091,sierra
+USA.26.88_1,Randolph,MO,Missouri,29175,randolph
+USA.47.96_1,Pittsylvania,VA,Virginia,51143,pittsylvania
+USA.43.36_1,Hardin,TN,Tennessee,47071,hardin
+USA.26.27_1,Cooper,MO,Missouri,29053,cooper
+USA.11.82_1,Jenkins,GA,Georgia,13165,jenkins
+USA.34.8_1,Bertie,NC,North Carolina,37015,bertie
+USA.19.37_1,Ouachita,LA,Louisiana,22073,ouachita
+USA.44.3_1,Angelina,TX,Texas,48005,angelina
+USA.18.89_1,Muhlenberg,KY,Kentucky,21177,muhlenberg
+USA.43.13_1,Claiborne,TN,Tennessee,47025,claiborne
+USA.26.57_1,Lincoln,MO,Missouri,29113,lincoln
+USA.47.125_1,Warren,VA,Virginia,51187,warren
+USA.43.21_1,DeKalb,TN,Tennessee,47041,dekalb
+USA.23.34_1,Ionia,MI,Michigan,26067,ionia
+USA.39.56_1,Somerset,PA,Pennsylvania,42111,somerset
+USA.16.8_1,Boone,IA,Iowa,19015,boone
+USA.34.12_1,Burke,NC,North Carolina,37023,burke
+USA.27.21_1,Hill,MT,Montana,30041,hill
+USA.34.84_1,Stanly,NC,North Carolina,37167,stanly
+USA.35.15_1,Emmons,ND,North Dakota,38029,emmons
+USA.27.15_1,Flathead,MT,Montana,30029,flathead
+USA.18.106_1,Shelby,KY,Kentucky,21211,shelby
+USA.17.103_1,Wilson,KS,Kansas,20205,wilson
+USA.15.5_1,Blackford,IN,Indiana,18009,blackford
+USA.13.1_1,Ada,ID,Idaho,16001,ada
+USA.37.25_1,Garvin,OK,Oklahoma,40049,garvin
+USA.44.37_1,Cherokee,TX,Texas,48073,cherokee
+USA.44.34_1,Cass,TX,Texas,48067,cass
+USA.10.31_1,Jackson,FL,Florida,12063,jackson
+USA.47.56_1,Halifax,VA,Virginia,51083,halifax
+USA.15.90_1,Wayne,IN,Indiana,18177,wayne
+USA.37.4_1,Beaver,OK,Oklahoma,40007,beaver
+USA.34.48_1,Hyde,NC,North Carolina,37095,hyde
+USA.4.40_1,Lincoln,AR,Arkansas,05079,lincoln
+USA.16.82_1,Scott,IA,Iowa,19163,scott
+USA.18.40_1,Garrard,KY,Kentucky,21079,garrard
+USA.10.56_1,Saint Lucie,FL,Florida,12111,saint lucie
+USA.39.62_1,Warren,PA,Pennsylvania,42123,warren
+USA.14.57_1,Macoupin,IL,Illinois,17117,macoupin
+USA.15.45_1,Lake,IN,Indiana,18089,lake
+USA.25.37_1,Lamar,MS,Mississippi,28073,lamar
+USA.32.27_1,Santa Fe,NM,New Mexico,35049,santa fe
+USA.44.245_1,Willacy,TX,Texas,48489,willacy
+USA.26.55_1,Lawrence,MO,Missouri,29109,lawrence
+USA.33.34_1,Oneida,NY,New York,36065,oneida
+USA.11.135_1,Terrell,GA,Georgia,13273,terrell
+USA.22.10_1,Nantucket,MA,Massachusetts,25019,nantucket
+USA.42.4_1,Bon Homme,SD,South Dakota,46009,bon homme
+USA.16.63_1,Marion,IA,Iowa,19125,marion
+USA.1.27_1,Escambia,AL,Alabama,01053,escambia
+USA.37.10_1,Carter,OK,Oklahoma,40019,carter
+USA.47.98_1,Portsmouth,VA,Virginia,51740,portsmouth
+USA.48.18_1,Kitsap,WA,Washington,53035,kitsap
+USA.11.141_1,Troup,GA,Georgia,13285,troup
+USA.11.29_1,Clarke,GA,Georgia,13059,clarke
+USA.50.61_1,Shawano,WI,Wisconsin,55115,shawano
+USA.32.33_1,Valencia,NM,New Mexico,35061,valencia
+USA.36.7_1,Belmont,OH,Ohio,39013,belmont
+USA.43.43_1,Humphreys,TN,Tennessee,47085,humphreys
+USA.1.17_1,Colbert,AL,Alabama,01033,colbert
+USA.21.21_1,Washington,MD,Maryland,24043,washington
+USA.20.4_1,Franklin,ME,Maine,23007,franklin
+USA.18.69_1,Lincoln,KY,Kentucky,21137,lincoln
+USA.42.43_1,Marshall,SD,South Dakota,46091,marshall
+USA.28.2_1,Antelope,NE,Nebraska,31003,antelope
+USA.47.104_1,Radford,VA,Virginia,51750,radford
+USA.36.46_1,Licking,OH,Ohio,39089,licking
+USA.33.60_1,Wayne,NY,New York,36117,wayne
+USA.6.60_1,Summit,CO,Colorado,08117,summit
+USA.17.78_1,Reno,KS,Kansas,20155,reno
+USA.36.45_1,Lawrence,OH,Ohio,39087,lawrence
+USA.13.3_1,Bannock,ID,Idaho,16005,bannock
+USA.2.7_1,Dillingham,AK,Alaska,02070,dillingham
+USA.23.47_1,Lake Superior,MI,,,lake superior
+USA.25.71_1,Tishomingo,MS,Mississippi,28141,tishomingo
+USA.26.31_1,Daviess,MO,Missouri,29061,daviess
+USA.41.18_1,Dorchester,SC,South Carolina,45035,dorchester
+USA.44.35_1,Castro,TX,Texas,48069,castro
+USA.43.62_1,Monroe,TN,Tennessee,47123,monroe
+USA.11.79_1,Jasper,GA,Georgia,13159,jasper
+USA.48.3_1,Benton,WA,Washington,53005,benton
+USA.22.4_1,Dukes,MA,Massachusetts,25007,dukes
+USA.47.13_1,Bland,VA,Virginia,51021,bland
+USA.41.21_1,Florence,SC,South Carolina,45041,florence
+USA.36.15_1,Columbiana,OH,Ohio,39029,columbiana
+USA.47.46_1,Franklin,VA,Virginia,51067,franklin
+USA.47.46_1,Franklin,VA,Virginia,51620,franklin
+USA.47.75_1,Lynchburg,VA,Virginia,51680,lynchburg
+USA.37.62_1,Pontotoc,OK,Oklahoma,40123,pontotoc
+USA.11.19_1,Calhoun,GA,Georgia,13037,calhoun
+USA.43.47_1,Knox,TN,Tennessee,47093,knox
+USA.45.7_1,Duchesne,UT,Utah,49013,duchesne
+USA.48.36_1,Walla Walla,WA,Washington,53071,walla walla
+USA.25.39_1,Lawrence,MS,Mississippi,28077,lawrence
+USA.11.48_1,Douglas,GA,Georgia,13097,douglas
+USA.36.32_1,Hancock,OH,Ohio,39063,hancock
+USA.49.48_1,Tyler,WV,West Virginia,54095,tyler
+USA.41.8_1,Berkeley,SC,South Carolina,45015,berkeley
+USA.14.46_1,Kankakee,IL,Illinois,17091,kankakee
+USA.36.39_1,Huron,OH,Ohio,39077,huron
+USA.27.37_1,Pondera,MT,Montana,30073,pondera
+USA.25.46_1,Marion,MS,Mississippi,28091,marion
+USA.44.60_1,Delta,TX,Texas,48119,delta
+USA.4.1_1,Arkansas,AR,Arkansas,05001,arkansas
+USA.36.83_1,Vinton,OH,Ohio,39163,vinton
+USA.34.59_1,McDowell,NC,North Carolina,37111,mcdowell
+USA.23.62_1,Monroe,MI,Michigan,26115,monroe
+USA.44.140_1,Lamar,TX,Texas,48277,lamar
+USA.33.57_1,Ulster,NY,New York,36111,ulster
+USA.14.83_1,Saint Clair,IL,Illinois,17163,saint clair
+USA.44.26_1,Burleson,TX,Texas,48051,burleson
+USA.18.111_1,Trigg,KY,Kentucky,21221,trigg
+USA.37.22_1,Dewey,OK,Oklahoma,40043,dewey
+USA.44.52_1,Crane,TX,Texas,48103,crane
+USA.18.25_1,Clark,KY,Kentucky,21049,clark
+USA.4.7_1,Calhoun,AR,Arkansas,05013,calhoun
+USA.23.39_1,Kalamazoo,MI,Michigan,26077,kalamazoo
+USA.35.24_1,Logan,ND,North Dakota,38047,logan
+USA.5.51_1,Sutter,CA,California,06101,sutter
+USA.18.117_1,Webster,KY,Kentucky,21233,webster
+USA.38.30_1,Umatilla,OR,Oregon,41059,umatilla
+USA.42.51_1,Pennington,SD,South Dakota,46103,pennington
+USA.47.76_1,Madison,VA,Virginia,51113,madison
+USA.45.25_1,Utah,UT,Utah,49049,utah
+USA.10.40_1,Manatee,FL,Florida,12081,manatee
+USA.41.1_1,Abbeville,SC,South Carolina,45001,abbeville
+USA.29.15_1,Storey,NV,Nevada,32029,storey
+USA.23.87_1,Wexford,MI,Michigan,26165,wexford
+USA.36.33_1,Hardin,OH,Ohio,39065,hardin
+USA.50.66_1,Vilas,WI,Wisconsin,55125,vilas
+USA.44.53_1,Crockett,TX,Texas,48105,crockett
+USA.25.4_1,Attala,MS,Mississippi,28007,attala
+USA.26.9_1,Bollinger,MO,Missouri,29017,bollinger
+USA.14.3_1,Bond,IL,Illinois,17005,bond
+USA.12.3_1,Kalawao,HI,Hawaii,15005,kalawao
+USA.32.6_1,Curry,NM,New Mexico,35009,curry
+USA.47.39_1,Essex,VA,Virginia,51057,essex
+USA.43.58_1,Maury,TN,Tennessee,47119,maury
+USA.23.31_1,Houghton,MI,Michigan,26061,houghton
+USA.11.35_1,Colquitt,GA,Georgia,13071,colquitt
+USA.11.39_1,Crawford,GA,Georgia,13079,crawford
+USA.44.142_1,Lampasas,TX,Texas,48281,lampasas
+USA.44.229_1,Tyler,TX,Texas,48457,tyler
+USA.49.44_1,Roane,WV,West Virginia,54087,roane
+USA.44.77_1,Floyd,TX,Texas,48153,floyd
+USA.27.1_1,Beaverhead,MT,Montana,30001,beaverhead
+USA.44.235_1,Victoria,TX,Texas,48469,victoria
+USA.28.50_1,Kearney,NE,Nebraska,31099,kearney
+USA.44.95_1,Hale,TX,Texas,48189,hale
+USA.26.52_1,Knox,MO,Missouri,29103,knox
+USA.26.18_1,Carter,MO,Missouri,29035,carter
+USA.10.53_1,Polk,FL,Florida,12105,polk
+USA.44.204_1,San Jacinto,TX,Texas,48407,san jacinto
+USA.13.24_1,Gooding,ID,Idaho,16047,gooding
+USA.48.34_1,Thurston,WA,Washington,53067,thurston
+USA.6.27_1,Gunnison,CO,Colorado,08051,gunnison
+USA.43.90_1,Washington,TN,Tennessee,47179,washington
+USA.33.18_1,Fulton,NY,New York,36035,fulton
+USA.22.11_1,Norfolk,MA,Massachusetts,25021,norfolk
+USA.4.10_1,Clark,AR,Arkansas,05019,clark
+USA.4.23_1,Faulkner,AR,Arkansas,05045,faulkner
+USA.48.25_1,Pacific,WA,Washington,53049,pacific
+USA.44.154_1,Madison,TX,Texas,48313,madison
+USA.25.72_1,Tunica,MS,Mississippi,28143,tunica
+USA.5.21_1,Marin,CA,California,06041,marin
+USA.44.251_1,Yoakum,TX,Texas,48501,yoakum
+USA.39.28_1,Franklin,PA,Pennsylvania,42055,franklin
+USA.18.15_1,Bullitt,KY,Kentucky,21029,bullitt
+USA.43.12_1,Chester,TN,Tennessee,47023,chester
+USA.39.47_1,Montour,PA,Pennsylvania,42093,montour
+USA.19.27_1,Jefferson Davis,LA,Louisiana,22053,jefferson davis
+USA.14.71_1,Moultrie,IL,Illinois,17139,moultrie
+USA.23.27_1,Gogebic,MI,Michigan,26053,gogebic
+USA.26.73_1,Newton,MO,Missouri,29145,newton
+USA.1.46_1,Marengo,AL,Alabama,01091,marengo
+USA.23.67_1,Oakland,MI,Michigan,26125,oakland
+USA.24.49_1,Mille Lacs,MN,Minnesota,27095,mille lacs
+USA.4.45_1,Marion,AR,Arkansas,05089,marion
+USA.14.95_1,Warren,IL,Illinois,17187,warren
+USA.38.11_1,Gilliam,OR,Oregon,41021,gilliam
+USA.47.118_1,Stafford,VA,Virginia,51179,stafford
+USA.36.20_1,Defiance,OH,Ohio,39039,defiance
+USA.16.60_1,Lyon,IA,Iowa,19119,lyon
+USA.44.186_1,Pecos,TX,Texas,48371,pecos
+USA.47.15_1,Bristol,VA,Virginia,51520,bristol
+USA.16.39_1,Guthrie,IA,Iowa,19077,guthrie
+USA.18.59_1,Kenton,KY,Kentucky,21117,kenton
+USA.28.31_1,Franklin,NE,Nebraska,31061,franklin
+USA.10.48_1,Orange,FL,Florida,12095,orange
+USA.4.72_1,Washington,AR,Arkansas,05143,washington
+USA.23.9_1,Bay,MI,Michigan,26017,bay
+USA.25.76_1,Washington,MS,Mississippi,28151,washington
+USA.31.18_1,Somerset,NJ,New Jersey,34035,somerset
+USA.49.37_1,Pleasants,WV,West Virginia,54073,pleasants
+USA.11.108_1,Oconee,GA,Georgia,13219,oconee
+USA.4.6_1,Bradley,AR,Arkansas,05011,bradley
+USA.4.43_1,Lonoke,AR,Arkansas,05085,lonoke
+USA.44.109_1,Hill,TX,Texas,48217,hill
+USA.28.33_1,Furnas,NE,Nebraska,31065,furnas
+USA.6.31_1,Jefferson,CO,Colorado,08059,jefferson
+USA.25.62_1,Scott,MS,Mississippi,28123,scott
+USA.51.5_1,Converse,WY,Wyoming,56009,converse
+USA.42.6_1,Brown,SD,South Dakota,46013,brown
+USA.15.61_1,Owen,IN,Indiana,18119,owen
+USA.18.85_1,Metcalfe,KY,Kentucky,21169,metcalfe
+USA.24.13_1,Chisago,MN,Minnesota,27025,chisago
+USA.1.60_1,Sumter,AL,Alabama,01119,sumter
+USA.17.79_1,Republic,KS,Kansas,20157,republic
+USA.16.93_1,Wayne,IA,Iowa,19185,wayne
+USA.11.145_1,Upson,GA,Georgia,13293,upson
+USA.44.67_1,Eastland,TX,Texas,48133,eastland
+USA.50.28_1,Jefferson,WI,Wisconsin,55055,jefferson
+USA.17.63_1,Montgomery,KS,Kansas,20125,montgomery
+USA.44.254_1,Zavala,TX,Texas,48507,zavala
+USA.47.123_1,Tazewell,VA,Virginia,51185,tazewell
+USA.19.2_1,Allen,LA,Louisiana,22003,allen
+USA.41.19_1,Edgefield,SC,South Carolina,45037,edgefield
+USA.44.122_1,Jeff Davis,TX,Texas,48243,jeff davis
+USA.43.32_1,Hamblen,TN,Tennessee,47063,hamblen
+USA.11.148_1,Ware,GA,Georgia,13299,ware
+USA.2.10_1,Juneau,AK,Alaska,02110,juneau
+USA.51.1_1,Albany,WY,Wyoming,56001,albany
+USA.47.51_1,Gloucester,VA,Virginia,51073,gloucester
+USA.26.79_1,Perry,MO,Missouri,29157,perry
+USA.48.2_1,Asotin,WA,Washington,53003,asotin
+USA.41.4_1,Anderson,SC,South Carolina,45007,anderson
+USA.35.38_1,Renville,ND,North Dakota,38075,renville
+USA.25.78_1,Webster,MS,Mississippi,28155,webster
+USA.18.100_1,Pulaski,KY,Kentucky,21199,pulaski
+USA.44.134_1,Kimble,TX,Texas,48267,kimble
+USA.18.35_1,Fleming,KY,Kentucky,21069,fleming
+USA.19.38_1,Plaquemines,LA,Louisiana,22075,plaquemines
+USA.43.74_1,Robertson,TN,Tennessee,47147,robertson
+USA.19.55_1,Terrebonne,LA,Louisiana,22109,terrebonne
+USA.45.1_1,Beaver,UT,Utah,49001,beaver
+USA.17.3_1,Atchison,KS,Kansas,20005,atchison
+USA.50.35_1,Lake Superior,WI,,,lake superior
+USA.2.25_1,Wrangell-Petersburg,AK,Alaska,02280,wrangell petersburg
+USA.24.18_1,Crow Wing,MN,Minnesota,27035,crow wing
+USA.33.4_1,Broome,NY,New York,36007,broome
+USA.23.43_1,Lake,MI,Michigan,26085,lake
+USA.33.52_1,Steuben,NY,New York,36101,steuben
+USA.35.45_1,Stark,ND,North Dakota,38089,stark
+USA.26.50_1,Jefferson,MO,Missouri,29099,jefferson
+USA.23.72_1,Oscoda,MI,Michigan,26135,oscoda
+USA.10.66_1,Walton,FL,Florida,12131,walton
+USA.6.4_1,Archuleta,CO,Colorado,08007,archuleta
+USA.7.7_1,Tolland,CT,Connecticut,09013,tolland
+USA.23.66_1,Newaygo,MI,Michigan,26123,newaygo
+USA.47.71_1,Lexington,VA,Virginia,51678,lexington
+USA.10.44_1,Monroe,FL,Florida,12087,monroe
+USA.32.32_1,Union,NM,New Mexico,35059,union
+USA.26.96_1,Sainte Genevieve,MO,Missouri,29186,sainte genevieve
+USA.15.9_1,Cass,IN,Indiana,18017,cass
+USA.6.2_1,Alamosa,CO,Colorado,08003,alamosa
+USA.18.79_1,McCracken,KY,Kentucky,21145,mccracken
+USA.11.38_1,Coweta,GA,Georgia,13077,coweta
+USA.15.20_1,Elkhart,IN,Indiana,18039,elkhart
+USA.11.130_1,Talbot,GA,Georgia,13263,talbot
+USA.15.38_1,Jay,IN,Indiana,18075,jay
+USA.5.35_1,San Benito,CA,California,06069,san benito
+USA.18.1_1,Adair,KY,Kentucky,21001,adair
+USA.43.14_1,Clay,TN,Tennessee,47027,clay
+USA.27.35_1,Petroleum,MT,Montana,30069,petroleum
+USA.25.16_1,Covington,MS,Mississippi,28031,covington
+USA.11.49_1,Early,GA,Georgia,13099,early
+USA.11.26_1,Chattahoochee,GA,Georgia,13053,chattahoochee
+USA.2.11_1,Kenai Peninsula,AK,Alaska,02122,kenai peninsula
+USA.48.32_1,Spokane,WA,Washington,53063,spokane
+USA.48.24_1,Okanogan,WA,Washington,53047,okanogan
+USA.44.215_1,Stephens,TX,Texas,48429,stephens
+USA.39.67_1,York,PA,Pennsylvania,42133,york
+USA.44.47_1,Comanche,TX,Texas,48093,comanche
+USA.44.81_1,Freestone,TX,Texas,48161,freestone
+USA.16.43_1,Harrison,IA,Iowa,19085,harrison
+USA.25.34_1,Jones,MS,Mississippi,28067,jones
+USA.16.71_1,O'Brien,IA,Iowa,19141,obrien
+USA.19.7_1,Bienville,LA,Louisiana,22013,bienville
+USA.1.66_1,Wilcox,AL,Alabama,01131,wilcox
+USA.36.75_1,Seneca,OH,Ohio,39147,seneca
+USA.14.40_1,Jasper,IL,Illinois,17079,jasper
+USA.16.10_1,Buchanan,IA,Iowa,19019,buchanan
+USA.34.7_1,Beaufort,NC,North Carolina,37013,beaufort
+USA.25.27_1,Humphreys,MS,Mississippi,28053,humphreys
+USA.19.4_1,Assumption,LA,Louisiana,22007,assumption
+USA.34.35_1,Franklin,NC,North Carolina,37069,franklin
+USA.16.94_1,Webster,IA,Iowa,19187,webster
+USA.51.20_1,Teton,WY,Wyoming,56039,teton
+USA.25.63_1,Sharkey,MS,Mississippi,28125,sharkey
+USA.27.31_1,Mineral,MT,Montana,30061,mineral
+USA.45.13_1,Kane,UT,Utah,49025,kane
+USA.44.55_1,Culberson,TX,Texas,48109,culberson
+USA.27.6_1,Carter,MT,Montana,30011,carter
+USA.26.70_1,Montgomery,MO,Missouri,29139,montgomery
+USA.14.42_1,Jersey,IL,Illinois,17083,jersey
+USA.4.52_1,Ouachita,AR,Arkansas,05103,ouachita
+USA.51.9_1,Hot Springs,WY,Wyoming,56017,hot springs
+USA.37.70_1,Texas,OK,Oklahoma,40139,texas
+USA.34.31_1,Duplin,NC,North Carolina,37061,duplin
+USA.6.22_1,Elbert,CO,Colorado,08039,elbert
+USA.24.30_1,Isanti,MN,Minnesota,27059,isanti
+USA.36.84_1,Warren,OH,Ohio,39165,warren
+USA.37.71_1,Tillman,OK,Oklahoma,40141,tillman
+USA.27.9_1,Custer,MT,Montana,30017,custer
+USA.8.1_1,Kent,DE,Delaware,10001,kent
+USA.24.43_1,Lyon,MN,Minnesota,27083,lyon
+USA.36.12_1,Clark,OH,Ohio,39023,clark
+USA.36.56_1,Miami,OH,Ohio,39109,miami
+USA.44.97_1,Hamilton,TX,Texas,48193,hamilton
+USA.47.94_1,Patrick,VA,Virginia,51141,patrick
+USA.51.4_1,Carbon,WY,Wyoming,56007,carbon
+USA.16.99_1,Wright,IA,Iowa,19197,wright
+USA.47.44_1,Floyd,VA,Virginia,51063,floyd
+USA.44.70_1,El Paso,TX,Texas,48141,el paso
+USA.26.24_1,Clay,MO,Missouri,29047,clay
+USA.15.28_1,Greene,IN,Indiana,18055,greene
+USA.47.33_1,Culpeper,VA,Virginia,51047,culpeper
+USA.4.24_1,Franklin,AR,Arkansas,05047,franklin
+USA.38.21_1,Lincoln,OR,Oregon,41041,lincoln
+USA.10.34_1,Lake,FL,Florida,12069,lake
+USA.34.30_1,Davie,NC,North Carolina,37059,davie
+USA.25.45_1,Madison,MS,Mississippi,28089,madison
+USA.16.2_1,Adams,IA,Iowa,19003,adams
+USA.24.66_1,Renville,MN,Minnesota,27129,renville
+USA.19.18_1,East Carroll,LA,Louisiana,22035,east carroll
+USA.34.68_1,Orange,NC,North Carolina,37135,orange
+USA.37.23_1,Ellis,OK,Oklahoma,40045,ellis
+USA.50.67_1,Walworth,WI,Wisconsin,55127,walworth
+USA.24.12_1,Chippewa,MN,Minnesota,27023,chippewa
+USA.5.24_1,Merced,CA,California,06047,merced
+USA.11.27_1,Chattooga,GA,Georgia,13055,chattooga
+USA.43.77_1,Sequatchie,TN,Tennessee,47153,sequatchie
+USA.43.61_1,Meigs,TN,Tennessee,47121,meigs
+USA.3.6_1,Greenlee,AZ,Arizona,04011,greenlee
+USA.17.23_1,Douglas,KS,Kansas,20045,douglas
+USA.26.95_1,Saint Louis,MO,Missouri,29189,saint louis
+USA.26.95_1,Saint Louis,MO,Missouri,29510,saint louis
+USA.25.7_1,Calhoun,MS,Mississippi,28013,calhoun
+USA.19.39_1,Pointe Coupee,LA,Louisiana,22077,pointe coupee
+USA.50.31_1,Kewaunee,WI,Wisconsin,55061,kewaunee
+USA.47.18_1,Buckingham,VA,Virginia,51029,buckingham
+USA.25.2_1,Alcorn,MS,Mississippi,28003,alcorn
+USA.18.28_1,Crittenden,KY,Kentucky,21055,crittenden
+USA.23.82_1,Shiawassee,MI,Michigan,26155,shiawassee
+USA.51.14_1,Niobrara,WY,Wyoming,56027,niobrara
+USA.37.7_1,Bryan,OK,Oklahoma,40013,bryan
+USA.28.13_1,Cass,NE,Nebraska,31025,cass
+USA.37.54_1,Okfuskee,OK,Oklahoma,40107,okfuskee
+USA.32.20_1,Otero,NM,New Mexico,35035,otero
+USA.21.15_1,Montgomery,MD,Maryland,24031,montgomery
+USA.27.14_1,Fergus,MT,Montana,30027,fergus
+USA.47.48_1,Fredericksburg,VA,Virginia,51630,fredericksburg
+USA.15.30_1,Hancock,IN,Indiana,18059,hancock
+USA.24.68_1,Rock,MN,Minnesota,27133,rock
+USA.39.13_1,Carbon,PA,Pennsylvania,42025,carbon
+USA.11.158_1,Wilkinson,GA,Georgia,13319,wilkinson
+USA.14.18_1,Cumberland,IL,Illinois,17035,cumberland
+USA.49.5_1,Brooke,WV,West Virginia,54009,brooke
+USA.15.44_1,LaGrange,IN,Indiana,18087,lagrange
+USA.35.3_1,Benson,ND,North Dakota,38005,benson
+USA.47.79_1,Martinsville,VA,Virginia,51690,martinsville
+USA.15.11_1,Clay,IN,Indiana,18021,clay
+USA.27.40_1,Prairie,MT,Montana,30079,prairie
+USA.24.44_1,Mahnomen,MN,Minnesota,27087,mahnomen
+USA.23.77_1,Saginaw,MI,Michigan,26145,saginaw
+USA.28.59_1,Madison,NE,Nebraska,31119,madison
+USA.46.12_1,Washington,VT,Vermont,50023,washington
+USA.24.73_1,Sibley,MN,Minnesota,27143,sibley
+USA.19.48_1,Saint John the Baptist,LA,Louisiana,22095,saint john the baptist
+USA.17.6_1,Bourbon,KS,Kansas,20011,bourbon
+USA.10.26_1,Hernando,FL,Florida,12053,hernando
+USA.24.69_1,Roseau,MN,Minnesota,27135,roseau
+USA.11.56_1,Fayette,GA,Georgia,13113,fayette
+USA.14.59_1,Marion,IL,Illinois,17121,marion
+USA.25.51_1,Newton,MS,Mississippi,28101,newton
+USA.11.54_1,Evans,GA,Georgia,13109,evans
+USA.28.37_1,Gosper,NE,Nebraska,31073,gosper
+USA.43.3_1,Benton,TN,Tennessee,47005,benton
+USA.37.21_1,Delaware,OK,Oklahoma,40041,delaware
+USA.28.35_1,Garden,NE,Nebraska,31069,garden
+USA.10.28_1,Hillsborough,FL,Florida,12057,hillsborough
+USA.16.9_1,Bremer,IA,Iowa,19017,bremer
+USA.18.120_1,Woodford,KY,Kentucky,21239,woodford
+USA.23.32_1,Huron,MI,Michigan,26063,huron
+USA.10.16_1,Escambia,FL,Florida,12033,escambia
+USA.47.108_1,Roanoke City,VA,Virginia,51161,roanoke
+USA.47.108_1,Roanoke City,VA,Virginia,51770,roanoke
+USA.34.79_1,Rockingham,NC,North Carolina,37157,rockingham
+USA.44.16_1,Blanco,TX,Texas,48031,blanco
+USA.34.65_1,New Hanover,NC,North Carolina,37129,new hanover
+USA.48.16_1,Jefferson,WA,Washington,53031,jefferson
+USA.41.45_1,Williamsburg,SC,South Carolina,45089,williamsburg
+USA.25.10_1,Choctaw,MS,Mississippi,28019,choctaw
+USA.18.101_1,Robertson,KY,Kentucky,21201,robertson
+USA.16.19_1,Chickasaw,IA,Iowa,19037,chickasaw
+USA.44.208_1,Scurry,TX,Texas,48415,scurry
+USA.38.9_1,Deschutes,OR,Oregon,41017,deschutes
+USA.11.58_1,Forsyth,GA,Georgia,13117,forsyth
+USA.42.29_1,Hand,SD,South Dakota,46059,hand
+USA.36.35_1,Henry,OH,Ohio,39069,henry
+USA.49.20_1,Kanawha,WV,West Virginia,54039,kanawha
+USA.27.47_1,Silver Bow,MT,Montana,30093,silver bow
+USA.14.99_1,Whiteside,IL,Illinois,17195,whiteside
+USA.14.68_1,Monroe,IL,Illinois,17133,monroe
+USA.47.105_1,Rappahannock,VA,Virginia,51157,rappahannock
+USA.44.201_1,Rusk,TX,Texas,48401,rusk
+USA.17.75_1,Pottawatomie,KS,Kansas,20149,pottawatomie
+USA.39.17_1,Clearfield,PA,Pennsylvania,42033,clearfield
+USA.11.76_1,Houston,GA,Georgia,13153,houston
+USA.23.14_1,Cass,MI,Michigan,26027,cass
+USA.47.1_1,Accomack,VA,Virginia,51001,accomack
+USA.37.3_1,Atoka,OK,Oklahoma,40005,atoka
+USA.15.83_1,Vanderburgh,IN,Indiana,18163,vanderburgh
+USA.39.18_1,Clinton,PA,Pennsylvania,42035,clinton
+USA.1.36_1,Jackson,AL,Alabama,01071,jackson
+USA.31.11_1,Mercer,NJ,New Jersey,34021,mercer
+USA.17.91_1,Sherman,KS,Kansas,20181,sherman
+USA.36.36_1,Highland,OH,Ohio,39071,highland
+USA.16.90_1,Wapello,IA,Iowa,19179,wapello
+USA.18.27_1,Clinton,KY,Kentucky,21053,clinton
+USA.49.23_1,Logan,WV,West Virginia,54045,logan
+USA.28.48_1,Jefferson,NE,Nebraska,31095,jefferson
+USA.20.10_1,Penobscot,ME,Maine,23019,penobscot
+USA.23.70_1,Ontonagon,MI,Michigan,26131,ontonagon
+USA.51.12_1,Lincoln,WY,Wyoming,56023,lincoln
+USA.25.33_1,Jefferson Davis,MS,Mississippi,28065,jefferson davis
+USA.49.19_1,Jefferson,WV,West Virginia,54037,jefferson
+USA.35.33_1,Oliver,ND,North Dakota,38065,oliver
+USA.13.37_1,Owyhee,ID,Idaho,16073,owyhee
+USA.2.6_1,Denali,AK,Alaska,02068,denali
+USA.11.67_1,Gwinnett,GA,Georgia,13135,gwinnett
+USA.24.36_1,Koochiching,MN,Minnesota,27071,koochiching
+USA.24.42_1,Lincoln,MN,Minnesota,27081,lincoln
+USA.36.16_1,Coshocton,OH,Ohio,39031,coshocton
+USA.14.91_1,Tazewell,IL,Illinois,17179,tazewell
+USA.1.65_1,Washington,AL,Alabama,01129,washington
+USA.33.43_1,Rensselaer,NY,New York,36083,rensselaer
+USA.28.66_1,Otoe,NE,Nebraska,31131,otoe
+USA.11.125_1,Seminole,GA,Georgia,13253,seminole
+USA.48.22_1,Lincoln,WA,Washington,53043,lincoln
+USA.10.14_1,Dixie,FL,Florida,12029,dixie
+USA.14.75_1,Piatt,IL,Illinois,17147,piatt
+USA.44.250_1,Wood,TX,Texas,48499,wood
+USA.18.26_1,Clay,KY,Kentucky,21051,clay
+USA.13.7_1,Blaine,ID,Idaho,16013,blaine
+USA.4.54_1,Phillips,AR,Arkansas,05107,phillips
+USA.4.44_1,Madison,AR,Arkansas,05087,madison
+USA.10.7_1,Calhoun,FL,Florida,12013,calhoun
+USA.47.113_1,Scott,VA,Virginia,51169,scott
+USA.39.5_1,Bedford,PA,Pennsylvania,42009,bedford
+USA.24.32_1,Jackson,MN,Minnesota,27063,jackson
+USA.44.216_1,Sterling,TX,Texas,48431,sterling
+USA.16.92_1,Washington,IA,Iowa,19183,washington
+USA.47.22_1,Carroll,VA,Virginia,51035,carroll
+USA.11.151_1,Wayne,GA,Georgia,13305,wayne
+USA.17.70_1,Osage,KS,Kansas,20139,osage
+USA.15.77_1,Steuben,IN,Indiana,18151,steuben
+USA.26.59_1,Livingston,MO,Missouri,29117,livingston
+USA.1.39_1,Lauderdale,AL,Alabama,01077,lauderdale
+USA.11.152_1,Webster,GA,Georgia,13307,webster
+USA.36.4_1,Ashtabula,OH,Ohio,39007,ashtabula
+USA.11.57_1,Floyd,GA,Georgia,13115,floyd
+USA.28.39_1,Greeley,NE,Nebraska,31077,greeley
+USA.15.57_1,Newton,IN,Indiana,18111,newton
+USA.44.112_1,Hopkins,TX,Texas,48223,hopkins
+USA.23.36_1,Iron,MI,Michigan,26071,iron
+USA.47.110_1,Rockingham,VA,Virginia,51165,rockingham
+USA.42.48_1,Miner,SD,South Dakota,46097,miner
+USA.36.54_1,Meigs,OH,Ohio,39105,meigs
+USA.15.79_1,Switzerland,IN,Indiana,18155,switzerland
+USA.3.4_1,Gila,AZ,Arizona,04007,gila
+USA.35.50_1,Walsh,ND,North Dakota,38099,walsh
+USA.42.44_1,McCook,SD,South Dakota,46087,mccook
+USA.10.59_1,Seminole,FL,Florida,12117,seminole
+USA.15.69_1,Randolph,IN,Indiana,18135,randolph
+USA.13.36_1,Oneida,ID,Idaho,16071,oneida
+USA.16.74_1,Palo Alto,IA,Iowa,19147,palo alto
+USA.17.12_1,Cheyenne,KS,Kansas,20023,cheyenne
+USA.23.65_1,Muskegon,MI,Michigan,26121,muskegon
+USA.47.124_1,Virginia Beach,VA,Virginia,51810,virginia beach
+USA.17.48_1,Kingman,KS,Kansas,20095,kingman
+USA.34.95_1,Watauga,NC,North Carolina,37189,watauga
+USA.44.25_1,Brown,TX,Texas,48049,brown
+USA.17.93_1,Stafford,KS,Kansas,20185,stafford
+USA.44.211_1,Sherman,TX,Texas,48421,sherman
+USA.28.55_1,Lancaster,NE,Nebraska,31109,lancaster
+USA.36.41_1,Jefferson,OH,Ohio,39081,jefferson
+USA.13.18_1,Clearwater,ID,Idaho,16035,clearwater
+USA.23.81_1,Schoolcraft,MI,Michigan,26153,schoolcraft
+USA.18.103_1,Rowan,KY,Kentucky,21205,rowan
+USA.44.83_1,Gaines,TX,Texas,48165,gaines
+USA.18.77_1,Martin,KY,Kentucky,21159,martin
+USA.38.4_1,Clatsop,OR,Oregon,41007,clatsop
+USA.43.20_1,Decatur,TN,Tennessee,47039,decatur
+USA.14.79_1,Putnam,IL,Illinois,17155,putnam
+USA.16.51_1,Jefferson,IA,Iowa,19101,jefferson
+USA.43.39_1,Henderson,TN,Tennessee,47077,henderson
+USA.19.25_1,Jackson,LA,Louisiana,22049,jackson
+USA.26.29_1,Dade,MO,Missouri,29057,dade
+USA.28.14_1,Cedar,NE,Nebraska,31027,cedar
+USA.41.28_1,Kershaw,SC,South Carolina,45055,kershaw
+USA.1.61_1,Talladega,AL,Alabama,01121,talladega
+USA.44.141_1,Lamb,TX,Texas,48279,lamb
+USA.39.24_1,Elk,PA,Pennsylvania,42047,elk
+USA.14.86_1,Schuyler,IL,Illinois,17169,schuyler
+USA.24.15_1,Clearwater,MN,Minnesota,27029,clearwater
+USA.34.36_1,Gaston,NC,North Carolina,37071,gaston
+USA.1.47_1,Marion,AL,Alabama,01093,marion
+USA.20.6_1,Kennebec,ME,Maine,23011,kennebec
+USA.28.74_1,Richardson,NE,Nebraska,31147,richardson
+USA.49.54_1,Wood,WV,West Virginia,54107,wood
+USA.33.11_1,Columbia,NY,New York,36021,columbia
+USA.16.89_1,Van Buren,IA,Iowa,19177,van buren
+USA.44.242_1,Wheeler,TX,Texas,48483,wheeler
+USA.14.90_1,Stephenson,IL,Illinois,17177,stephenson
+USA.39.34_1,Juniata,PA,Pennsylvania,42067,juniata
+USA.17.87_1,Sedgwick,KS,Kansas,20173,sedgwick
+USA.47.120_1,Suffolk,VA,Virginia,51800,suffolk
+USA.11.10_1,Berrien,GA,Georgia,13019,berrien
+USA.44.225_1,Titus,TX,Texas,48449,titus
+USA.18.110_1,Todd,KY,Kentucky,21219,todd
+USA.50.40_1,Marinette,WI,Wisconsin,55075,marinette
+USA.11.14_1,Brooks,GA,Georgia,13027,brooks
+USA.48.26_1,Pend Oreille,WA,Washington,53051,pend oreille
+USA.45.11_1,Iron,UT,Utah,49021,iron
+USA.47.5_1,Amelia,VA,Virginia,51007,amelia
+USA.2.3_1,Anchorage,AK,Alaska,02020,anchorage
+USA.16.37_1,Greene,IA,Iowa,19073,greene
+USA.23.18_1,Clare,MI,Michigan,26035,clare
+USA.50.26_1,Iron,WI,Wisconsin,55051,iron
+USA.26.3_1,Atchison,MO,Missouri,29005,atchison
+USA.11.45_1,Dodge,GA,Georgia,13091,dodge
+USA.37.63_1,Pottawatomie,OK,Oklahoma,40125,pottawatomie
+USA.39.45_1,Monroe,PA,Pennsylvania,42089,monroe
+USA.11.104_1,Morgan,GA,Georgia,13211,morgan
+USA.44.181_1,Orange,TX,Texas,48361,orange
+USA.15.84_1,Vermillion,IN,Indiana,18165,vermillion
+USA.23.46_1,Lake St. Clair,MI,,,lake saint clair
+USA.4.15_1,Conway,AR,Arkansas,05029,conway
+USA.18.75_1,Marion,KY,Kentucky,21155,marion
+USA.35.28_1,McLean,ND,North Dakota,38055,mclean
+USA.44.56_1,Dallam,TX,Texas,48111,dallam
+USA.1.41_1,Lee,AL,Alabama,01081,lee
+USA.17.30_1,Franklin,KS,Kansas,20059,franklin
+USA.29.8_1,Humboldt,NV,Nevada,32013,humboldt
+USA.46.13_1,Windham,VT,Vermont,50025,windham
+USA.44.57_1,Dallas,TX,Texas,48113,dallas
+USA.23.59_1,Menominee,MI,Michigan,26109,menominee
+USA.44.8_1,Austin,TX,Texas,48015,austin
+USA.5.41_1,San Mateo,CA,California,06081,san mateo
+USA.44.233_1,Val Verde,TX,Texas,48465,val verde
+USA.35.35_1,Pierce,ND,North Dakota,38069,pierce
+USA.44.50_1,Coryell,TX,Texas,48099,coryell
+USA.16.31_1,Dubuque,IA,Iowa,19061,dubuque
+USA.1.2_1,Baldwin,AL,Alabama,01003,baldwin
+USA.5.11_1,Glenn,CA,California,06021,glenn
+USA.17.77_1,Rawlins,KS,Kansas,20153,rawlins
+USA.44.173_1,Motley,TX,Texas,48345,motley
+USA.37.72_1,Tulsa,OK,Oklahoma,40143,tulsa
+USA.47.121_1,Surry,VA,Virginia,51181,surry
+USA.44.197_1,Roberts,TX,Texas,48393,roberts
+USA.39.36_1,Lancaster,PA,Pennsylvania,42071,lancaster
+USA.6.64_1,Yuma,CO,Colorado,08125,yuma
+USA.42.49_1,Minnehaha,SD,South Dakota,46099,minnehaha
+USA.14.47_1,Kendall,IL,Illinois,17093,kendall
+USA.38.7_1,Crook,OR,Oregon,41013,crook
+USA.44.89_1,Gonzales,TX,Texas,48177,gonzales
+USA.25.56_1,Perry,MS,Mississippi,28111,perry
+USA.11.83_1,Johnson,GA,Georgia,13167,johnson
+USA.16.29_1,Des Moines,IA,Iowa,19057,des moines
+USA.24.51_1,Mower,MN,Minnesota,27099,mower
+USA.42.14_1,Codington,SD,South Dakota,46029,codington
+USA.34.24_1,Columbus,NC,North Carolina,37047,columbus
+USA.25.6_1,Bolivar,MS,Mississippi,28011,bolivar
+USA.26.93_1,Saint Clair,MO,Missouri,29185,saint clair
+USA.49.32_1,Monroe,WV,West Virginia,54063,monroe
+USA.23.53_1,Mackinac,MI,Michigan,26097,mackinac
+USA.44.13_1,Bee,TX,Texas,48025,bee
+USA.42.45_1,McPherson,SD,South Dakota,46089,mcpherson
+USA.23.28_1,Grand Traverse,MI,Michigan,26055,grand traverse
+USA.18.70_1,Livingston,KY,Kentucky,21139,livingston
+USA.25.1_1,Adams,MS,Mississippi,28001,adams
+USA.16.79_1,Poweshiek,IA,Iowa,19157,poweshiek
+USA.35.39_1,Richland,ND,North Dakota,38077,richland
+USA.33.14_1,Dutchess,NY,New York,36027,dutchess
+USA.44.230_1,Upshur,TX,Texas,48459,upshur
+USA.13.39_1,Power,ID,Idaho,16077,power
+USA.26.32_1,De Kalb,MO,,,de kalb
+USA.25.26_1,Holmes,MS,Mississippi,28051,holmes
+USA.48.17_1,King,WA,Washington,53033,king
+USA.17.22_1,Doniphan,KS,Kansas,20043,doniphan
+USA.11.73_1,Hart,GA,Georgia,13147,hart
+USA.14.49_1,La Salle,IL,,,la salle
+USA.34.64_1,Nash,NC,North Carolina,37127,nash
+USA.18.96_1,Pendleton,KY,Kentucky,21191,pendleton
+USA.24.47_1,McLeod,MN,Minnesota,27085,mcleod
+USA.47.55_1,Greensville,VA,Virginia,51081,greensville
+USA.39.25_1,Erie,PA,Pennsylvania,42049,erie
+USA.45.12_1,Juab,UT,Utah,49023,juab
+USA.34.21_1,Chowan,NC,North Carolina,37041,chowan
+USA.20.14_1,Waldo,ME,Maine,23027,waldo
+USA.29.10_1,Lincoln,NV,Nevada,32017,lincoln
+USA.42.60_1,Todd,SD,South Dakota,46121,todd
+USA.11.70_1,Hancock,GA,Georgia,13141,hancock
+USA.50.68_1,Washburn,WI,Wisconsin,55129,washburn
+USA.45.6_1,Davis,UT,Utah,49011,davis
+USA.14.50_1,Lake,IL,Illinois,17097,lake
+USA.15.64_1,Pike,IN,Indiana,18125,pike
+USA.11.154_1,White,GA,Georgia,13311,white
+USA.28.25_1,Deuel,NE,Nebraska,31049,deuel
+USA.24.19_1,Dakota,MN,Minnesota,27037,dakota
+USA.22.14_1,Worcester,MA,Massachusetts,25027,worcester
+USA.38.3_1,Clackamas,OR,Oregon,41005,clackamas
+USA.50.20_1,Fond du Lac,WI,Wisconsin,55039,fond du lac
+USA.49.16_1,Hardy,WV,West Virginia,54031,hardy
+USA.5.33_1,Riverside,CA,California,06065,riverside
+USA.45.3_1,Cache,UT,Utah,49005,cache
+USA.11.52_1,Elbert,GA,Georgia,13105,elbert
+USA.50.51_1,Polk,WI,Wisconsin,55095,polk
+USA.13.4_1,Bear Lake,ID,Idaho,16007,bear lake
+USA.24.23_1,Fillmore,MN,Minnesota,27045,fillmore
+USA.28.88_1,Valley,NE,Nebraska,31175,valley
+USA.44.124_1,Jim Hogg,TX,Texas,48247,jim hogg
+USA.13.29_1,Latah,ID,Idaho,16057,latah
+USA.28.36_1,Garfield,NE,Nebraska,31071,garfield
+USA.19.44_1,Saint Bernard,LA,Louisiana,22087,saint bernard
+USA.44.119_1,Jack,TX,Texas,48237,jack
+USA.7.6_1,New London,CT,Connecticut,09011,new london
+USA.27.10_1,Daniels,MT,Montana,30019,daniels
+USA.26.40_1,Grundy,MO,Missouri,29079,grundy
+USA.11.8_1,Bartow,GA,Georgia,13015,bartow
+USA.26.38_1,Gentry,MO,Missouri,29075,gentry
+USA.18.99_1,Powell,KY,Kentucky,21197,powell
+USA.14.39_1,Jackson,IL,Illinois,17077,jackson
+USA.28.69_1,Phelps,NE,Nebraska,31137,phelps
+USA.26.36_1,Franklin,MO,Missouri,29071,franklin
+USA.16.76_1,Pocahontas,IA,Iowa,19151,pocahontas
+USA.34.81_1,Rutherford,NC,North Carolina,37161,rutherford
+USA.4.11_1,Clay,AR,Arkansas,05021,clay
+USA.44.113_1,Houston,TX,Texas,48225,houston
+USA.24.59_1,Pine,MN,Minnesota,27115,pine
+USA.41.35_1,McCormick,SC,South Carolina,45065,mccormick
+USA.23.13_1,Calhoun,MI,Michigan,26025,calhoun
+USA.18.80_1,McCreary,KY,Kentucky,21147,mccreary
+USA.24.28_1,Houston,MN,Minnesota,27055,houston
+USA.36.74_1,Scioto,OH,Ohio,39145,scioto
+USA.24.27_1,Hennepin,MN,Minnesota,27053,hennepin
+USA.14.35_1,Hardin,IL,Illinois,17069,hardin
+USA.11.116_1,Pulaski,GA,Georgia,13235,pulaski
+USA.39.6_1,Berks,PA,Pennsylvania,42011,berks
+USA.42.40_1,Lawrence,SD,South Dakota,46081,lawrence
+USA.36.57_1,Monroe,OH,Ohio,39111,monroe
+USA.49.14_1,Hampshire,WV,West Virginia,54027,hampshire
+USA.23.23_1,Eaton,MI,Michigan,26045,eaton
+USA.34.93_1,Warren,NC,North Carolina,37185,warren
+USA.18.31_1,Edmonson,KY,Kentucky,21061,edmonson
+USA.38.14_1,Hood River,OR,Oregon,41027,hood river
+USA.43.25_1,Fentress,TN,Tennessee,47049,fentress
+USA.14.100_1,Will,IL,Illinois,17197,will
+USA.37.74_1,Washington,OK,Oklahoma,40147,washington
+USA.39.52_1,Pike,PA,Pennsylvania,42103,pike
+USA.44.234_1,Van Zandt,TX,Texas,48467,van zandt
+USA.26.39_1,Greene,MO,Missouri,29077,greene
+USA.27.39_1,Powell,MT,Montana,30077,powell
+USA.31.13_1,Monmouth,NJ,New Jersey,34025,monmouth
+USA.17.76_1,Pratt,KS,Kansas,20151,pratt
+USA.2.15_1,Matanuska-Susitna,AK,Alaska,02170,matanuska susitna
+USA.1.63_1,Tuscaloosa,AL,Alabama,01125,tuscaloosa
+USA.11.33_1,Cobb,GA,Georgia,13067,cobb
+USA.34.49_1,Iredell,NC,North Carolina,37097,iredell
+USA.21.18_1,Saint Mary's,MD,Maryland,24037,saint marys
+USA.44.146_1,Liberty,TX,Texas,48291,liberty
+USA.34.42_1,Halifax,NC,North Carolina,37083,halifax
+USA.34.40_1,Greene,NC,North Carolina,37079,greene
+USA.17.49_1,Kiowa,KS,Kansas,20097,kiowa
+USA.38.17_1,Josephine,OR,Oregon,41033,josephine
+USA.42.35_1,Jackson,SD,South Dakota,46071,jackson
+USA.32.25_1,San Miguel,NM,New Mexico,35047,san miguel
+USA.1.4_1,Bibb,AL,Alabama,01007,bibb
+USA.18.60_1,Knott,KY,Kentucky,21119,knott
+USA.10.1_1,Alachua,FL,Florida,12001,alachua
+USA.11.139_1,Towns,GA,Georgia,13281,towns
+USA.43.30_1,Greene,TN,Tennessee,47059,greene
+USA.27.53_1,Valley,MT,Montana,30105,valley
+USA.42.50_1,Moody,SD,South Dakota,46101,moody
+USA.16.41_1,Hancock,IA,Iowa,19081,hancock
+USA.41.43_1,Sumter,SC,South Carolina,45085,sumter
+USA.27.29_1,McCone,MT,Montana,30055,mccone
+USA.19.41_1,Red River,LA,Louisiana,22081,red river
+USA.14.76_1,Pike,IL,Illinois,17149,pike
+USA.33.59_1,Washington,NY,New York,36115,washington
+USA.27.2_1,Big Horn,MT,Montana,30003,big horn
+USA.28.38_1,Grant,NE,Nebraska,31075,grant
+USA.29.16_1,Washoe,NV,Nevada,32031,washoe
+USA.23.15_1,Charlevoix,MI,Michigan,26029,charlevoix
+USA.18.112_1,Trimble,KY,Kentucky,21223,trimble
+USA.16.47_1,Ida,IA,Iowa,19093,ida
+USA.11.24_1,Charlton,GA,Georgia,13049,charlton
+USA.14.73_1,Peoria,IL,Illinois,17143,peoria
+USA.14.32_1,Grundy,IL,Illinois,17063,grundy
+USA.26.12_1,Butler,MO,Missouri,29023,butler
+USA.47.80_1,Mathews,VA,Virginia,51115,mathews
+USA.33.7_1,Chautauqua,NY,New York,36013,chautauqua
+USA.44.118_1,Irion,TX,Texas,48235,irion
+USA.18.67_1,Letcher,KY,Kentucky,21133,letcher
+USA.47.68_1,King William,VA,Virginia,51101,king william
+USA.11.120_1,Randolph,GA,Georgia,13243,randolph
+USA.17.17_1,Comanche,KS,Kansas,20033,comanche
+USA.17.85_1,Saline,KS,Kansas,20169,saline
+USA.46.7_1,Grand Isle,VT,Vermont,50013,grand isle
+USA.11.105_1,Murray,GA,Georgia,13213,murray
+USA.31.1_1,Atlantic,NJ,New Jersey,34001,atlantic
+USA.18.109_1,Taylor,KY,Kentucky,21217,taylor
+USA.14.103_1,Woodford,IL,Illinois,17203,woodford
+USA.24.21_1,Douglas,MN,Minnesota,27041,douglas
+USA.39.32_1,Indiana,PA,Pennsylvania,42063,indiana
+USA.15.23_1,Fountain,IN,Indiana,18045,fountain
+USA.16.84_1,Sioux,IA,Iowa,19167,sioux
+USA.14.33_1,Hamilton,IL,Illinois,17065,hamilton
+USA.37.14_1,Cleveland,OK,Oklahoma,40027,cleveland
+USA.47.50_1,Giles,VA,Virginia,51071,giles
+USA.35.13_1,Dunn,ND,North Dakota,38025,dunn
+USA.15.4_1,Benton,IN,Indiana,18007,benton
+USA.22.12_1,Plymouth,MA,Massachusetts,25023,plymouth
+USA.28.11_1,Burt,NE,Nebraska,31021,burt
+USA.26.100_1,Scott,MO,Missouri,29201,scott
+USA.11.46_1,Dooly,GA,Georgia,13093,dooly
+USA.50.49_1,Pepin,WI,Wisconsin,55091,pepin
+USA.17.71_1,Osborne,KS,Kansas,20141,osborne
+USA.1.23_1,Dale,AL,Alabama,01045,dale
+USA.47.7_1,Appomattox,VA,Virginia,51011,appomattox
+USA.33.3_1,Bronx,NY,New York,36005,bronx
+USA.43.52_1,Lincoln,TN,Tennessee,47103,lincoln
+USA.36.70_1,Putnam,OH,Ohio,39137,putnam
+USA.35.34_1,Pembina,ND,North Dakota,38067,pembina
+USA.28.90_1,Wayne,NE,Nebraska,31179,wayne
+USA.20.8_1,Lincoln,ME,Maine,23015,lincoln
+USA.39.64_1,Wayne,PA,Pennsylvania,42127,wayne
+USA.23.44_1,Lake Hurron,MI,,,lake hurron
+USA.48.27_1,Pierce,WA,Washington,53053,pierce
+USA.15.59_1,Ohio,IN,Indiana,18115,ohio
+USA.11.133_1,Taylor,GA,Georgia,13269,taylor
+USA.25.25_1,Hinds,MS,Mississippi,28049,hinds
+USA.5.13_1,Imperial,CA,California,06025,imperial
+USA.17.98_1,Trego,KS,Kansas,20195,trego
+USA.14.70_1,Morgan,IL,Illinois,17137,morgan
+USA.37.17_1,Cotton,OK,Oklahoma,40033,cotton
+USA.44.156_1,Martin,TX,Texas,48317,martin
+USA.44.228_1,Trinity,TX,Texas,48455,trinity
+USA.44.217_1,Stonewall,TX,Texas,48433,stonewall
+USA.25.74_1,Walthall,MS,Mississippi,28147,walthall
+USA.14.56_1,Macon,IL,Illinois,17115,macon
+USA.1.13_1,Clarke,AL,Alabama,01025,clarke
+USA.16.17_1,Cerro Gordo,IA,Iowa,19033,cerro gordo
+USA.43.84_1,Tipton,TN,Tennessee,47167,tipton
+USA.17.104_1,Woodson,KS,Kansas,20207,woodson
+USA.47.93_1,Page,VA,Virginia,51139,page
+USA.26.83_1,Platte,MO,Missouri,29165,platte
+USA.16.24_1,Crawford,IA,Iowa,19047,crawford
+USA.7.3_1,Litchfield,CT,Connecticut,09005,litchfield
+USA.4.30_1,Hot Spring,AR,Arkansas,05059,hot spring
+USA.44.221_1,Taylor,TX,Texas,48441,taylor
+USA.4.66_1,Sebastian,AR,Arkansas,05131,sebastian
+USA.14.45_1,Kane,IL,Illinois,17089,kane
+USA.11.47_1,Dougherty,GA,Georgia,13095,dougherty
+USA.27.44_1,Rosebud,MT,Montana,30087,rosebud
+USA.10.12_1,Columbia,FL,Florida,12023,columbia
+USA.17.41_1,Haskell,KS,Kansas,20081,haskell
+USA.14.78_1,Pulaski,IL,Illinois,17153,pulaski
+USA.10.4_1,Bradford,FL,Florida,12007,bradford
+USA.14.81_1,Richland,IL,Illinois,17159,richland
+USA.50.11_1,Columbia,WI,Wisconsin,55021,columbia
+USA.29.6_1,Esmeralda,NV,Nevada,32009,esmeralda
+USA.44.9_1,Bailey,TX,Texas,48017,bailey
+USA.11.77_1,Irwin,GA,Georgia,13155,irwin
+USA.18.84_1,Mercer,KY,Kentucky,21167,mercer
+USA.32.19_1,Mora,NM,New Mexico,35033,mora
+USA.22.5_1,Essex,MA,Massachusetts,25009,essex
+USA.44.172_1,Morris,TX,Texas,48343,morris
+USA.17.94_1,Stanton,KS,Kansas,20187,stanton
+USA.14.101_1,Williamson,IL,Illinois,17199,williamson
+USA.26.71_1,Morgan,MO,Missouri,29141,morgan
+USA.42.11_1,Charles Mix,SD,South Dakota,46023,charles mix
+USA.44.176_1,Newton,TX,Texas,48351,newton
+USA.6.34_1,La Plata,CO,Colorado,08067,la plata
+USA.44.85_1,Garza,TX,Texas,48169,garza
+USA.50.1_1,Adams,WI,Wisconsin,55001,adams
+USA.12.5_1,Maui,HI,Hawaii,15009,maui
+USA.43.53_1,Loudon,TN,Tennessee,47105,loudon
+USA.32.2_1,Catron,NM,New Mexico,35003,catron
+USA.47.12_1,Bedford City,VA,Virginia,51019,bedford
+USA.47.12_1,Bedford City,VA,Virginia,51515,bedford
+USA.51.2_1,Big Horn,WY,Wyoming,56003,big horn
+USA.17.2_1,Anderson,KS,Kansas,20003,anderson
+USA.19.52_1,Saint Tammany,LA,Louisiana,22103,saint tammany
+USA.33.28_1,Madison,NY,New York,36053,madison
+USA.15.34_1,Howard,IN,Indiana,18067,howard
+USA.49.8_1,Clay,WV,West Virginia,54015,clay
+USA.6.53_1,Rio Blanco,CO,Colorado,08103,rio blanco
+USA.15.92_1,White,IN,Indiana,18181,white
+USA.16.12_1,Butler,IA,Iowa,19023,butler
+USA.29.2_1,Churchill,NV,Nevada,32001,churchill
+USA.42.30_1,Hanson,SD,South Dakota,46061,hanson
+USA.26.51_1,Johnson,MO,Missouri,29101,johnson
+USA.43.24_1,Fayette,TN,Tennessee,47047,fayette
+USA.16.42_1,Hardin,IA,Iowa,19083,hardin
+USA.43.46_1,Johnson,TN,Tennessee,47091,johnson
+USA.24.61_1,Polk,MN,Minnesota,27119,polk
+USA.32.22_1,Rio Arriba,NM,New Mexico,35039,rio arriba
+USA.45.21_1,Sevier,UT,Utah,49041,sevier
+USA.18.114_1,Warren,KY,Kentucky,21227,warren
+USA.22.6_1,Franklin,MA,Massachusetts,25011,franklin
+USA.47.107_1,Roanoke,VA,Virginia,51161,roanoke
+USA.47.107_1,Roanoke,VA,Virginia,51770,roanoke
+USA.11.53_1,Emanuel,GA,Georgia,13107,emanuel
+USA.3.8_1,Maricopa,AZ,Arizona,04013,maricopa
+USA.24.4_1,Beltrami,MN,Minnesota,27007,beltrami
+USA.15.1_1,Adams,IN,Indiana,18001,adams
+USA.35.18_1,Grand Forks,ND,North Dakota,38035,grand forks
+USA.24.3_1,Becker,MN,Minnesota,27005,becker
+USA.29.5_1,Elko,NV,Nevada,32007,elko
+USA.20.12_1,Sagadahoc,ME,Maine,23023,sagadahoc
+USA.11.2_1,Atkinson,GA,Georgia,13003,atkinson
+USA.4.63_1,Saline,AR,Arkansas,05125,saline
+USA.34.92_1,Wake,NC,North Carolina,37183,wake
+USA.3.10_1,Navajo,AZ,Arizona,04017,navajo
+USA.36.86_1,Wayne,OH,Ohio,39169,wayne
+USA.50.69_1,Washington,WI,Wisconsin,55131,washington
+USA.16.15_1,Cass,IA,Iowa,19029,cass
+USA.27.17_1,Garfield,MT,Montana,30033,garfield
+USA.19.5_1,Avoyelles,LA,Louisiana,22009,avoyelles
+USA.28.47_1,Howard,NE,Nebraska,31093,howard
+USA.47.53_1,Grayson,VA,Virginia,51077,grayson
+USA.15.2_1,Allen,IN,Indiana,18003,allen
+USA.6.26_1,Grand,CO,Colorado,08049,grand
+USA.14.1_1,Adams,IL,Illinois,17001,adams
+USA.15.81_1,Tipton,IN,Indiana,18159,tipton
+USA.43.71_1,Putnam,TN,Tennessee,47141,putnam
+USA.50.71_1,Waupaca,WI,Wisconsin,55135,waupaca
+USA.6.23_1,Fremont,CO,Colorado,08043,fremont
+USA.36.29_1,Greene,OH,Ohio,39057,greene
+USA.6.49_1,Phillips,CO,Colorado,08095,phillips
+USA.26.7_1,Bates,MO,Missouri,29013,bates
+USA.17.73_1,Pawnee,KS,Kansas,20145,pawnee
+USA.41.9_1,Calhoun,SC,South Carolina,45017,calhoun
+USA.31.7_1,Essex,NJ,New Jersey,34013,essex
+USA.33.9_1,Chenango,NY,New York,36017,chenango
+USA.38.23_1,Malheur,OR,Oregon,41045,malheur
+USA.25.19_1,Franklin,MS,Mississippi,28037,franklin
+USA.28.87_1,Thurston,NE,Nebraska,31173,thurston
+USA.32.28_1,Sierra,NM,New Mexico,35051,sierra
+USA.26.111_1,Wayne,MO,Missouri,29223,wayne
+USA.15.39_1,Jefferson,IN,Indiana,18077,jefferson
+USA.51.16_1,Platte,WY,Wyoming,56031,platte
+USA.38.20_1,Lane,OR,Oregon,41039,lane
+USA.17.34_1,Grant,KS,Kansas,20067,grant
+USA.4.73_1,White,AR,Arkansas,05145,white
+USA.50.64_1,Trempealeau,WI,Wisconsin,55121,trempealeau
+USA.44.2_1,Andrews,TX,Texas,48003,andrews
+USA.23.35_1,Iosco,MI,Michigan,26069,iosco
+USA.47.67_1,King George,VA,Virginia,51099,king george
+USA.20.11_1,Piscataquis,ME,Maine,23021,piscataquis
+USA.18.116_1,Wayne,KY,Kentucky,21231,wayne
+USA.11.93_1,Lumpkin,GA,Georgia,13187,lumpkin
+USA.48.11_1,Franklin,WA,Washington,53021,franklin
+USA.27.55_1,Wibaux,MT,Montana,30109,wibaux
+USA.49.43_1,Ritchie,WV,West Virginia,54085,ritchie
+USA.33.37_1,Orange,NY,New York,36071,orange
+USA.27.36_1,Phillips,MT,Montana,30071,phillips
+USA.44.203_1,San Augustine,TX,Texas,48405,san augustine
+USA.32.3_1,Chaves,NM,New Mexico,35005,chaves
+USA.16.59_1,Lucas,IA,Iowa,19117,lucas
+USA.17.89_1,Shawnee,KS,Kansas,20177,shawnee
+USA.48.12_1,Garfield,WA,Washington,53023,garfield
+USA.15.66_1,Posey,IN,Indiana,18129,posey
+USA.15.25_1,Fulton,IN,Indiana,18049,fulton
+USA.44.86_1,Gillespie,TX,Texas,48171,gillespie
+USA.26.67_1,Mississippi,MO,Missouri,29133,mississippi
+USA.48.7_1,Columbia,WA,Washington,53013,columbia
+USA.34.15_1,Camden,NC,North Carolina,37029,camden
+USA.47.97_1,Poquoson,VA,Virginia,51735,poquoson
+USA.41.20_1,Fairfield,SC,South Carolina,45039,fairfield
+USA.49.46_1,Taylor,WV,West Virginia,54091,taylor
+USA.43.38_1,Haywood,TN,Tennessee,47075,haywood
+USA.5.50_1,Stanislaus,CA,California,06099,stanislaus
+USA.20.2_1,Aroostook,ME,Maine,23003,aroostook
+USA.11.111_1,Peach,GA,Georgia,13225,peach
+USA.23.78_1,Saint Clair,MI,Michigan,26147,saint clair
+USA.18.73_1,Madison,KY,Kentucky,21151,madison
+USA.49.55_1,Wyoming,WV,West Virginia,54109,wyoming
+USA.15.82_1,Union,IN,Indiana,18161,union
+USA.50.36_1,Langlade,WI,Wisconsin,55067,langlade
+USA.18.5_1,Barren,KY,Kentucky,21009,barren
+USA.36.66_1,Pickaway,OH,Ohio,39129,pickaway
+USA.45.2_1,Box Elder,UT,Utah,49003,box elder
+USA.26.5_1,Barry,MO,Missouri,29009,barry
+USA.6.5_1,Baca,CO,Colorado,08009,baca
+USA.43.34_1,Hancock,TN,Tennessee,47067,hancock
+USA.26.106_1,Taney,MO,Missouri,29213,taney
+USA.18.119_1,Wolfe,KY,Kentucky,21237,wolfe
+USA.11.137_1,Tift,GA,Georgia,13277,tift
+USA.47.115_1,Smyth,VA,Virginia,51173,smyth
+USA.41.30_1,Laurens,SC,South Carolina,45059,laurens
+USA.17.13_1,Clark,KS,Kansas,20025,clark
+USA.37.67_1,Seminole,OK,Oklahoma,40133,seminole
+USA.2.13_1,Kodiak Island,AK,Alaska,02150,kodiak island
+USA.10.27_1,Highlands,FL,Florida,12055,highlands
+USA.24.87_1,Wright,MN,Minnesota,27171,wright
+USA.13.42_1,Twin Falls,ID,Idaho,16083,twin falls
+USA.34.97_1,Wilkes,NC,North Carolina,37193,wilkes
+USA.31.6_1,Cumberland,NJ,New Jersey,34011,cumberland
+USA.28.7_1,Box Butte,NE,Nebraska,31013,box butte
+USA.44.226_1,Tom Green,TX,Texas,48451,tom green
+USA.6.28_1,Hinsdale,CO,Colorado,08053,hinsdale
+USA.49.3_1,Boone,WV,West Virginia,54005,boone
+USA.15.78_1,Sullivan,IN,Indiana,18153,sullivan
+USA.44.193_1,Real,TX,Texas,48385,real
+USA.28.92_1,Wheeler,NE,Nebraska,31183,wheeler
+USA.47.32_1,Craig,VA,Virginia,51045,craig
+USA.26.47_1,Iron,MO,Missouri,29093,iron
+USA.44.150_1,Llano,TX,Texas,48299,llano
+USA.23.17_1,Chippewa,MI,Michigan,26033,chippewa
+USA.10.39_1,Madison,FL,Florida,12079,madison
+USA.49.13_1,Greenbrier,WV,West Virginia,54025,greenbrier
+USA.27.11_1,Dawson,MT,Montana,30021,dawson
+USA.14.29_1,Fulton,IL,Illinois,17057,fulton
+USA.11.146_1,Walker,GA,Georgia,13295,walker
+USA.26.64_1,McDonald,MO,Missouri,29119,mcdonald
+USA.15.21_1,Fayette,IN,Indiana,18041,fayette
+USA.44.104_1,Haskell,TX,Texas,48207,haskell
+USA.13.44_1,Washington,ID,Idaho,16087,washington
+USA.23.7_1,Baraga,MI,Michigan,26013,baraga
+USA.24.62_1,Pope,MN,Minnesota,27121,pope
+USA.50.52_1,Portage,WI,Wisconsin,55097,portage
+USA.36.80_1,Tuscarawas,OH,Ohio,39157,tuscarawas
+USA.14.16_1,Cook,IL,Illinois,17031,cook
+USA.15.41_1,Johnson,IN,Indiana,18081,johnson
+USA.14.55_1,Logan,IL,Illinois,17107,logan
+USA.46.10_1,Orleans,VT,Vermont,50019,orleans
+USA.36.67_1,Pike,OH,Ohio,39131,pike
+USA.24.26_1,Grant,MN,Minnesota,27051,grant
+USA.11.85_1,Lamar,GA,Georgia,13171,lamar
+USA.26.103_1,Stoddard,MO,Missouri,29207,stoddard
+USA.18.83_1,Menifee,KY,Kentucky,21165,menifee
+USA.28.18_1,Clay,NE,Nebraska,31035,clay
+USA.14.63_1,McDonough,IL,Illinois,17109,mcdonough
+USA.37.16_1,Comanche,OK,Oklahoma,40031,comanche
+USA.26.104_1,Stone,MO,Missouri,29209,stone
+USA.44.237_1,Waller,TX,Texas,48473,waller
+USA.34.10_1,Brunswick,NC,North Carolina,37019,brunswick
+USA.44.158_1,Matagorda,TX,Texas,48321,matagorda
+USA.44.61_1,Denton,TX,Texas,48121,denton
+USA.5.37_1,San Diego,CA,California,06073,san diego
+USA.11.147_1,Walton,GA,Georgia,13297,walton
+USA.24.34_1,Kandiyohi,MN,Minnesota,27067,kandiyohi
+USA.47.62_1,Highland,VA,Virginia,51091,highland
+USA.17.16_1,Coffey,KS,Kansas,20031,coffey
+USA.35.25_1,McHenry,ND,North Dakota,38049,mchenry
+USA.6.55_1,Routt,CO,Colorado,08107,routt
+USA.16.49_1,Jackson,IA,Iowa,19097,jackson
+USA.37.36_1,Kay,OK,Oklahoma,40071,kay
+USA.10.24_1,Hardee,FL,Florida,12049,hardee
+USA.23.57_1,Mason,MI,Michigan,26105,mason
+USA.11.9_1,Ben Hill,GA,Georgia,13017,ben hill
+USA.21.5_1,Caroline,MD,Maryland,24011,caroline
+USA.43.60_1,McNairy,TN,Tennessee,47109,mcnairy
+USA.35.31_1,Mountrail,ND,North Dakota,38061,mountrail
+USA.26.54_1,Lafayette,MO,Missouri,29107,lafayette
+USA.19.33_1,Madison,LA,Louisiana,22065,madison
+USA.17.54_1,Linn,KS,Kansas,20107,linn
+USA.11.3_1,Bacon,GA,Georgia,13005,bacon
+USA.43.64_1,Moore,TN,Tennessee,47127,moore
+USA.26.91_1,Ripley,MO,Missouri,29181,ripley
+USA.14.31_1,Greene,IL,Illinois,17061,greene
+USA.4.13_1,Cleveland,AR,Arkansas,05025,cleveland
+USA.34.91_1,Vance,NC,North Carolina,37181,vance
+USA.6.18_1,Dolores,CO,Colorado,08033,dolores
+USA.13.31_1,Lewis,ID,Idaho,16061,lewis
+USA.11.17_1,Burke,GA,Georgia,13033,burke
+USA.36.76_1,Shelby,OH,Ohio,39149,shelby
+USA.25.60_1,Quitman,MS,Mississippi,28119,quitman
+USA.1.14_1,Clay,AL,Alabama,01027,clay
+USA.44.32_1,Camp,TX,Texas,48063,camp
+USA.30.8_1,Rockingham,NH,New Hampshire,33015,rockingham
+USA.37.45_1,Marshall,OK,Oklahoma,40095,marshall
+USA.17.27_1,Ellsworth,KS,Kansas,20053,ellsworth
+USA.49.42_1,Randolph,WV,West Virginia,54083,randolph
+USA.27.28_1,Madison,MT,Montana,30057,madison
+USA.42.33_1,Hutchinson,SD,South Dakota,46067,hutchinson
+USA.34.53_1,Lee,NC,North Carolina,37105,lee
+USA.49.26_1,Mason,WV,West Virginia,54053,mason
+USA.29.3_1,Clark,NV,Nevada,32003,clark
+USA.31.2_1,Bergen,NJ,New Jersey,34003,bergen
+USA.37.57_1,Osage,OK,Oklahoma,40113,osage
+USA.26.28_1,Crawford,MO,Missouri,29055,crawford
+USA.34.39_1,Granville,NC,North Carolina,37077,granville
+USA.42.52_1,Perkins,SD,South Dakota,46105,perkins
+USA.35.37_1,Ransom,ND,North Dakota,38073,ransom
+USA.50.29_1,Juneau,WI,Wisconsin,55057,juneau
+USA.49.15_1,Hancock,WV,West Virginia,54029,hancock
+USA.18.88_1,Morgan,KY,Kentucky,21175,morgan
+USA.24.29_1,Hubbard,MN,Minnesota,27057,hubbard
+USA.2.23_1,Valdez-Cordova,AK,Alaska,02261,valdez cordova
+USA.25.14_1,Coahoma,MS,Mississippi,28027,coahoma
+USA.11.114_1,Pike,GA,Georgia,13231,pike
+USA.24.48_1,Meeker,MN,Minnesota,27093,meeker
+USA.42.1_1,Aurora,SD,South Dakota,46003,aurora
+USA.26.78_1,Pemiscot,MO,Missouri,29155,pemiscot
+USA.28.44_1,Hitchcock,NE,Nebraska,31087,hitchcock
+USA.44.80_1,Franklin,TX,Texas,48159,franklin
+USA.47.38_1,Emporia,VA,Virginia,51595,emporia
+USA.33.24_1,Kings,NY,New York,36047,kings
+USA.26.14_1,Callaway,MO,Missouri,29027,callaway
+USA.44.107_1,Henderson,TX,Texas,48213,henderson
+USA.50.17_1,Dunn,WI,Wisconsin,55033,dunn
+USA.50.15_1,Door,WI,Wisconsin,55029,door
+USA.15.31_1,Harrison,IN,Indiana,18061,harrison
+USA.24.38_1,Lake,MN,Minnesota,27075,lake
+USA.44.138_1,Knox,TX,Texas,48275,knox
+USA.24.10_1,Carver,MN,Minnesota,27019,carver
+USA.15.36_1,Jackson,IN,Indiana,18071,jackson
+USA.44.169_1,Montague,TX,Texas,48337,montague
+USA.23.5_1,Antrim,MI,Michigan,26009,antrim
+USA.17.102_1,Wichita,KS,Kansas,20203,wichita
+USA.5.12_1,Humboldt,CA,California,06023,humboldt
+USA.34.50_1,Jackson,NC,North Carolina,37099,jackson
+USA.44.92_1,Gregg,TX,Texas,48183,gregg
+USA.6.40_1,Mesa,CO,Colorado,08077,mesa
+USA.39.53_1,Potter,PA,Pennsylvania,42105,potter
+USA.26.35_1,Dunklin,MO,Missouri,29069,dunklin
+USA.1.38_1,Lamar,AL,Alabama,01075,lamar
+USA.49.39_1,Preston,WV,West Virginia,54077,preston
+USA.14.10_1,Champaign,IL,Illinois,17019,champaign
+USA.29.1_1,Carson City,NV,Nevada,32510,carson
+USA.29.4_1,Douglas,NV,Nevada,32005,douglas
+USA.42.16_1,Custer,SD,South Dakota,46033,custer
+USA.30.3_1,Cheshire,NH,New Hampshire,33005,cheshire
+USA.3.3_1,Coconino,AZ,Arizona,04005,coconino
+USA.44.66_1,Duval,TX,Texas,48131,duval
+USA.44.19_1,Bowie,TX,Texas,48037,bowie
+USA.33.25_1,Lake Ontario,NY,,,lake ontario
+USA.18.72_1,Lyon,KY,Kentucky,21143,lyon
+USA.6.48_1,Park,CO,Colorado,08093,park
+USA.18.13_1,Breathitt,KY,Kentucky,21025,breathitt
+USA.16.53_1,Jones,IA,Iowa,19105,jones
+USA.16.98_1,Worth,IA,Iowa,19195,worth
+USA.47.109_1,Rockbridge,VA,Virginia,51163,rockbridge
+USA.46.5_1,Essex,VT,Vermont,50009,essex
+USA.6.41_1,Mineral,CO,Colorado,08079,mineral
+USA.6.7_1,Boulder,CO,Colorado,08013,boulder
+USA.11.32_1,Clinch,GA,Georgia,13065,clinch
+USA.11.115_1,Polk,GA,Georgia,13233,polk
+USA.3.1_1,Apache,AZ,Arizona,04001,apache
+USA.26.17_1,Carroll,MO,Missouri,29033,carroll
+USA.37.6_1,Blaine,OK,Oklahoma,40011,blaine
+USA.19.11_1,Caldwell,LA,Louisiana,22021,caldwell
+USA.25.68_1,Tallahatchie,MS,Mississippi,28135,tallahatchie
+USA.35.23_1,Lamoure,ND,North Dakota,38045,lamoure
+USA.50.74_1,Wood,WI,Wisconsin,55141,wood
+USA.10.25_1,Hendry,FL,Florida,12051,hendry
+USA.4.26_1,Garland,AR,Arkansas,05051,garland
+USA.36.60_1,Morrow,OH,Ohio,39117,morrow
+USA.14.62_1,Massac,IL,Illinois,17127,massac
+USA.13.20_1,Elmore,ID,Idaho,16039,elmore
+USA.36.40_1,Jackson,OH,Ohio,39079,jackson
+USA.28.76_1,Saline,NE,Nebraska,31151,saline
+USA.43.23_1,Dyer,TN,Tennessee,47045,dyer
+USA.17.32_1,Gove,KS,Kansas,20063,gove
+USA.23.12_1,Branch,MI,Michigan,26023,branch
+USA.26.11_1,Buchanan,MO,Missouri,29021,buchanan
+USA.10.49_1,Osceola,FL,Florida,12097,osceola
+USA.44.182_1,Palo Pinto,TX,Texas,48363,palo pinto
+USA.47.88_1,Northampton,VA,Virginia,51131,northampton
+USA.48.10_1,Ferry,WA,Washington,53019,ferry
+USA.47.57_1,Hampton,VA,Virginia,51650,hampton
+USA.23.2_1,Alger,MI,Michigan,26003,alger
+USA.25.57_1,Pike,MS,Mississippi,28113,pike
+USA.18.86_1,Monroe,KY,Kentucky,21171,monroe
+USA.11.30_1,Clay,GA,Georgia,13061,clay
+USA.32.21_1,Quay,NM,New Mexico,35037,quay
+USA.35.41_1,Sargent,ND,North Dakota,38081,sargent
+USA.47.130_1,Winchester,VA,Virginia,51840,winchester
+USA.4.16_1,Craighead,AR,Arkansas,05031,craighead
+USA.36.17_1,Crawford,OH,Ohio,39033,crawford
+USA.34.94_1,Washington,NC,North Carolina,37187,washington
+USA.43.89_1,Warren,TN,Tennessee,47177,warren
+USA.16.4_1,Appanoose,IA,Iowa,19007,appanoose
+USA.11.40_1,Crisp,GA,Georgia,13081,crisp
+USA.15.51_1,Marshall,IN,Indiana,18099,marshall
+USA.27.7_1,Cascade,MT,Montana,30013,cascade
+USA.47.19_1,Buena Vista,VA,Virginia,51530,buena vista
+USA.36.72_1,Ross,OH,Ohio,39141,ross
+USA.48.35_1,Wahkiakum,WA,Washington,53069,wahkiakum
+USA.13.28_1,Kootenai,ID,Idaho,16055,kootenai
+USA.10.32_1,Jefferson,FL,Florida,12065,jefferson
+USA.34.98_1,Wilson,NC,North Carolina,37195,wilson
+USA.50.70_1,Waukesha,WI,Wisconsin,55133,waukesha
+USA.14.38_1,Iroquois,IL,Illinois,17075,iroquois
+USA.34.90_1,Union,NC,North Carolina,37179,union
+USA.14.52_1,Lawrence,IL,Illinois,17101,lawrence
+USA.35.30_1,Morton,ND,North Dakota,38059,morton
+USA.48.30_1,Skamania,WA,Washington,53059,skamania
+USA.10.15_1,Duval,FL,Florida,12031,duval
+USA.23.69_1,Ogemaw,MI,Michigan,26129,ogemaw
+USA.21.7_1,Cecil,MD,Maryland,24015,cecil
+USA.28.45_1,Holt,NE,Nebraska,31089,holt
+USA.14.94_1,Wabash,IL,Illinois,17185,wabash
+USA.18.33_1,Estill,KY,Kentucky,21065,estill
+USA.29.17_1,White Pine,NV,Nevada,32033,white pine
+USA.44.231_1,Upton,TX,Texas,48461,upton
+USA.44.136_1,Kinney,TX,Texas,48271,kinney
+USA.15.53_1,Miami,IN,Indiana,18103,miami
+USA.28.77_1,Sarpy,NE,Nebraska,31153,sarpy
+USA.44.22_1,Brewster,TX,Texas,48043,brewster
+USA.4.28_1,Greene,AR,Arkansas,05055,greene
+USA.11.99_1,Meriwether,GA,Georgia,13199,meriwether
+USA.15.29_1,Hamilton,IN,Indiana,18057,hamilton
+USA.10.65_1,Wakulla,FL,Florida,12129,wakulla
+USA.24.74_1,Stearns,MN,Minnesota,27145,stearns
+USA.49.51_1,Webster,WV,West Virginia,54101,webster
+USA.11.22_1,Carroll,GA,Georgia,13045,carroll
+USA.37.43_1,Love,OK,Oklahoma,40085,love
+USA.43.41_1,Hickman,TN,Tennessee,47081,hickman
+USA.18.29_1,Cumberland,KY,Kentucky,21057,cumberland
+USA.44.40_1,Cochran,TX,Texas,48079,cochran
+USA.35.9_1,Cass,ND,North Dakota,38017,cass
+USA.18.105_1,Scott,KY,Kentucky,21209,scott
+USA.11.95_1,Madison,GA,Georgia,13195,madison
+USA.48.13_1,Grant,WA,Washington,53025,grant
+USA.47.26_1,Chesapeake,VA,Virginia,51550,chesapeake
+USA.20.13_1,Somerset,ME,Maine,23025,somerset
+USA.37.35_1,Johnston,OK,Oklahoma,40069,johnston
+USA.43.68_1,Perry,TN,Tennessee,47135,perry
+USA.36.23_1,Fairfield,OH,Ohio,39045,fairfield
+USA.6.11_1,Clear Creek,CO,Colorado,08019,clear creek
+USA.11.155_1,Whitfield,GA,Georgia,13313,whitfield
+USA.28.91_1,Webster,NE,Nebraska,31181,webster
+USA.23.73_1,Otsego,MI,Michigan,26137,otsego
+USA.27.46_1,Sheridan,MT,Montana,30091,sheridan
+USA.19.45_1,Saint Charles,LA,Louisiana,22089,saint charles
+USA.34.22_1,Clay,NC,North Carolina,37043,clay
+USA.6.44_1,Montrose,CO,Colorado,08085,montrose
+USA.38.1_1,Baker,OR,Oregon,41001,baker
+USA.48.28_1,San Juan,WA,Washington,53055,san juan
+USA.36.55_1,Mercer,OH,Ohio,39107,mercer
+USA.26.108_1,Vernon,MO,Missouri,29217,vernon
+USA.28.60_1,McPherson,NE,Nebraska,31117,mcpherson
+USA.36.68_1,Portage,OH,Ohio,39133,portage
+USA.47.119_1,Staunton,VA,Virginia,51790,staunton
+USA.47.29_1,Clifton Forge City,VA,Virginia,51560,clifton forge
+USA.34.2_1,Alexander,NC,North Carolina,37003,alexander
+USA.44.45_1,Colorado,TX,Texas,48089,colorado
+USA.48.29_1,Skagit,WA,Washington,53057,skagit
+USA.34.88_1,Transylvania,NC,North Carolina,37175,transylvania
+USA.17.97_1,Thomas,KS,Kansas,20193,thomas
+USA.47.34_1,Cumberland,VA,Virginia,51049,cumberland
+USA.36.65_1,Perry,OH,Ohio,39127,perry
+USA.47.21_1,Caroline,VA,Virginia,51033,caroline
+USA.33.38_1,Orleans,NY,New York,36073,orleans
+USA.10.30_1,Indian River,FL,Florida,12061,indian river
+USA.34.20_1,Cherokee,NC,North Carolina,37039,cherokee
+USA.19.14_1,Claiborne,LA,Louisiana,22027,claiborne
+USA.24.9_1,Carlton,MN,Minnesota,27017,carlton
+USA.47.11_1,Bedford,VA,Virginia,51019,bedford
+USA.47.11_1,Bedford,VA,Virginia,51515,bedford
+USA.18.91_1,Nicholas,KY,Kentucky,21181,nicholas
+USA.34.18_1,Catawba,NC,North Carolina,37035,catawba
+USA.8.2_1,New Castle,DE,Delaware,10003,new castle
+USA.2.22_1,Southeast Fairbanks,AK,Alaska,02240,southeast fairbanks
+USA.50.38_1,Manitowoc,WI,Wisconsin,55071,manitowoc
+USA.35.7_1,Burke,ND,North Dakota,38013,burke
+USA.36.63_1,Ottawa,OH,Ohio,39123,ottawa
+USA.43.54_1,Macon,TN,Tennessee,47111,macon
+USA.34.1_1,Alamance,NC,North Carolina,37001,alamance
+USA.5.20_1,Madera,CA,California,06039,madera
+USA.19.54_1,Tensas,LA,Louisiana,22107,tensas
+USA.47.72_1,Loudoun,VA,Virginia,51107,loudoun
+USA.44.11_1,Bastrop,TX,Texas,48021,bastrop
+USA.18.63_1,Laurel,KY,Kentucky,21125,laurel
+USA.47.20_1,Campbell,VA,Virginia,51031,campbell
+USA.24.81_1,Wadena,MN,Minnesota,27159,wadena
+USA.24.1_1,Aitkin,MN,Minnesota,27001,aitkin
+USA.19.53_1,Tangipahoa,LA,Louisiana,22105,tangipahoa
+USA.39.19_1,Columbia,PA,Pennsylvania,42037,columbia
+USA.26.8_1,Benton,MO,Missouri,29015,benton
+USA.44.94_1,Guadalupe,TX,Texas,48187,guadalupe
+USA.5.49_1,Sonoma,CA,California,06097,sonoma
+USA.27.30_1,Meagher,MT,Montana,30059,meagher
+USA.17.10_1,Chautauqua,KS,Kansas,20019,chautauqua
+USA.44.5_1,Archer,TX,Texas,48009,archer
+USA.17.68_1,Ness,KS,Kansas,20135,ness
+USA.46.9_1,Orange,VT,Vermont,50017,orange
+USA.2.17_1,North Slope,AK,Alaska,02185,north slope
+USA.15.48_1,Lawrence,IN,Indiana,18093,lawrence
+USA.44.143_1,Lavaca,TX,Texas,48285,lavaca
+USA.25.44_1,Lowndes,MS,Mississippi,28087,lowndes
+USA.45.5_1,Daggett,UT,Utah,49009,daggett
+USA.25.3_1,Amite,MS,Mississippi,28005,amite
+USA.34.33_1,Edgecombe,NC,North Carolina,37065,edgecombe
+USA.18.118_1,Whitley,KY,Kentucky,21235,whitley
+USA.14.82_1,Rock Island,IL,Illinois,17161,rock island
+USA.33.58_1,Warren,NY,New York,36113,warren
+USA.27.54_1,Wheatland,MT,Montana,30107,wheatland
+USA.15.87_1,Warren,IN,Indiana,18171,warren
+USA.47.9_1,Augusta,VA,Virginia,51015,augusta
+USA.25.52_1,Noxubee,MS,Mississippi,28103,noxubee
+USA.43.28_1,Giles,TN,Tennessee,47055,giles
+USA.36.38_1,Holmes,OH,Ohio,39075,holmes
+USA.35.42_1,Sheridan,ND,North Dakota,38083,sheridan
+USA.31.12_1,Middlesex,NJ,New Jersey,34023,middlesex
+USA.4.48_1,Monroe,AR,Arkansas,05095,monroe
+USA.44.43_1,Collin,TX,Texas,48085,collin
+USA.10.6_1,Broward,FL,Florida,12011,broward
+USA.26.33_1,Dent,MO,Missouri,29065,dent
+USA.36.1_1,Adams,OH,Ohio,39001,adams
+USA.14.61_1,Mason,IL,Illinois,17125,mason
+USA.37.44_1,Major,OK,Oklahoma,40093,major
+USA.44.133_1,Kerr,TX,Texas,48265,kerr
+USA.23.86_1,Wayne,MI,Michigan,26163,wayne
+USA.18.51_1,Henderson,KY,Kentucky,21101,henderson
+USA.23.26_1,Gladwin,MI,Michigan,26051,gladwin
+USA.5.29_1,Nevada,CA,California,06057,nevada
+USA.47.77_1,Manassas,VA,Virginia,51683,manassas
+USA.25.5_1,Benton,MS,Mississippi,28009,benton
+USA.26.89_1,Ray,MO,Missouri,29177,ray
+USA.50.6_1,Buffalo,WI,Wisconsin,55011,buffalo
+USA.11.42_1,Dawson,GA,Georgia,13085,dawson
+USA.35.53_1,Williams,ND,North Dakota,38105,williams
+USA.35.2_1,Barnes,ND,North Dakota,38003,barnes
+USA.43.49_1,Lauderdale,TN,Tennessee,47097,lauderdale
+USA.24.17_1,Cottonwood,MN,Minnesota,27033,cottonwood
+USA.44.116_1,Hunt,TX,Texas,48231,hunt
+USA.13.8_1,Boise,ID,Idaho,16015,boise
+USA.28.51_1,Keith,NE,Nebraska,31101,keith
+USA.10.17_1,Flagler,FL,Florida,12035,flagler
+USA.17.39_1,Harper,KS,Kansas,20077,harper
+USA.25.41_1,Lee,MS,Mississippi,28081,lee
+USA.14.8_1,Carroll,IL,Illinois,17015,carroll
+USA.13.11_1,Boundary,ID,Idaho,16021,boundary
+USA.2.4_1,Bethel,AK,Alaska,02050,bethel
+USA.24.50_1,Morrison,MN,Minnesota,27097,morrison
+USA.16.80_1,Ringgold,IA,Iowa,19159,ringgold
+USA.42.17_1,Davison,SD,South Dakota,46035,davison
+USA.13.10_1,Bonneville,ID,Idaho,16019,bonneville
+USA.28.12_1,Butler,NE,Nebraska,31023,butler
+USA.1.18_1,Conecuh,AL,Alabama,01035,conecuh
+USA.43.2_1,Bedford,TN,Tennessee,47003,bedford
+USA.28.86_1,Thomas,NE,Nebraska,31171,thomas
+USA.11.157_1,Wilkes,GA,Georgia,13317,wilkes
+USA.23.50_1,Lenawee,MI,Michigan,26091,lenawee
+USA.15.19_1,Dubois,IN,Indiana,18037,dubois
+USA.47.90_1,Norton,VA,Virginia,51720,norton
+USA.28.57_1,Logan,NE,Nebraska,31113,logan
+USA.47.65_1,James City,VA,Virginia,51095,james
+USA.16.75_1,Plymouth,IA,Iowa,19149,plymouth
+USA.26.102_1,Shelby,MO,Missouri,29205,shelby
+USA.17.88_1,Seward,KS,Kansas,20175,seward
+USA.33.45_1,Rockland,NY,New York,36087,rockland
+USA.11.134_1,Telfair,GA,Georgia,13271,telfair
+USA.11.118_1,Quitman,GA,Georgia,13239,quitman
+USA.17.55_1,Logan,KS,Kansas,20109,logan
+USA.41.39_1,Pickens,SC,South Carolina,45077,pickens
+USA.17.86_1,Scott,KS,Kansas,20171,scott
+USA.47.30_1,Colonial Heights,VA,Virginia,51570,colonial heights
+USA.36.48_1,Lorain,OH,Ohio,39093,lorain
+USA.47.14_1,Botetourt,VA,Virginia,51023,botetourt
+USA.18.58_1,Johnson,KY,Kentucky,21115,johnson
+USA.24.46_1,Martin,MN,Minnesota,27091,martin
+USA.44.207_1,Schleicher,TX,Texas,48413,schleicher
+USA.17.74_1,Phillips,KS,Kansas,20147,phillips
+USA.15.33_1,Henry,IN,Indiana,18065,henry
+USA.1.56_1,Randolph,AL,Alabama,01111,randolph
+USA.16.57_1,Linn,IA,Iowa,19113,linn
+USA.10.47_1,Okeechobee,FL,Florida,12093,okeechobee
+USA.44.76_1,Fisher,TX,Texas,48151,fisher
+USA.24.83_1,Washington,MN,Minnesota,27163,washington
+USA.44.202_1,Sabine,TX,Texas,48403,sabine
+USA.44.98_1,Hansford,TX,Texas,48195,hansford
+USA.23.29_1,Gratiot,MI,Michigan,26057,gratiot
+USA.5.45_1,Shasta,CA,California,06089,shasta
+USA.44.126_1,Johnson,TX,Texas,48251,johnson
+USA.23.58_1,Mecosta,MI,Michigan,26107,mecosta
+USA.20.7_1,Knox,ME,Maine,23013,knox
+USA.6.58_1,San Miguel,CO,Colorado,08113,san miguel
+USA.16.48_1,Iowa,IA,Iowa,19095,iowa
+USA.47.8_1,Arlington,VA,Virginia,51013,arlington
+USA.32.16_1,Los Alamos,NM,New Mexico,35028,los alamos
+USA.18.50_1,Hart,KY,Kentucky,21099,hart
+USA.31.19_1,Sussex,NJ,New Jersey,34037,sussex
+USA.50.73_1,Winnebago,WI,Wisconsin,55139,winnebago
+USA.24.11_1,Cass,MN,Minnesota,27021,cass
+USA.37.60_1,Payne,OK,Oklahoma,40119,payne
+USA.47.122_1,Sussex,VA,Virginia,51183,sussex
+USA.51.21_1,Uinta,WY,Wyoming,56041,uinta
+USA.14.88_1,Shelby,IL,Illinois,17173,shelby
+USA.38.34_1,Washington,OR,Oregon,41067,washington
+USA.18.53_1,Hickman,KY,Kentucky,21105,hickman
+USA.37.1_1,Adair,OK,Oklahoma,40001,adair
+USA.5.58_1,Yuba,CA,California,06115,yuba
+USA.10.50_1,Palm Beach,FL,Florida,12099,palm beach
+USA.44.192_1,Reagan,TX,Texas,48383,reagan
+USA.17.25_1,Elk,KS,Kansas,20049,elk
+USA.30.2_1,Carroll,NH,New Hampshire,33003,carroll
+USA.33.32_1,New York,NY,New York,36061,new york
+USA.42.21_1,Douglas,SD,South Dakota,46043,douglas
+USA.50.34_1,Lake Michigan,WI,,,lake michigan
+USA.23.79_1,Saint Joseph,MI,Michigan,26149,saint joseph
+USA.44.190_1,Rains,TX,Texas,48379,rains
+USA.5.16_1,Kings,CA,California,06031,kings
+USA.15.40_1,Jennings,IN,Indiana,18079,jennings
+USA.5.42_1,Santa Barbara,CA,California,06083,santa barbara
+USA.24.14_1,Clay,MN,Minnesota,27027,clay
+USA.42.66_1,Ziebach,SD,South Dakota,46137,ziebach
+USA.1.62_1,Tallapoosa,AL,Alabama,01123,tallapoosa
+USA.24.58_1,Pennington,MN,Minnesota,27113,pennington
+USA.36.81_1,Union,OH,Ohio,39159,union
+USA.43.10_1,Carter,TN,Tennessee,47019,carter
+USA.16.11_1,Buena Vista,IA,Iowa,19021,buena vista
+USA.33.10_1,Clinton,NY,New York,36019,clinton
+USA.26.46_1,Howell,MO,Missouri,29091,howell
+USA.43.8_1,Cannon,TN,Tennessee,47015,cannon
+USA.4.39_1,Lee,AR,Arkansas,05077,lee
+USA.40.2_1,Kent,RI,Rhode Island,44003,kent
+USA.4.65_1,Searcy,AR,Arkansas,05129,searcy
+USA.17.96_1,Sumner,KS,Kansas,20191,sumner
+USA.45.10_1,Grand,UT,Utah,49019,grand
+USA.24.53_1,Nicollet,MN,Minnesota,27103,nicollet
+USA.18.55_1,Jackson,KY,Kentucky,21109,jackson
+USA.16.7_1,Black Hawk,IA,Iowa,19013,black hawk
+USA.17.58_1,Marshall,KS,Kansas,20117,marshall
+USA.23.38_1,Jackson,MI,Michigan,26075,jackson
+USA.4.69_1,Stone,AR,Arkansas,05137,stone
+USA.50.23_1,Green,WI,Wisconsin,55045,green
+USA.24.71_1,Scott,MN,Minnesota,27139,scott
+USA.25.42_1,Leflore,MS,Mississippi,28083,leflore
+USA.6.50_1,Pitkin,CO,Colorado,08097,pitkin
+USA.48.15_1,Island,WA,Washington,53029,island
+USA.26.41_1,Harrison,MO,Missouri,29081,harrison
+USA.51.17_1,Sheridan,WY,Wyoming,56033,sheridan
+USA.7.4_1,Middlesex,CT,Connecticut,09007,middlesex
+USA.26.48_1,Jackson,MO,Missouri,29095,jackson
+USA.15.47_1,LaPorte,IN,Indiana,18091,laporte
+USA.44.184_1,Parker,TX,Texas,48367,parker
+USA.39.42_1,Mc Kean,PA,,,mc kean
+USA.10.21_1,Glades,FL,Florida,12043,glades
+USA.38.10_1,Douglas,OR,Oregon,41019,douglas
+USA.43.50_1,Lawrence,TN,Tennessee,47099,lawrence
+USA.23.30_1,Hillsdale,MI,Michigan,26059,hillsdale
+USA.45.24_1,Uintah,UT,Utah,49047,uintah
+USA.26.16_1,Cape Girardeau,MO,Missouri,29031,cape girardeau
+USA.36.88_1,Wood,OH,Ohio,39173,wood
+USA.6.32_1,Kiowa,CO,Colorado,08061,kiowa
+USA.5.53_1,Trinity,CA,California,06105,trinity
+USA.10.2_1,Baker,FL,Florida,12003,baker
+USA.39.57_1,Sullivan,PA,Pennsylvania,42113,sullivan
+USA.51.15_1,Park,WY,Wyoming,56029,park
+USA.24.86_1,Winona,MN,Minnesota,27169,winona
+USA.13.27_1,Jerome,ID,Idaho,16053,jerome
+USA.33.44_1,Richmond,NY,New York,36085,richmond
+USA.16.52_1,Johnson,IA,Iowa,19103,johnson
+USA.3.7_1,La Paz,AZ,Arizona,04012,la paz
+USA.21.12_1,Harford,MD,Maryland,24025,harford
+USA.13.26_1,Jefferson,ID,Idaho,16051,jefferson
+USA.17.99_1,Wabaunsee,KS,Kansas,20197,wabaunsee
+USA.10.60_1,Sumter,FL,Florida,12119,sumter
+USA.19.59_1,Washington,LA,Louisiana,22117,washington
+USA.50.53_1,Price,WI,Wisconsin,55099,price
+USA.1.51_1,Montgomery,AL,Alabama,01101,montgomery
+USA.43.40_1,Henry,TN,Tennessee,47079,henry
+USA.21.11_1,Garrett,MD,Maryland,24023,garrett
+USA.4.22_1,Drew,AR,Arkansas,05043,drew
+USA.14.87_1,Scott,IL,Illinois,17171,scott
+USA.4.3_1,Baxter,AR,Arkansas,05005,baxter
+USA.16.70_1,Muscatine,IA,Iowa,19139,muscatine
+USA.44.222_1,Terrell,TX,Texas,48443,terrell
+USA.15.24_1,Franklin,IN,Indiana,18047,franklin
+USA.44.49_1,Cooke,TX,Texas,48097,cooke
+USA.36.8_1,Brown,OH,Ohio,39015,brown
+USA.41.24_1,Greenwood,SC,South Carolina,45047,greenwood
+USA.32.13_1,Hidalgo,NM,New Mexico,35023,hidalgo
+USA.34.55_1,Lincoln,NC,North Carolina,37109,lincoln
+USA.27.24_1,Lake,MT,Montana,30047,lake
+USA.15.3_1,Bartholomew,IN,Indiana,18005,bartholomew
+USA.23.19_1,Clinton,MI,Michigan,26037,clinton
+USA.28.29_1,Dundy,NE,Nebraska,31057,dundy
+USA.44.15_1,Bexar,TX,Texas,48029,bexar
+USA.43.82_1,Sullivan,TN,Tennessee,47163,sullivan
+USA.43.15_1,Cocke,TN,Tennessee,47029,cocke
+USA.36.79_1,Trumbull,OH,Ohio,39155,trumbull
+USA.49.28_1,Mercer,WV,West Virginia,54055,mercer
+USA.6.63_1,Weld,CO,Colorado,08123,weld
+USA.18.9_1,Bourbon,KY,Kentucky,21017,bourbon
+USA.18.45_1,Greenup,KY,Kentucky,21089,greenup
+USA.15.72_1,Saint Joseph,IN,Indiana,18141,saint joseph
+USA.16.32_1,Emmet,IA,Iowa,19063,emmet
+USA.36.47_1,Logan,OH,Ohio,39091,logan
+USA.44.198_1,Robertson,TX,Texas,48395,robertson
+USA.18.49_1,Harrison,KY,Kentucky,21097,harrison
+USA.7.5_1,New Haven,CT,Connecticut,09009,new haven
+USA.14.14_1,Clinton,IL,Illinois,17027,clinton
+USA.19.58_1,Vernon,LA,Louisiana,22115,vernon
+USA.34.51_1,Johnston,NC,North Carolina,37101,johnston
+USA.26.49_1,Jasper,MO,Missouri,29097,jasper
+USA.43.5_1,Blount,TN,Tennessee,47009,blount
+USA.25.47_1,Marshall,MS,Mississippi,28093,marshall
+USA.44.28_1,Caldwell,TX,Texas,48055,caldwell
+USA.26.6_1,Barton,MO,Missouri,29011,barton
+USA.44.44_1,Collingsworth,TX,Texas,48087,collingsworth
+USA.35.44_1,Slope,ND,North Dakota,38087,slope
+USA.11.140_1,Treutlen,GA,Georgia,13283,treutlen
+USA.39.7_1,Blair,PA,Pennsylvania,42013,blair
+USA.47.73_1,Louisa,VA,Virginia,51109,louisa
+USA.18.30_1,Daviess,KY,Kentucky,21059,daviess
+USA.15.46_1,Lake Michigan,IN,,,lake michigan
+USA.28.65_1,Nuckolls,NE,Nebraska,31129,nuckolls
+USA.28.61_1,Merrick,NE,Nebraska,31121,merrick
+USA.49.21_1,Lewis,WV,West Virginia,54041,lewis
+USA.25.35_1,Kemper,MS,Mississippi,28069,kemper
+USA.45.23_1,Tooele,UT,Utah,49045,tooele
+USA.39.54_1,Schuylkill,PA,Pennsylvania,42107,schuylkill
+USA.38.27_1,Polk,OR,Oregon,41053,polk
+USA.12.2_1,Honolulu,HI,Hawaii,15003,honolulu
+USA.5.8_1,Del Norte,CA,California,06015,del norte
+USA.42.39_1,Lake,SD,South Dakota,46079,lake
+USA.17.45_1,Jewell,KS,Kansas,20089,jewell
+USA.20.1_1,Androscoggin,ME,Maine,23001,androscoggin
+USA.44.159_1,Maverick,TX,Texas,48323,maverick
+USA.43.70_1,Polk,TN,Tennessee,47139,polk
+USA.35.20_1,Griggs,ND,North Dakota,38039,griggs
+USA.10.35_1,Lee,FL,Florida,12071,lee
+USA.35.48_1,Towner,ND,North Dakota,38095,towner
+USA.14.54_1,Livingston,IL,Illinois,17105,livingston
+USA.37.27_1,Grant,OK,Oklahoma,40053,grant
+USA.37.48_1,McCurtain,OK,Oklahoma,40089,mccurtain
+USA.25.69_1,Tate,MS,Mississippi,28137,tate
+USA.47.3_1,Alexandria,VA,Virginia,51510,alexandria
+USA.34.43_1,Harnett,NC,North Carolina,37085,harnett
+USA.33.41_1,Putnam,NY,New York,36079,putnam
+USA.43.29_1,Grainger,TN,Tennessee,47057,grainger
+USA.43.7_1,Campbell,TN,Tennessee,47013,campbell
+USA.1.8_1,Calhoun,AL,Alabama,01015,calhoun
+USA.21.23_1,Worcester,MD,Maryland,24047,worcester
+USA.42.28_1,Hamlin,SD,South Dakota,46057,hamlin
+USA.39.14_1,Centre,PA,Pennsylvania,42027,centre
+USA.21.20_1,Talbot,MD,Maryland,24041,talbot
+USA.45.16_1,Piute,UT,Utah,49031,piute
+USA.50.8_1,Calumet,WI,Wisconsin,55015,calumet
+USA.44.65_1,Donley,TX,Texas,48129,donley
+USA.33.51_1,Seneca,NY,New York,36099,seneca
+USA.35.43_1,Sioux,ND,North Dakota,38085,sioux
+USA.33.31_1,Nassau,NY,New York,36059,nassau
+USA.42.31_1,Harding,SD,South Dakota,46063,harding
+USA.14.72_1,Ogle,IL,Illinois,17141,ogle
+USA.14.5_1,Brown,IL,Illinois,17009,brown
+USA.47.42_1,Falls Church,VA,Virginia,51610,falls church
+USA.50.32_1,La Crosse,WI,Wisconsin,55063,la crosse
+USA.34.54_1,Lenoir,NC,North Carolina,37107,lenoir
+USA.17.90_1,Sheridan,KS,Kansas,20179,sheridan
+USA.4.19_1,Cross,AR,Arkansas,05037,cross
+USA.32.9_1,Eddy,NM,New Mexico,35015,eddy
+USA.44.135_1,King,TX,Texas,48269,king
+USA.32.18_1,McKinley,NM,New Mexico,35031,mckinley
+USA.37.28_1,Greer,OK,Oklahoma,40055,greer
+USA.47.102_1,Prince William,VA,Virginia,51153,prince william
+USA.4.47_1,Mississippi,AR,Arkansas,05093,mississippi
+USA.43.83_1,Sumner,TN,Tennessee,47165,sumner
+USA.7.2_1,Hartford,CT,Connecticut,09003,hartford
+USA.44.241_1,Wharton,TX,Texas,48481,wharton
+USA.48.31_1,Snohomish,WA,Washington,53061,snohomish
+USA.18.82_1,Meade,KY,Kentucky,21163,meade
+USA.4.2_1,Ashley,AR,Arkansas,05003,ashley
+USA.6.29_1,Huerfano,CO,Colorado,08055,huerfano
+USA.38.6_1,Coos,OR,Oregon,41011,coos
+USA.11.60_1,Fulton,GA,Georgia,13121,fulton
+USA.36.34_1,Harrison,OH,Ohio,39067,harrison
+USA.43.22_1,Dickson,TN,Tennessee,47043,dickson
+USA.35.14_1,Eddy,ND,North Dakota,38027,eddy
+USA.3.12_1,Pinal,AZ,Arizona,04021,pinal
+USA.33.46_1,Saint Lawrence,NY,New York,36089,saint lawrence
+USA.25.23_1,Hancock,MS,Mississippi,28045,hancock
+USA.10.23_1,Hamilton,FL,Florida,12047,hamilton
+USA.44.84_1,Galveston,TX,Texas,48167,galveston
+USA.31.5_1,Cape May,NJ,New Jersey,34009,cape may
+USA.44.82_1,Frio,TX,Texas,48163,frio
+USA.26.10_1,Boone,MO,Missouri,29019,boone
+USA.44.114_1,Howard,TX,Texas,48227,howard
+USA.4.32_1,Independence,AR,Arkansas,05063,independence
+USA.1.50_1,Monroe,AL,Alabama,01099,monroe
+USA.16.56_1,Lee,IA,Iowa,19111,lee
+USA.45.20_1,Sanpete,UT,Utah,49039,sanpete
+USA.14.30_1,Gallatin,IL,Illinois,17059,gallatin
+USA.26.112_1,Webster,MO,Missouri,29225,webster
+USA.36.82_1,Van Wert,OH,Ohio,39161,van wert
+USA.34.67_1,Onslow,NC,North Carolina,37133,onslow
+USA.42.26_1,Gregory,SD,South Dakota,46053,gregory
+USA.19.17_1,East Baton Rouge,LA,Louisiana,22033,east baton rouge
+USA.25.73_1,Union,MS,Mississippi,28145,union
+USA.47.84_1,Nelson,VA,Virginia,51125,nelson
+USA.33.30_1,Montgomery,NY,New York,36057,montgomery
+USA.33.1_1,Albany,NY,New York,36001,albany
+USA.32.17_1,Luna,NM,New Mexico,35029,luna
+USA.22.8_1,Hampshire,MA,Massachusetts,25015,hampshire
+USA.37.12_1,Choctaw,OK,Oklahoma,40023,choctaw
+USA.1.43_1,Lowndes,AL,Alabama,01085,lowndes
+USA.6.52_1,Pueblo,CO,Colorado,08101,pueblo
+USA.50.63_1,Taylor,WI,Wisconsin,55119,taylor
+USA.29.9_1,Lander,NV,Nevada,32015,lander
+USA.16.1_1,Adair,IA,Iowa,19001,adair
+USA.43.66_1,Obion,TN,Tennessee,47131,obion
+USA.37.49_1,McIntosh,OK,Oklahoma,40091,mcintosh
+USA.23.48_1,Lapeer,MI,Michigan,26087,lapeer
+USA.43.51_1,Lewis,TN,Tennessee,47101,lewis
+USA.39.40_1,Luzerne,PA,Pennsylvania,42079,luzerne
+USA.26.80_1,Pettis,MO,Missouri,29159,pettis
+USA.44.71_1,Ellis,TX,Texas,48139,ellis
+USA.38.15_1,Jackson,OR,Oregon,41029,jackson
+USA.16.18_1,Cherokee,IA,Iowa,19035,cherokee
+USA.5.3_1,Amador,CA,California,06005,amador
+USA.33.53_1,Suffolk,NY,New York,36103,suffolk
+USA.4.35_1,Jefferson,AR,Arkansas,05069,jefferson
+USA.33.15_1,Erie,NY,New York,36029,erie
+USA.50.62_1,Sheboygan,WI,Wisconsin,55117,sheboygan
+USA.4.9_1,Chicot,AR,Arkansas,05017,chicot
+USA.24.76_1,Stevens,MN,Minnesota,27149,stevens
+USA.13.19_1,Custer,ID,Idaho,16037,custer
+USA.10.37_1,Levy,FL,Florida,12075,levy
+USA.10.64_1,Volusia,FL,Florida,12127,volusia
+USA.47.133_1,York,VA,Virginia,51199,york
+USA.43.11_1,Cheatham,TN,Tennessee,47021,cheatham
+USA.28.73_1,Red Willow,NE,Nebraska,31145,red willow
+USA.41.3_1,Allendale,SC,South Carolina,45005,allendale
+USA.14.69_1,Montgomery,IL,Illinois,17135,montgomery
+USA.5.15_1,Kern,CA,California,06029,kern
+USA.17.81_1,Riley,KS,Kansas,20161,riley
+USA.39.44_1,Mifflin,PA,Pennsylvania,42087,mifflin
+USA.26.101_1,Shannon,MO,Missouri,29203,shannon
+USA.33.29_1,Monroe,NY,New York,36055,monroe
+USA.36.11_1,Champaign,OH,Ohio,39021,champaign
+USA.24.84_1,Watonwan,MN,Minnesota,27165,watonwan
+USA.47.117_1,Spotsylvania,VA,Virginia,51177,spotsylvania
+USA.23.37_1,Isabella,MI,Michigan,26073,isabella
+USA.5.55_1,Tuolumne,CA,California,06109,tuolumne
+USA.27.48_1,Stillwater,MT,Montana,30095,stillwater
+USA.15.16_1,Dearborn,IN,Indiana,18029,dearborn
+USA.28.70_1,Pierce,NE,Nebraska,31139,pierce
+USA.25.32_1,Jefferson,MS,Mississippi,28063,jefferson
+USA.43.42_1,Houston,TN,Tennessee,47083,houston
+USA.43.44_1,Jackson,TN,Tennessee,47087,jackson
+USA.44.243_1,Wichita,TX,Texas,48485,wichita
+USA.50.54_1,Racine,WI,Wisconsin,55101,racine
+USA.23.22_1,Dickinson,MI,Michigan,26043,dickinson
+USA.24.16_1,Cook,MN,Minnesota,27031,cook
+USA.42.56_1,Shannon,SD,South Dakota,46113,shannon
+USA.14.26_1,Fayette,IL,Illinois,17051,fayette
+USA.42.65_1,Yankton,SD,South Dakota,46135,yankton
+USA.15.88_1,Warrick,IN,Indiana,18173,warrick
+USA.34.75_1,Polk,NC,North Carolina,37149,polk
+USA.44.27_1,Burnet,TX,Texas,48053,burnet
+USA.11.59_1,Franklin,GA,Georgia,13119,franklin
+USA.39.60_1,Union,PA,Pennsylvania,42119,union
+USA.34.45_1,Henderson,NC,North Carolina,37089,henderson
+USA.34.3_1,Alleghany,NC,North Carolina,37005,alleghany
+USA.27.23_1,Judith Basin,MT,Montana,30045,judith basin
+USA.11.101_1,Mitchell,GA,Georgia,13205,mitchell
+USA.10.38_1,Liberty,FL,Florida,12077,liberty
+USA.43.45_1,Jefferson,TN,Tennessee,47089,jefferson
+USA.15.26_1,Gibson,IN,Indiana,18051,gibson
+USA.36.14_1,Clinton,OH,Ohio,39027,clinton
+USA.19.50_1,Saint Martin,LA,Louisiana,22099,saint martin
+USA.13.17_1,Clark,ID,Idaho,16033,clark
+USA.36.78_1,Summit,OH,Ohio,39153,summit
+USA.11.55_1,Fannin,GA,Georgia,13111,fannin
+USA.17.95_1,Stevens,KS,Kansas,20189,stevens
+USA.14.85_1,Sangamon,IL,Illinois,17167,sangamon
+USA.33.42_1,Queens,NY,New York,36081,queens
+USA.44.131_1,Kenedy,TX,Texas,48261,kenedy
+USA.16.23_1,Clinton,IA,Iowa,19045,clinton
+USA.26.56_1,Lewis,MO,Missouri,29111,lewis
+USA.28.16_1,Cherry,NE,Nebraska,31031,cherry
+USA.6.24_1,Garfield,CO,Colorado,08045,garfield
+USA.44.68_1,Ector,TX,Texas,48135,ector
+USA.32.1_1,Bernalillo,NM,New Mexico,35001,bernalillo
+USA.28.21_1,Custer,NE,Nebraska,31041,custer
+USA.17.67_1,Neosho,KS,Kansas,20133,neosho
+USA.24.35_1,Kittson,MN,Minnesota,27069,kittson
+USA.44.177_1,Nolan,TX,Texas,48353,nolan
+USA.37.68_1,Sequoyah,OK,Oklahoma,40135,sequoyah
+USA.42.23_1,Fall River,SD,South Dakota,46047,fall river
+USA.14.74_1,Perry,IL,Illinois,17145,perry
+USA.12.1_1,Hawaii,HI,Hawaii,15001,hawaii
+USA.38.19_1,Lake,OR,Oregon,41037,lake
+USA.34.6_1,Avery,NC,North Carolina,37011,avery
+USA.17.20_1,Decatur,KS,Kansas,20039,decatur
+USA.44.218_1,Sutton,TX,Texas,48435,sutton
+USA.51.13_1,Natrona,WY,Wyoming,56025,natrona
+USA.24.70_1,Saint Louis,MN,Minnesota,27137,saint louis
+USA.18.34_1,Fayette,KY,Kentucky,21067,fayette
+USA.24.67_1,Rice,MN,Minnesota,27131,rice
+USA.1.9_1,Chambers,AL,Alabama,01017,chambers
+USA.5.7_1,Contra Costa,CA,California,06013,contra costa
+USA.4.70_1,Union,AR,Arkansas,05139,union
+USA.16.28_1,Delaware,IA,Iowa,19055,delaware
+USA.6.46_1,Otero,CO,Colorado,08089,otero
+USA.44.73_1,Falls,TX,Texas,48145,falls
+USA.44.223_1,Terry,TX,Texas,48445,terry
+USA.35.46_1,Steele,ND,North Dakota,38091,steele
+USA.27.43_1,Roosevelt,MT,Montana,30085,roosevelt
+USA.38.2_1,Benton,OR,Oregon,41003,benton
+USA.38.26_1,Multnomah,OR,Oregon,41051,multnomah
+USA.11.153_1,Wheeler,GA,Georgia,13309,wheeler
+USA.10.41_1,Marion,FL,Florida,12083,marion
+USA.15.6_1,Boone,IN,Indiana,18011,boone
+USA.45.4_1,Carbon,UT,Utah,49007,carbon
+USA.47.41_1,Fairfax City,VA,Virginia,51059,fairfax
+USA.47.41_1,Fairfax City,VA,Virginia,51600,fairfax
+USA.28.28_1,Douglas,NE,Nebraska,31055,douglas
+USA.27.12_1,Deer Lodge,MT,Montana,30023,deer lodge
+USA.19.62_1,West Carroll,LA,Louisiana,22123,west carroll
+USA.22.2_1,Berkshire,MA,Massachusetts,25003,berkshire
+USA.6.3_1,Arapahoe,CO,Colorado,08005,arapahoe
+USA.18.57_1,Jessamine,KY,Kentucky,21113,jessamine
+USA.14.7_1,Calhoun,IL,Illinois,17013,calhoun
+USA.36.6_1,Auglaize,OH,Ohio,39011,auglaize
+USA.18.44_1,Green,KY,Kentucky,21087,green
+USA.44.125_1,Jim Wells,TX,Texas,48249,jim wells
+USA.3.13_1,Santa Cruz,AZ,Arizona,04023,santa cruz
+USA.50.22_1,Grant,WI,Wisconsin,55043,grant
+USA.5.5_1,Calaveras,CA,California,06009,calaveras
+USA.47.111_1,Russell,VA,Virginia,51167,russell
+USA.23.63_1,Montcalm,MI,Michigan,26117,montcalm
+USA.11.123_1,Schley,GA,Georgia,13249,schley
+USA.46.8_1,Lamoille,VT,Vermont,50015,lamoille
+USA.44.164_1,Menard,TX,Texas,48327,menard
+USA.49.52_1,Wetzel,WV,West Virginia,54103,wetzel
+USA.44.224_1,Throckmorton,TX,Texas,48447,throckmorton
+USA.43.92_1,Weakley,TN,Tennessee,47183,weakley
+USA.19.47_1,Saint James,LA,Louisiana,22093,saint james
+USA.16.86_1,Tama,IA,Iowa,19171,tama
+USA.23.16_1,Cheboygan,MI,Michigan,26031,cheboygan
+USA.1.35_1,Houston,AL,Alabama,01069,houston
+USA.26.90_1,Reynolds,MO,Missouri,29179,reynolds
+USA.25.66_1,Stone,MS,Mississippi,28131,stone
+USA.44.78_1,Foard,TX,Texas,48155,foard
+USA.14.9_1,Cass,IL,Illinois,17017,cass
+USA.17.84_1,Russell,KS,Kansas,20167,russell
+USA.5.4_1,Butte,CA,California,06007,butte
+USA.34.27_1,Currituck,NC,North Carolina,37053,currituck
+USA.11.75_1,Henry,GA,Georgia,13151,henry
+USA.44.171_1,Moore,TX,Texas,48341,moore
+USA.39.48_1,Northampton,PA,Pennsylvania,42095,northampton
+USA.42.9_1,Butte,SD,South Dakota,46019,butte
+USA.15.80_1,Tippecanoe,IN,Indiana,18157,tippecanoe
+USA.34.23_1,Cleveland,NC,North Carolina,37045,cleveland
+USA.11.84_1,Jones,GA,Georgia,13169,jones
+USA.15.89_1,Washington,IN,Indiana,18175,washington
+USA.10.20_1,Gilchrist,FL,Florida,12041,gilchrist
+USA.28.75_1,Rock,NE,Nebraska,31149,rock
+USA.14.98_1,White,IL,Illinois,17193,white
+USA.6.42_1,Moffat,CO,Colorado,08081,moffat
+USA.23.3_1,Allegan,MI,Michigan,26005,allegan
+USA.19.30_1,Lafourche,LA,Louisiana,22057,lafourche
+USA.33.5_1,Cattaraugus,NY,New York,36009,cattaraugus
+USA.34.86_1,Surry,NC,North Carolina,37171,surry
+USA.1.64_1,Walker,AL,Alabama,01127,walker
+USA.6.13_1,Costilla,CO,Colorado,08023,costilla
+USA.16.81_1,Sac,IA,Iowa,19161,sac
+USA.5.44_1,Santa Cruz,CA,California,06087,santa cruz
+USA.24.65_1,Redwood,MN,Minnesota,27127,redwood
+USA.39.31_1,Huntingdon,PA,Pennsylvania,42061,huntingdon
+USA.41.46_1,York,SC,South Carolina,45091,york
+USA.23.75_1,Presque Isle,MI,Michigan,26141,presque isle
+USA.15.32_1,Hendricks,IN,Indiana,18063,hendricks
+USA.35.10_1,Cavalier,ND,North Dakota,38019,cavalier
+USA.47.128_1,Westmoreland,VA,Virginia,51193,westmoreland
+USA.17.43_1,Jackson,KS,Kansas,20085,jackson
+USA.14.21_1,Douglas,IL,Illinois,17041,douglas
+USA.41.16_1,Darlington,SC,South Carolina,45031,darlington
+USA.44.244_1,Wilbarger,TX,Texas,48487,wilbarger
+USA.11.112_1,Pickens,GA,Georgia,13227,pickens
+USA.31.17_1,Salem,NJ,New Jersey,34033,salem
+USA.38.32_1,Wallowa,OR,Oregon,41063,wallowa
+USA.30.6_1,Hillsborough,NH,New Hampshire,33011,hillsborough
+USA.47.43_1,Fauquier,VA,Virginia,51061,fauquier
+USA.10.9_1,Citrus,FL,Florida,12017,citrus
+USA.11.110_1,Paulding,GA,Georgia,13223,paulding
+USA.26.87_1,Ralls,MO,Missouri,29173,ralls
+USA.18.38_1,Fulton,KY,Kentucky,21075,fulton
+USA.14.28_1,Franklin,IL,Illinois,17055,franklin
+USA.39.50_1,Perry,PA,Pennsylvania,42099,perry
+USA.44.178_1,Nueces,TX,Texas,48355,nueces
+USA.37.73_1,Wagoner,OK,Oklahoma,40145,wagoner
+USA.16.68_1,Monroe,IA,Iowa,19135,monroe
+USA.24.40_1,Lake Superior,MN,,,lake superior
+USA.15.27_1,Grant,IN,Indiana,18053,grant
+USA.18.21_1,Carroll,KY,Kentucky,21041,carroll
+USA.49.36_1,Pendleton,WV,West Virginia,54071,pendleton
+USA.5.57_1,Yolo,CA,California,06113,yolo
+USA.14.66_1,Menard,IL,Illinois,17129,menard
+USA.15.73_1,Scott,IN,Indiana,18143,scott
+USA.11.122_1,Rockdale,GA,Georgia,13247,rockdale
+USA.11.28_1,Cherokee,GA,Georgia,13057,cherokee
+USA.47.89_1,Northumberland,VA,Virginia,51133,northumberland
+USA.14.102_1,Winnebago,IL,Illinois,17201,winnebago
+USA.17.44_1,Jefferson,KS,Kansas,20087,jefferson
+USA.26.94_1,Saint Francois,MO,Missouri,29187,saint francois
+USA.24.24_1,Freeborn,MN,Minnesota,27047,freeborn
+USA.14.27_1,Ford,IL,Illinois,17053,ford
+USA.3.9_1,Mohave,AZ,Arizona,04015,mohave
+USA.37.46_1,Mayes,OK,Oklahoma,40097,mayes
+USA.28.89_1,Washington,NE,Nebraska,31177,washington
+USA.36.77_1,Stark,OH,Ohio,39151,stark
+USA.39.21_1,Cumberland,PA,Pennsylvania,42041,cumberland
+USA.25.53_1,Oktibbeha,MS,Mississippi,28105,oktibbeha
+USA.25.20_1,George,MS,Mississippi,28039,george
+USA.47.114_1,Shenandoah,VA,Virginia,51171,shenandoah
+USA.5.47_1,Siskiyou,CA,California,06093,siskiyou
+USA.4.37_1,Lafayette,AR,Arkansas,05073,lafayette
+USA.6.30_1,Jackson,CO,Colorado,08057,jackson
+USA.16.33_1,Fayette,IA,Iowa,19065,fayette
+USA.14.51_1,Lake Michigan,IL,,,lake michigan
+USA.15.17_1,Decatur,IN,Indiana,18031,decatur
+USA.11.97_1,McDuffie,GA,Georgia,13189,mcduffie
+USA.23.68_1,Oceana,MI,Michigan,26127,oceana
+USA.18.47_1,Hardin,KY,Kentucky,21093,hardin
+USA.11.65_1,Grady,GA,Georgia,13131,grady
+USA.10.19_1,Gadsden,FL,Florida,12039,gadsden
+USA.17.15_1,Cloud,KS,Kansas,20029,cloud
+USA.24.25_1,Goodhue,MN,Minnesota,27049,goodhue
+USA.42.53_1,Potter,SD,South Dakota,46107,potter
+USA.24.80_1,Wabasha,MN,Minnesota,27157,wabasha
+USA.48.5_1,Clallam,WA,Washington,53009,clallam
+USA.43.19_1,Davidson,TN,Tennessee,47037,davidson
+USA.28.53_1,Kimball,NE,Nebraska,31105,kimball
+USA.34.57_1,Madison,NC,North Carolina,37115,madison
+USA.36.51_1,Mahoning,OH,Ohio,39099,mahoning
+USA.29.13_1,Nye,NV,Nevada,32023,nye
+USA.28.67_1,Pawnee,NE,Nebraska,31133,pawnee
+USA.50.45_1,Oconto,WI,Wisconsin,55083,oconto
+USA.16.6_1,Benton,IA,Iowa,19011,benton
+USA.1.26_1,Elmore,AL,Alabama,01051,elmore
+USA.39.20_1,Crawford,PA,Pennsylvania,42039,crawford
+USA.6.33_1,Kit Carson,CO,Colorado,08063,kit carson
+USA.49.29_1,Mineral,WV,West Virginia,54057,mineral
+USA.42.41_1,Lincoln,SD,South Dakota,46083,lincoln
+USA.41.22_1,Georgetown,SC,South Carolina,45043,georgetown
+USA.16.50_1,Jasper,IA,Iowa,19099,jasper
+USA.51.3_1,Campbell,WY,Wyoming,56005,campbell
+USA.34.60_1,Mecklenburg,NC,North Carolina,37119,mecklenburg
+USA.26.74_1,Nodaway,MO,Missouri,29147,nodaway
+USA.26.4_1,Audrain,MO,Missouri,29007,audrain
+USA.16.25_1,Dallas,IA,Iowa,19049,dallas
+USA.24.72_1,Sherburne,MN,Minnesota,27141,sherburne
+USA.34.77_1,Richmond,NC,North Carolina,37153,richmond
+USA.11.16_1,Bulloch,GA,Georgia,13031,bulloch
+USA.20.9_1,Oxford,ME,Maine,23017,oxford
+USA.41.6_1,Barnwell,SC,South Carolina,45011,barnwell
+USA.17.46_1,Johnson,KS,Kansas,20091,johnson
+USA.49.34_1,Nicholas,WV,West Virginia,54067,nicholas
+USA.50.19_1,Florence,WI,Wisconsin,55037,florence
+USA.23.61_1,Missaukee,MI,Michigan,26113,missaukee
+USA.17.52_1,Leavenworth,KS,Kansas,20103,leavenworth
+USA.34.4_1,Anson,NC,North Carolina,37007,anson
+USA.47.85_1,New Kent,VA,Virginia,51127,new kent
+USA.27.27_1,Lincoln,MT,Montana,30053,lincoln
+USA.44.175_1,Navarro,TX,Texas,48349,navarro
+USA.44.30_1,Callahan,TX,Texas,48059,callahan
+USA.43.55_1,Madison,TN,Tennessee,47113,madison
+USA.42.47_1,Mellette,SD,South Dakota,46095,mellette
+USA.35.40_1,Rolette,ND,North Dakota,38079,rolette
+USA.13.35_1,Nez Perce,ID,Idaho,16069,nez perce
+USA.44.249_1,Wise,TX,Texas,48497,wise
+USA.18.68_1,Lewis,KY,Kentucky,21135,lewis
+USA.18.93_1,Oldham,KY,Kentucky,21185,oldham
+USA.24.54_1,Nobles,MN,Minnesota,27105,nobles
+USA.2.8_1,Fairbanks North Star,AK,Alaska,02090,fairbanks north star
+USA.24.78_1,Todd,MN,Minnesota,27153,todd
+USA.11.107_1,Newton,GA,Georgia,13217,newton
+USA.15.67_1,Pulaski,IN,Indiana,18131,pulaski
+USA.5.19_1,Los Angeles,CA,California,06037,los angeles
+USA.26.109_1,Warren,MO,Missouri,29219,warren
+USA.4.38_1,Lawrence,AR,Arkansas,05075,lawrence
+USA.34.28_1,Dare,NC,North Carolina,37055,dare
+USA.36.58_1,Montgomery,OH,Ohio,39113,montgomery
+USA.49.45_1,Summers,WV,West Virginia,54089,summers
+USA.2.19_1,Prince of Wales-Outer Ketchi,AK,,,prince of wales outer ketchi
+USA.6.61_1,Teller,CO,Colorado,08119,teller
+USA.23.51_1,Livingston,MI,Michigan,26093,livingston
+USA.3.14_1,Yavapai,AZ,Arizona,04025,yavapai
+USA.1.40_1,Lawrence,AL,Alabama,01079,lawrence
+USA.44.121_1,Jasper,TX,Texas,48241,jasper
+USA.23.52_1,Luce,MI,Michigan,26095,luce
+USA.16.36_1,Fremont,IA,Iowa,19071,fremont
+USA.14.20_1,De Witt,IL,Illinois,17039,de witt
+USA.17.105_1,Wyandotte,KS,Kansas,20209,wyandotte
+USA.16.54_1,Keokuk,IA,Iowa,19107,keokuk
+USA.42.12_1,Clark,SD,South Dakota,46025,clark
+USA.35.49_1,Traill,ND,North Dakota,38097,traill
+USA.44.187_1,Polk,TX,Texas,48373,polk
+USA.20.5_1,Hancock,ME,Maine,23009,hancock
+USA.14.25_1,Effingham,IL,Illinois,17049,effingham
+USA.23.45_1,Lake Michigan,MI,,,lake michigan
+USA.27.19_1,Golden Valley,MT,Montana,30037,golden valley
+USA.18.7_1,Bell,KY,Kentucky,21013,bell
+USA.28.24_1,Dawson,NE,Nebraska,31047,dawson
+USA.43.9_1,Carroll,TN,Tennessee,47017,carroll
+USA.34.9_1,Bladen,NC,North Carolina,37017,bladen
+USA.26.37_1,Gasconade,MO,Missouri,29073,gasconade
+USA.14.11_1,Christian,IL,Illinois,17021,christian
+USA.41.2_1,Aiken,SC,South Carolina,45003,aiken
+USA.39.30_1,Greene,PA,Pennsylvania,42059,greene
+USA.15.74_1,Shelby,IN,Indiana,18145,shelby
+USA.1.20_1,Covington,AL,Alabama,01039,covington
+USA.28.79_1,Scotts Bluff,NE,Nebraska,31157,scotts bluff
+USA.32.31_1,Torrance,NM,New Mexico,35057,torrance
+USA.41.13_1,Chesterfield,SC,South Carolina,45025,chesterfield
+USA.50.37_1,Lincoln,WI,Wisconsin,55069,lincoln
+USA.5.17_1,Lake,CA,California,06033,lake
+USA.19.12_1,Cameron,LA,Louisiana,22023,cameron
+USA.25.61_1,Rankin,MS,Mississippi,28121,rankin
+USA.14.65_1,McLean,IL,Illinois,17113,mclean
+USA.44.115_1,Hudspeth,TX,Texas,48229,hudspeth
+USA.44.179_1,Ochiltree,TX,Texas,48357,ochiltree
+USA.11.63_1,Glynn,GA,Georgia,13127,glynn
+USA.23.40_1,Kalkaska,MI,Michigan,26079,kalkaska
+USA.44.165_1,Midland,TX,Texas,48329,midland
+USA.27.49_1,Sweet Grass,MT,Montana,30097,sweet grass
+USA.14.34_1,Hancock,IL,Illinois,17067,hancock
+USA.44.64_1,Dimmit,TX,Texas,48127,dimmit
+USA.17.62_1,Mitchell,KS,Kansas,20123,mitchell
+USA.44.14_1,Bell,TX,Texas,48027,bell
+USA.44.212_1,Smith,TX,Texas,48423,smith
+USA.21.1_1,Allegany,MD,Maryland,24001,allegany
+USA.34.19_1,Chatham,NC,North Carolina,37037,chatham
+USA.13.25_1,Idaho,ID,Idaho,16049,idaho
+USA.1.6_1,Bullock,AL,Alabama,01011,bullock
+USA.6.25_1,Gilpin,CO,Colorado,08047,gilpin
+USA.11.150_1,Washington,GA,Georgia,13303,washington
+USA.41.5_1,Bamberg,SC,South Carolina,45009,bamberg
+USA.25.43_1,Lincoln,MS,Mississippi,28085,lincoln
+USA.17.82_1,Rooks,KS,Kansas,20163,rooks
+USA.45.9_1,Garfield,UT,Utah,49017,garfield
+USA.28.19_1,Colfax,NE,Nebraska,31037,colfax
+USA.47.83_1,Montgomery,VA,Virginia,51121,montgomery
+USA.4.42_1,Logan,AR,Arkansas,05083,logan
+USA.44.196_1,Refugio,TX,Texas,48391,refugio
+USA.45.27_1,Washington,UT,Utah,49053,washington
+USA.14.92_1,Union,IL,Illinois,17181,union
+USA.11.149_1,Warren,GA,Georgia,13301,warren
+USA.44.236_1,Walker,TX,Texas,48471,walker
+USA.5.2_1,Alpine,CA,California,06003,alpine
+USA.17.33_1,Graham,KS,Kansas,20065,graham
+USA.5.56_1,Ventura,CA,California,06111,ventura
+USA.47.112_1,Salem,VA,Virginia,51775,salem
+USA.24.6_1,Big Stone,MN,Minnesota,27011,big stone
+USA.43.59_1,McMinn,TN,Tennessee,47107,mcminn
+USA.11.37_1,Cook,GA,Georgia,13075,cook
+USA.42.27_1,Haakon,SD,South Dakota,46055,haakon
+USA.33.16_1,Essex,NY,New York,36031,essex
+USA.14.43_1,Jo Daviess,IL,Illinois,17085,jo daviess
+USA.34.29_1,Davidson,NC,North Carolina,37057,davidson
+USA.28.49_1,Johnson,NE,Nebraska,31097,johnson
+USA.25.50_1,Neshoba,MS,Mississippi,28099,neshoba
+USA.49.53_1,Wirt,WV,West Virginia,54105,wirt
+USA.47.99_1,Powhatan,VA,Virginia,51145,powhatan
+USA.49.31_1,Monongalia,WV,West Virginia,54061,monongalia
+USA.10.18_1,Franklin,FL,Florida,12037,franklin
+USA.5.14_1,Inyo,CA,California,06027,inyo
+USA.5.28_1,Napa,CA,California,06055,napa
+USA.27.5_1,Carbon,MT,Montana,30009,carbon
+USA.31.8_1,Gloucester,NJ,New Jersey,34015,gloucester
+USA.19.64_1,Winn,LA,Louisiana,22127,winn
+USA.11.89_1,Liberty,GA,Georgia,13179,liberty
+USA.28.40_1,Hall,NE,Nebraska,31079,hall
+USA.36.71_1,Richland,OH,Ohio,39139,richland
+USA.44.24_1,Brooks,TX,Texas,48047,brooks
+USA.31.10_1,Hunterdon,NJ,New Jersey,34019,hunterdon
+USA.47.87_1,Norfolk,VA,Virginia,51710,norfolk
+USA.4.5_1,Boone,AR,Arkansas,05009,boone
+USA.10.10_1,Clay,FL,Florida,12019,clay
+USA.47.69_1,Lancaster,VA,Virginia,51103,lancaster
+USA.33.36_1,Ontario,NY,New York,36069,ontario
+USA.21.19_1,Somerset,MD,Maryland,24039,somerset
+USA.45.26_1,Wasatch,UT,Utah,49051,wasatch
+USA.33.49_1,Schoharie,NY,New York,36095,schoharie
+USA.34.78_1,Robeson,NC,North Carolina,37155,robeson
+USA.37.65_1,Roger Mills,OK,Oklahoma,40129,roger mills
+USA.23.11_1,Berrien,MI,Michigan,26021,berrien
+USA.14.6_1,Bureau,IL,Illinois,17011,bureau
+USA.14.22_1,Dupage,IL,Illinois,17043,dupage
+USA.20.3_1,Cumberland,ME,Maine,23005,cumberland
+USA.24.52_1,Murray,MN,Minnesota,27101,murray
+USA.47.61_1,Henry,VA,Virginia,51089,henry
+USA.19.40_1,Rapides,LA,Louisiana,22079,rapides
+USA.26.42_1,Henry,MO,Missouri,29083,henry
+USA.11.34_1,Coffee,GA,Georgia,13069,coffee
+USA.44.205_1,San Patricio,TX,Texas,48409,san patricio
+USA.33.20_1,Greene,NY,New York,36039,greene
+USA.11.71_1,Haralson,GA,Georgia,13143,haralson
+USA.15.68_1,Putnam,IN,Indiana,18133,putnam
+USA.36.85_1,Washington,OH,Ohio,39167,washington
+USA.19.43_1,Sabine,LA,Louisiana,22085,sabine
+USA.18.42_1,Graves,KY,Kentucky,21083,graves
+USA.47.81_1,Mecklenburg,VA,Virginia,51117,mecklenburg
+USA.18.4_1,Ballard,KY,Kentucky,21007,ballard
+USA.27.8_1,Chouteau,MT,Montana,30015,chouteau
+USA.1.5_1,Blount,AL,Alabama,01009,blount
+USA.34.100_1,Yancey,NC,North Carolina,37199,yancey
+USA.4.17_1,Crawford,AR,Arkansas,05033,crawford
+USA.44.1_1,Anderson,TX,Texas,48001,anderson
+USA.38.25_1,Morrow,OR,Oregon,41049,morrow
+USA.44.106_1,Hemphill,TX,Texas,48211,hemphill
+USA.23.83_1,Tuscola,MI,Michigan,26157,tuscola
+USA.6.10_1,Cheyenne,CO,Colorado,08017,cheyenne
+USA.4.41_1,Little River,AR,Arkansas,05081,little river
+USA.37.5_1,Beckham,OK,Oklahoma,40009,beckham
+USA.36.50_1,Madison,OH,Ohio,39097,madison
+USA.50.55_1,Richland,WI,Wisconsin,55103,richland
+USA.19.26_1,Jefferson,LA,Louisiana,22051,jefferson
+USA.21.8_1,Charles,MD,Maryland,24017,charles
+USA.10.11_1,Collier,FL,Florida,12021,collier
+USA.1.42_1,Limestone,AL,Alabama,01083,limestone
+USA.26.77_1,Ozark,MO,Missouri,29153,ozark
+USA.25.17_1,Desoto,MS,Mississippi,28033,desoto
+USA.34.80_1,Rowan,NC,North Carolina,37159,rowan
+USA.36.62_1,Noble,OH,Ohio,39121,noble
+USA.4.36_1,Johnson,AR,Arkansas,05071,johnson
+USA.4.57_1,Polk,AR,Arkansas,05113,polk
+USA.25.77_1,Wayne,MS,Mississippi,28153,wayne
+USA.43.69_1,Pickett,TN,Tennessee,47137,pickett
+USA.50.39_1,Marathon,WI,Wisconsin,55073,marathon
+USA.5.23_1,Mendocino,CA,California,06045,mendocino
+USA.26.92_1,Saint Charles,MO,Missouri,29183,saint charles
+USA.19.15_1,Concordia,LA,Louisiana,22029,concordia
+USA.44.12_1,Baylor,TX,Texas,48023,baylor
+USA.6.21_1,El Paso,CO,Colorado,08041,el paso
+USA.48.14_1,Grays Harbor,WA,Washington,53027,grays harbor
+USA.25.31_1,Jasper,MS,Mississippi,28061,jasper
+USA.36.21_1,Delaware,OH,Ohio,39041,delaware
+USA.1.15_1,Cleburne,AL,Alabama,01029,cleburne
+USA.16.16_1,Cedar,IA,Iowa,19031,cedar
+USA.28.81_1,Sheridan,NE,Nebraska,31161,sheridan
+USA.48.21_1,Lewis,WA,Washington,53041,lewis
+USA.24.88_1,Yellow Medicine,MN,Minnesota,27173,yellow medicine
+USA.47.86_1,Newport News,VA,Virginia,51700,newport news
+USA.5.18_1,Lassen,CA,California,06035,lassen
+USA.31.20_1,Union,NJ,New Jersey,34039,union
+USA.42.3_1,Bennett,SD,South Dakota,46007,bennett
+USA.18.113_1,Union,KY,Kentucky,21225,union
+USA.27.41_1,Ravalli,MT,Montana,30081,ravalli
+USA.49.9_1,Doddridge,WV,West Virginia,54017,doddridge
+USA.40.1_1,Bristol,RI,Rhode Island,44001,bristol
+USA.25.75_1,Warren,MS,Mississippi,28149,warren
+USA.5.25_1,Modoc,CA,California,06049,modoc
+USA.49.25_1,Marshall,WV,West Virginia,54051,marshall
+USA.33.40_1,Otsego,NY,New York,36077,otsego
+USA.28.26_1,Dixon,NE,Nebraska,31051,dixon
+USA.34.46_1,Hertford,NC,North Carolina,37091,hertford
+USA.47.17_1,Buchanan,VA,Virginia,51027,buchanan
+USA.21.2_1,Anne Arundel,MD,Maryland,24003,anne arundel
+USA.10.42_1,Martin,FL,Florida,12085,martin
+USA.47.4_1,Alleghany,VA,Virginia,51005,alleghany
+USA.10.5_1,Brevard,FL,Florida,12009,brevard
+USA.24.63_1,Ramsey,MN,Minnesota,27123,ramsey
+USA.43.4_1,Bledsoe,TN,Tennessee,47007,bledsoe
+USA.26.66_1,Miller,MO,Missouri,29131,miller
+USA.37.9_1,Canadian,OK,Oklahoma,40017,canadian
+USA.36.73_1,Sandusky,OH,Ohio,39143,sandusky
+USA.46.6_1,Franklin,VT,Vermont,50011,franklin
+USA.5.48_1,Solano,CA,California,06095,solano
+USA.11.91_1,Long,GA,Georgia,13183,long
+USA.44.189_1,Presidio,TX,Texas,48377,presidio
+USA.36.53_1,Medina,OH,Ohio,39103,medina
+USA.23.84_1,Van Buren,MI,Michigan,26159,van buren
+USA.11.72_1,Harris,GA,Georgia,13145,harris
+USA.32.23_1,Roosevelt,NM,New Mexico,35041,roosevelt
+USA.17.7_1,Brown,KS,Kansas,20013,brown
+USA.15.91_1,Wells,IN,Indiana,18179,wells
+USA.36.27_1,Gallia,OH,Ohio,39053,gallia
+USA.3.11_1,Pima,AZ,Arizona,04019,pima
+USA.17.11_1,Cherokee,KS,Kansas,20021,cherokee
+USA.39.11_1,Cambria,PA,Pennsylvania,42021,cambria
+USA.11.100_1,Miller,GA,Georgia,13201,miller
+USA.50.14_1,Dodge,WI,Wisconsin,55027,dodge
+USA.44.111_1,Hood,TX,Texas,48221,hood
+USA.18.20_1,Carlisle,KY,Kentucky,21039,carlisle
+USA.26.15_1,Camden,MO,Missouri,29029,camden
+USA.16.45_1,Howard,IA,Iowa,19089,howard
+USA.6.56_1,Saguache,CO,Colorado,08109,saguache
+USA.42.61_1,Tripp,SD,South Dakota,46123,tripp
+USA.12.4_1,Kauai,HI,Hawaii,15007,kauai
+USA.11.41_1,Dade,GA,Georgia,13083,dade
+USA.11.124_1,Screven,GA,Georgia,13251,screven
+USA.26.20_1,Cedar,MO,Missouri,29039,cedar
+USA.26.72_1,New Madrid,MO,Missouri,29143,new madrid
+USA.13.2_1,Adams,ID,Idaho,16003,adams
+USA.24.79_1,Traverse,MN,Minnesota,27155,traverse
+USA.34.14_1,Caldwell,NC,North Carolina,37027,caldwell
+USA.15.8_1,Carroll,IN,Indiana,18015,carroll
+USA.5.54_1,Tulare,CA,California,06107,tulare
+USA.47.82_1,Middlesex,VA,Virginia,51119,middlesex
+USA.10.22_1,Gulf,FL,Florida,12045,gulf
+USA.42.8_1,Buffalo,SD,South Dakota,46017,buffalo
+USA.17.1_1,Allen,KS,Kansas,20001,allen
+USA.23.60_1,Midland,MI,Michigan,26111,midland
+USA.25.15_1,Copiah,MS,Mississippi,28029,copiah
+USA.48.9_1,Douglas,WA,Washington,53017,douglas
+USA.25.54_1,Panola,MS,Mississippi,28107,panola
+USA.41.33_1,Marion,SC,South Carolina,45067,marion
+USA.14.77_1,Pope,IL,Illinois,17151,pope
+USA.47.23_1,Charles City,VA,Virginia,51036,charles
+USA.7.1_1,Fairfield,CT,Connecticut,09001,fairfield
+USA.33.17_1,Franklin,NY,New York,36033,franklin
+USA.49.1_1,Barbour,WV,West Virginia,54001,barbour
+USA.29.7_1,Eureka,NV,Nevada,32011,eureka
+USA.11.102_1,Monroe,GA,Georgia,13207,monroe
+USA.46.4_1,Chittenden,VT,Vermont,50007,chittenden
+USA.32.30_1,Taos,NM,New Mexico,35055,taos
+USA.27.45_1,Sanders,MT,Montana,30089,sanders
+USA.11.156_1,Wilcox,GA,Georgia,13315,wilcox
+USA.18.37_1,Franklin,KY,Kentucky,21073,franklin
+USA.1.55_1,Pike,AL,Alabama,01109,pike
+USA.19.31_1,Lincoln,LA,Louisiana,22061,lincoln
+USA.26.98_1,Schuyler,MO,Missouri,29197,schuyler
+USA.9.1_1,District of Columbia,DC,District of Columbia,11001,district of columbia
+USA.36.9_1,Butler,OH,Ohio,39017,butler
+USA.19.51_1,Saint Mary,LA,Louisiana,22101,saint mary
+USA.39.39_1,Lehigh,PA,Pennsylvania,42077,lehigh
+USA.33.12_1,Cortland,NY,New York,36023,cortland
+USA.39.66_1,Wyoming,PA,Pennsylvania,42131,wyoming
+USA.44.232_1,Uvalde,TX,Texas,48463,uvalde
+USA.45.19_1,San Juan,UT,Utah,49037,san juan
+USA.44.160_1,McCulloch,TX,Texas,48307,mcculloch
+USA.36.24_1,Fayette,OH,Ohio,39047,fayette
+USA.51.6_1,Crook,WY,Wyoming,56011,crook
+USA.44.199_1,Rockwall,TX,Texas,48397,rockwall
+USA.34.25_1,Craven,NC,North Carolina,37049,craven
+USA.18.98_1,Pike,KY,Kentucky,21195,pike
+USA.28.78_1,Saunders,NE,Nebraska,31155,saunders
+USA.44.108_1,Hidalgo,TX,Texas,48215,hidalgo
+USA.19.16_1,De Soto,LA,Louisiana,22031,de soto
+USA.33.47_1,Saratoga,NY,New York,36091,saratoga
+USA.11.11_1,Bibb,GA,Georgia,13021,bibb
+USA.11.5_1,Baldwin,GA,Georgia,13009,baldwin
+USA.46.2_1,Bennington,VT,Vermont,50003,bennington
+USA.16.40_1,Hamilton,IA,Iowa,19079,hamilton
+USA.41.17_1,Dillon,SC,South Carolina,45033,dillon
+USA.11.44_1,DeKalb,GA,Georgia,13089,dekalb
+USA.4.75_1,Yell,AR,Arkansas,05149,yell
+USA.1.49_1,Mobile,AL,Alabama,01097,mobile
+USA.41.44_1,Union,SC,South Carolina,45087,union
+USA.38.36_1,Yamhill,OR,Oregon,41071,yamhill
+USA.47.132_1,Wythe,VA,Virginia,51197,wythe
+USA.33.56_1,Tompkins,NY,New York,36109,tompkins
+USA.23.76_1,Roscommon,MI,Michigan,26143,roscommon
+USA.42.2_1,Beadle,SD,South Dakota,46005,beadle
+USA.18.36_1,Floyd,KY,Kentucky,21071,floyd
+USA.44.105_1,Hays,TX,Texas,48209,hays
+USA.39.4_1,Beaver,PA,Pennsylvania,42007,beaver
+USA.17.40_1,Harvey,KS,Kansas,20079,harvey
+USA.34.69_1,Pamlico,NC,North Carolina,37137,pamlico
+USA.50.7_1,Burnett,WI,Wisconsin,55013,burnett
+USA.50.56_1,Rock,WI,Wisconsin,55105,rock
+USA.37.39_1,Latimer,OK,Oklahoma,40077,latimer
+USA.36.69_1,Preble,OH,Ohio,39135,preble
+USA.1.7_1,Butler,AL,Alabama,01013,butler
+USA.49.33_1,Morgan,WV,West Virginia,54065,morgan
+USA.45.17_1,Rich,UT,Utah,49033,rich
+USA.38.28_1,Sherman,OR,Oregon,41055,sherman
+USA.36.5_1,Athens,OH,Ohio,39009,athens
+USA.16.64_1,Marshall,IA,Iowa,19127,marshall
+USA.11.88_1,Lee,GA,Georgia,13177,lee
+USA.33.35_1,Onondaga,NY,New York,36067,onondaga
+USA.25.64_1,Simpson,MS,Mississippi,28127,simpson
+USA.14.96_1,Washington,IL,Illinois,17189,washington
+USA.35.32_1,Nelson,ND,North Dakota,38063,nelson
+USA.2.9_1,Haines,AK,Alaska,02100,haines
+USA.49.6_1,Cabell,WV,West Virginia,54011,cabell
+USA.50.16_1,Douglas,WI,Wisconsin,55031,douglas
+USA.44.6_1,Armstrong,TX,Texas,48011,armstrong
+USA.25.59_1,Prentiss,MS,Mississippi,28117,prentiss
+USA.39.29_1,Fulton,PA,Pennsylvania,42057,fulton
+USA.34.32_1,Durham,NC,North Carolina,37063,durham
+USA.11.138_1,Toombs,GA,Georgia,13279,toombs
+USA.45.29_1,Weber,UT,Utah,49057,weber
+USA.18.24_1,Christian,KY,Kentucky,21047,christian
+USA.34.58_1,Martin,NC,North Carolina,37117,martin
+USA.50.2_1,Ashland,WI,Wisconsin,55003,ashland
+USA.32.5_1,Colfax,NM,New Mexico,35007,colfax
+USA.38.29_1,Tillamook,OR,Oregon,41057,tillamook
+USA.39.26_1,Fayette,PA,Pennsylvania,42051,fayette
+USA.42.25_1,Grant,SD,South Dakota,46051,grant
+USA.18.3_1,Anderson,KY,Kentucky,21005,anderson
+USA.17.42_1,Hodgeman,KS,Kansas,20083,hodgeman
+USA.43.72_1,Rhea,TN,Tennessee,47143,rhea
+USA.43.79_1,Shelby,TN,Tennessee,47157,shelby
+USA.11.6_1,Banks,GA,Georgia,13011,banks
+USA.11.144_1,Union,GA,Georgia,13291,union
+USA.41.23_1,Greenville,SC,South Carolina,45045,greenville
+USA.51.10_1,Johnson,WY,Wyoming,56019,johnson
+USA.10.67_1,Washington,FL,Florida,12133,washington
+USA.47.131_1,Wise,VA,Virginia,51195,wise
+USA.44.74_1,Fannin,TX,Texas,48147,fannin
+USA.4.55_1,Pike,AR,Arkansas,05109,pike
+USA.26.63_1,Marion,MO,Missouri,29127,marion
+USA.47.6_1,Amherst,VA,Virginia,51009,amherst
+USA.43.17_1,Crockett,TN,Tennessee,47033,crockett
+USA.32.11_1,Guadalupe,NM,New Mexico,35019,guadalupe
+USA.19.24_1,Iberville,LA,Louisiana,22047,iberville
+USA.11.87_1,Laurens,GA,Georgia,13175,laurens
+USA.5.43_1,Santa Clara,CA,California,06085,santa clara
+USA.44.41_1,Coke,TX,Texas,48081,coke
+USA.44.168_1,Mitchell,TX,Texas,48335,mitchell
+USA.48.20_1,Klickitat,WA,Washington,53039,klickitat
+USA.2.16_1,Nome,AK,Alaska,02180,nome
+USA.11.136_1,Thomas,GA,Georgia,13275,thomas
+USA.15.42_1,Knox,IN,Indiana,18083,knox
+USA.47.52_1,Goochland,VA,Virginia,51075,goochland
+USA.39.38_1,Lebanon,PA,Pennsylvania,42075,lebanon
+USA.49.30_1,Mingo,WV,West Virginia,54059,mingo
+USA.44.132_1,Kent,TX,Texas,48263,kent
+USA.16.38_1,Grundy,IA,Iowa,19075,grundy
+USA.44.240_1,Webb,TX,Texas,48479,webb
+USA.45.18_1,Salt Lake,UT,Utah,49035,salt lake
+USA.51.22_1,Washakie,WY,Wyoming,56043,washakie
+USA.17.36_1,Greeley,KS,Kansas,20071,greeley
+USA.37.37_1,Kingfisher,OK,Oklahoma,40073,kingfisher
+USA.50.9_1,Chippewa,WI,Wisconsin,55017,chippewa
+USA.4.60_1,Pulaski,AR,Arkansas,05119,pulaski
+USA.35.21_1,Hettinger,ND,North Dakota,38041,hettinger
+USA.5.38_1,San Francisco,CA,California,06075,san francisco
+USA.28.63_1,Nance,NE,Nebraska,31125,nance
+USA.6.15_1,Custer,CO,Colorado,08027,custer
+USA.27.25_1,Lewis and Clark,MT,Montana,30049,lewis and clark
+USA.47.129_1,Williamsburg,VA,Virginia,51830,williamsburg
+USA.5.39_1,San Joaquin,CA,California,06077,san joaquin
+USA.4.53_1,Perry,AR,Arkansas,05105,perry
+USA.13.12_1,Butte,ID,Idaho,16023,butte
+USA.36.42_1,Knox,OH,Ohio,39083,knox
+USA.14.60_1,Marshall,IL,Illinois,17123,marshall
+USA.39.41_1,Lycoming,PA,Pennsylvania,42081,lycoming
+USA.19.3_1,Ascension,LA,Louisiana,22005,ascension
+USA.35.47_1,Stutsman,ND,North Dakota,38093,stutsman
+USA.41.27_1,Jasper,SC,South Carolina,45053,jasper
+USA.48.1_1,Adams,WA,Washington,53001,adams
+USA.42.38_1,Kingsbury,SD,South Dakota,46077,kingsbury
+USA.28.34_1,Gage,NE,Nebraska,31067,gage
+USA.47.103_1,Pulaski,VA,Virginia,51155,pulaski
+USA.50.65_1,Vernon,WI,Wisconsin,55123,vernon
+USA.13.6_1,Bingham,ID,Idaho,16011,bingham
+USA.47.16_1,Brunswick,VA,Virginia,51025,brunswick
+USA.15.75_1,Spencer,IN,Indiana,18147,spencer
+USA.44.191_1,Randall,TX,Texas,48381,randall
+USA.34.96_1,Wayne,NC,North Carolina,37191,wayne
+USA.48.4_1,Chelan,WA,Washington,53007,chelan
+USA.4.56_1,Poinsett,AR,Arkansas,05111,poinsett
+USA.51.18_1,Sublette,WY,Wyoming,56035,sublette
+USA.37.19_1,Creek,OK,Oklahoma,40037,creek
+USA.15.76_1,Starke,IN,Indiana,18149,starke
+USA.13.21_1,Franklin,ID,Idaho,16041,franklin
+USA.1.67_1,Winston,AL,Alabama,01133,winston
+USA.11.12_1,Bleckley,GA,Georgia,13023,bleckley
+USA.15.12_1,Clinton,IN,Indiana,18023,clinton
+USA.26.97_1,Saline,MO,Missouri,29195,saline
+USA.24.85_1,Wilkin,MN,Minnesota,27167,wilkin
+USA.30.7_1,Merrimack,NH,New Hampshire,33013,merrimack
+USA.23.24_1,Emmet,MI,Michigan,26047,emmet
+USA.34.11_1,Buncombe,NC,North Carolina,37021,buncombe
+USA.50.13_1,Dane,WI,Wisconsin,55025,dane
+USA.36.64_1,Paulding,OH,Ohio,39125,paulding
+USA.44.151_1,Loving,TX,Texas,48301,loving
+USA.34.37_1,Gates,NC,North Carolina,37073,gates
+USA.35.19_1,Grant,ND,North Dakota,38037,grant
+USA.44.120_1,Jackson,TX,Texas,48239,jackson
+USA.48.33_1,Stevens,WA,Washington,53065,stevens
+USA.4.61_1,Randolph,AR,Arkansas,05121,randolph
+USA.44.90_1,Gray,TX,Texas,48179,gray
+USA.6.35_1,Lake,CO,Colorado,08065,lake
+USA.25.13_1,Clay,MS,Mississippi,28025,clay
+USA.28.8_1,Boyd,NE,Nebraska,31015,boyd
+USA.28.93_1,York,NE,Nebraska,31185,york
+USA.44.209_1,Shackelford,TX,Texas,48417,shackelford
+USA.18.11_1,Boyle,KY,Kentucky,21021,boyle
+USA.23.74_1,Ottawa,MI,Michigan,26139,ottawa
+USA.44.162_1,McMullen,TX,Texas,48311,mcmullen
+USA.26.61_1,Madison,MO,Missouri,29123,madison
+USA.47.54_1,Greene,VA,Virginia,51079,greene
+USA.43.94_1,Williamson,TN,Tennessee,47187,williamson
+USA.21.13_1,Howard,MD,Maryland,24027,howard
+USA.42.18_1,Day,SD,South Dakota,46037,day
+USA.17.38_1,Hamilton,KS,Kansas,20075,hamilton
+USA.16.5_1,Audubon,IA,Iowa,19009,audubon
+USA.28.85_1,Thayer,NE,Nebraska,31169,thayer
+USA.26.62_1,Maries,MO,Missouri,29125,maries
+USA.28.17_1,Cheyenne,NE,Nebraska,31033,cheyenne
+USA.37.55_1,Oklahoma,OK,Oklahoma,40109,oklahoma
+USA.15.70_1,Ripley,IN,Indiana,18137,ripley
+USA.32.26_1,Sandoval,NM,New Mexico,35043,sandoval
+USA.35.26_1,McIntosh,ND,North Dakota,38051,mcintosh
+USA.44.180_1,Oldham,TX,Texas,48359,oldham
+USA.50.18_1,Eau Claire,WI,Wisconsin,55035,eau claire
+USA.27.52_1,Treasure,MT,Montana,30103,treasure
+USA.25.21_1,Greene,MS,Mississippi,28041,greene
+USA.37.52_1,Noble,OK,Oklahoma,40103,noble
+USA.44.51_1,Cottle,TX,Texas,48101,cottle
+USA.19.63_1,West Feliciana,LA,Louisiana,22125,west feliciana
+USA.33.55_1,Tioga,NY,New York,36107,tioga
+USA.44.185_1,Parmer,TX,Texas,48369,parmer
+USA.37.20_1,Custer,OK,Oklahoma,40039,custer
+USA.6.6_1,Bent,CO,Colorado,08011,bent
+USA.43.86_1,Unicoi,TN,Tennessee,47171,unicoi
+USA.27.56_1,Yellowstone,MT,Montana,30111,yellowstone
+USA.24.22_1,Faribault,MN,Minnesota,27043,faribault
+USA.21.16_1,Prince George's,MD,Maryland,24033,prince georges
+USA.14.15_1,Coles,IL,Illinois,17029,coles
+USA.15.62_1,Parke,IN,Indiana,18121,parke
+USA.13.38_1,Payette,ID,Idaho,16075,payette
+USA.50.27_1,Jackson,WI,Wisconsin,55053,jackson
+USA.5.36_1,San Bernardino,CA,California,06071,san bernardino
+USA.15.60_1,Orange,IN,Indiana,18117,orange
+USA.6.39_1,Logan,CO,Colorado,08075,logan
+USA.27.33_1,Musselshell,MT,Montana,30065,musselshell
+USA.42.20_1,Dewey,SD,South Dakota,46041,dewey
+USA.38.8_1,Curry,OR,Oregon,41015,curry
+USA.40.5_1,Washington,RI,Rhode Island,44009,washington
+USA.44.137_1,Kleberg,TX,Texas,48273,kleberg
+USA.3.5_1,Graham,AZ,Arizona,04009,graham
+USA.28.64_1,Nemaha,NE,Nebraska,31127,nemaha
+USA.1.30_1,Franklin,AL,Alabama,01059,franklin
+USA.5.27_1,Monterey,CA,California,06053,monterey
+USA.10.61_1,Suwannee,FL,Florida,12121,suwannee
+USA.39.65_1,Westmoreland,PA,Pennsylvania,42129,westmoreland
+USA.37.56_1,Okmulgee,OK,Oklahoma,40111,okmulgee
+USA.1.52_1,Morgan,AL,Alabama,01103,morgan
+USA.47.25_1,Charlottesville,VA,Virginia,51540,charlottesville
+USA.47.47_1,Frederick,VA,Virginia,51069,frederick
+USA.17.83_1,Rush,KS,Kansas,20165,rush
+USA.41.14_1,Clarendon,SC,South Carolina,45027,clarendon
+USA.38.35_1,Wheeler,OR,Oregon,41069,wheeler
+USA.18.107_1,Simpson,KY,Kentucky,21213,simpson
+USA.39.15_1,Chester,PA,Pennsylvania,42029,chester
+USA.34.44_1,Haywood,NC,North Carolina,37087,haywood
+USA.14.93_1,Vermilion,IL,Illinois,17183,vermilion
+USA.10.55_1,Saint Johns,FL,Florida,12109,saint johns
+USA.10.57_1,Santa Rosa,FL,Florida,12113,santa rosa
+USA.15.63_1,Perry,IN,Indiana,18123,perry
+USA.25.38_1,Lauderdale,MS,Mississippi,28075,lauderdale
+USA.4.67_1,Sevier,AR,Arkansas,05133,sevier
+USA.51.19_1,Sweetwater,WY,Wyoming,56037,sweetwater
+USA.5.10_1,Fresno,CA,California,06019,fresno
+USA.11.64_1,Gordon,GA,Georgia,13129,gordon
+USA.11.62_1,Glascock,GA,Georgia,13125,glascock
+USA.23.25_1,Genesee,MI,Michigan,26049,genesee
+USA.16.27_1,Decatur,IA,Iowa,19053,decatur
+USA.28.9_1,Brown,NE,Nebraska,31017,brown
+USA.24.56_1,Olmsted,MN,Minnesota,27109,olmsted
+USA.44.93_1,Grimes,TX,Texas,48185,grimes
+USA.35.22_1,Kidder,ND,North Dakota,38043,kidder
+USA.42.22_1,Edmunds,SD,South Dakota,46045,edmunds
+USA.28.3_1,Arthur,NE,Nebraska,31005,arthur
+USA.33.13_1,Delaware,NY,New York,36025,delaware
+USA.19.60_1,Webster,LA,Louisiana,22119,webster
+USA.33.62_1,Wyoming,NY,New York,36121,wyoming
+USA.25.82_1,Yazoo,MS,Mississippi,28163,yazoo
+USA.17.5_1,Barton,KS,Kansas,20009,barton
+USA.17.60_1,Meade,KS,Kansas,20119,meade
+USA.23.71_1,Osceola,MI,Michigan,26133,osceola
+USA.44.139_1,La Salle,TX,Texas,48283,la salle
+USA.24.2_1,Anoka,MN,Minnesota,27003,anoka
+USA.11.94_1,Macon,GA,Georgia,13193,macon
+USA.43.18_1,Cumberland,TN,Tennessee,47035,cumberland
+USA.16.85_1,Story,IA,Iowa,19169,story
+USA.17.18_1,Cowley,KS,Kansas,20035,cowley
+USA.30.1_1,Belknap,NH,New Hampshire,33001,belknap
+USA.26.105_1,Sullivan,MO,Missouri,29211,sullivan
+USA.28.83_1,Sioux,NE,Nebraska,31165,sioux
+USA.1.12_1,Choctaw,AL,Alabama,01023,choctaw
+USA.39.49_1,Northumberland,PA,Pennsylvania,42097,northumberland
+USA.42.55_1,Sanborn,SD,South Dakota,46111,sanborn
+USA.49.22_1,Lincoln,WV,West Virginia,54043,lincoln
+USA.15.85_1,Vigo,IN,Indiana,18167,vigo
+USA.1.59_1,Shelby,AL,Alabama,01117,shelby
+USA.25.48_1,Monroe,MS,Mississippi,28095,monroe
+USA.13.33_1,Madison,ID,Idaho,16065,madison
+USA.35.16_1,Foster,ND,North Dakota,38031,foster
+USA.49.7_1,Calhoun,WV,West Virginia,54013,calhoun
+USA.26.43_1,Hickory,MO,Missouri,29085,hickory
+USA.26.58_1,Linn,MO,Missouri,29115,linn
+USA.11.78_1,Jackson,GA,Georgia,13157,jackson
+USA.21.10_1,Frederick,MD,Maryland,24021,frederick
+USA.23.41_1,Kent,MI,Michigan,26081,kent
+USA.42.7_1,Brule,SD,South Dakota,46015,brule
+USA.26.113_1,Worth,MO,Missouri,29227,worth
+USA.27.34_1,Park,MT,Montana,30067,park
+USA.1.25_1,De Kalb,AL,,,de kalb
+USA.42.19_1,Deuel,SD,South Dakota,46039,deuel
+USA.44.227_1,Travis,TX,Texas,48453,travis
+USA.35.17_1,Golden Valley,ND,North Dakota,38033,golden valley
+USA.18.64_1,Lawrence,KY,Kentucky,21127,lawrence
+USA.42.42_1,Lyman,SD,South Dakota,46085,lyman
+USA.16.95_1,Winnebago,IA,Iowa,19189,winnebago
+USA.44.248_1,Winkler,TX,Texas,48495,winkler
+USA.33.48_1,Schenectady,NY,New York,36093,schenectady
+USA.32.14_1,Lea,NM,New Mexico,35025,lea
+USA.14.24_1,Edwards,IL,Illinois,17047,edwards
+USA.32.15_1,Lincoln,NM,New Mexico,35027,lincoln
+USA.11.129_1,Sumter,GA,Georgia,13261,sumter
+USA.28.84_1,Stanton,NE,Nebraska,31167,stanton
+USA.32.4_1,Cibola,NM,New Mexico,35006,cibola
+USA.43.26_1,Franklin,TN,Tennessee,47051,franklin
+USA.19.10_1,Calcasieu,LA,Louisiana,22019,calcasieu
+USA.17.66_1,Nemaha,KS,Kansas,20131,nemaha
+USA.1.45_1,Madison,AL,Alabama,01089,madison
+USA.6.19_1,Douglas,CO,Colorado,08035,douglas
+USA.44.200_1,Runnels,TX,Texas,48399,runnels
+USA.1.57_1,Russell,AL,Alabama,01113,russell
+USA.39.55_1,Snyder,PA,Pennsylvania,42109,snyder
+USA.17.92_1,Smith,KS,Kansas,20183,smith
+USA.37.8_1,Caddo,OK,Oklahoma,40015,caddo
+USA.2.24_1,Wade Hampton,AK,Alaska,02270,wade hampton
+USA.18.62_1,Larue,KY,Kentucky,21123,larue
+USA.15.10_1,Clark,IN,Indiana,18019,clark
+USA.44.195_1,Reeves,TX,Texas,48389,reeves
+USA.41.31_1,Lee,SC,South Carolina,45061,lee
+USA.50.46_1,Oneida,WI,Wisconsin,55085,oneida
+USA.38.22_1,Linn,OR,Oregon,41043,linn
+USA.47.70_1,Lee,VA,Virginia,51105,lee
+USA.16.14_1,Carroll,IA,Iowa,19027,carroll
+USA.11.18_1,Butts,GA,Georgia,13035,butts
+USA.44.54_1,Crosby,TX,Texas,48107,crosby
+USA.6.12_1,Conejos,CO,Colorado,08021,conejos
+USA.44.10_1,Bandera,TX,Texas,48019,bandera
+USA.23.64_1,Montmorency,MI,Michigan,26119,montmorency
+USA.26.2_1,Andrew,MO,Missouri,29003,andrew
+USA.1.48_1,Marshall,AL,Alabama,01095,marshall
+USA.18.97_1,Perry,KY,Kentucky,21193,perry
+USA.6.51_1,Prowers,CO,Colorado,08099,prowers
+USA.25.36_1,Lafayette,MS,Mississippi,28071,lafayette
+USA.2.12_1,Ketchikan Gateway,AK,Alaska,02130,ketchikan gateway
+USA.19.28_1,La Salle,LA,Louisiana,22059,la salle
+USA.28.23_1,Dawes,NE,Nebraska,31045,dawes
+USA.11.132_1,Tattnall,GA,Georgia,13267,tattnall
+USA.26.114_1,Wright,MO,Missouri,29229,wright
+USA.32.29_1,Socorro,NM,New Mexico,35053,socorro
+USA.45.28_1,Wayne,UT,Utah,49055,wayne
+USA.44.153_1,Lynn,TX,Texas,48305,lynn
+USA.26.82_1,Pike,MO,Missouri,29163,pike
+USA.24.41_1,Le Sueur,MN,Minnesota,27079,le sueur
+USA.19.35_1,Natchitoches,LA,Louisiana,22069,natchitoches
+USA.44.163_1,Medina,TX,Texas,48325,medina
+USA.44.39_1,Clay,TX,Texas,48077,clay
+USA.16.44_1,Henry,IA,Iowa,19087,henry
+USA.1.16_1,Coffee,AL,Alabama,01031,coffee
+USA.44.117_1,Hutchinson,TX,Texas,48233,hutchinson
+USA.27.18_1,Glacier,MT,Montana,30035,glacier
+USA.18.81_1,McLean,KY,Kentucky,21149,mclean
+USA.17.61_1,Miami,KS,Kansas,20121,miami
+USA.16.88_1,Union,IA,Iowa,19175,union
+USA.33.19_1,Genesee,NY,New York,36037,genesee
+USA.37.15_1,Coal,OK,Oklahoma,40029,coal
+USA.17.19_1,Crawford,KS,Kansas,20037,crawford
+USA.17.14_1,Clay,KS,Kansas,20027,clay
+USA.4.58_1,Pope,AR,Arkansas,05115,pope
+USA.34.38_1,Graham,NC,North Carolina,37075,graham
+USA.49.12_1,Grant,WV,West Virginia,54023,grant
+USA.25.40_1,Leake,MS,Mississippi,28079,leake
+USA.37.18_1,Craig,OK,Oklahoma,40035,craig
+USA.45.8_1,Emery,UT,Utah,49015,emery
+USA.43.37_1,Hawkins,TN,Tennessee,47073,hawkins
+USA.24.20_1,Dodge,MN,Minnesota,27039,dodge
+USA.44.183_1,Panola,TX,Texas,48365,panola
+USA.15.86_1,Wabash,IN,Indiana,18169,wabash
+USA.37.69_1,Stephens,OK,Oklahoma,40137,stephens
+USA.16.73_1,Page,IA,Iowa,19145,page
+USA.36.89_1,Wyandot,OH,Ohio,39175,wyandot
+USA.15.7_1,Brown,IN,Indiana,18013,brown
+USA.11.92_1,Lowndes,GA,Georgia,13185,lowndes
+USA.49.47_1,Tucker,WV,West Virginia,54093,tucker
+USA.24.55_1,Norman,MN,Minnesota,27107,norman
+USA.4.20_1,Dallas,AR,Arkansas,05039,dallas
+USA.44.23_1,Briscoe,TX,Texas,48045,briscoe
+USA.42.63_1,Union,SD,South Dakota,46127,union
+USA.11.61_1,Gilmer,GA,Georgia,13123,gilmer
+USA.39.63_1,Washington,PA,Pennsylvania,42125,washington
+USA.44.127_1,Jones,TX,Texas,48253,jones
+USA.42.5_1,Brookings,SD,South Dakota,46011,brookings
+USA.25.55_1,Pearl River,MS,Mississippi,28109,pearl river
+USA.16.97_1,Woodbury,IA,Iowa,19193,woodbury
+USA.49.10_1,Fayette,WV,West Virginia,54019,fayette
+USA.16.83_1,Shelby,IA,Iowa,19165,shelby
+USA.44.63_1,Dickens,TX,Texas,48125,dickens
+USA.43.91_1,Wayne,TN,Tennessee,47181,wayne
+USA.47.40_1,Fairfax,VA,Virginia,51059,fairfax
+USA.47.40_1,Fairfax,VA,Virginia,51600,fairfax
+USA.1.33_1,Hale,AL,Alabama,01065,hale
+USA.24.82_1,Waseca,MN,Minnesota,27161,waseca
+USA.10.3_1,Bay,FL,Florida,12005,bay
+USA.43.81_1,Stewart,TN,Tennessee,47161,stewart
+USA.35.12_1,Divide,ND,North Dakota,38023,divide
+USA.18.78_1,Mason,KY,Kentucky,21161,mason
+USA.44.155_1,Marion,TX,Texas,48315,marion
+USA.50.4_1,Bayfield,WI,Wisconsin,55007,bayfield
+USA.1.24_1,Dallas,AL,Alabama,01047,dallas
+USA.2.1_1,Aleutians East,AK,Alaska,02013,aleutians east
+USA.49.11_1,Gilmer,WV,West Virginia,54021,gilmer
+USA.24.64_1,Red Lake,MN,Minnesota,27125,red lake
+USA.16.77_1,Polk,IA,Iowa,19153,polk
+USA.26.107_1,Texas,MO,Missouri,29215,texas
+USA.17.101_1,Washington,KS,Kansas,20201,washington
+USA.49.4_1,Braxton,WV,West Virginia,54007,braxton
+USA.16.58_1,Louisa,IA,Iowa,19115,louisa
+USA.47.100_1,Prince Edward,VA,Virginia,51147,prince edward
+USA.44.18_1,Bosque,TX,Texas,48035,bosque
+USA.26.81_1,Phelps,MO,Missouri,29161,phelps
+USA.36.22_1,Erie,OH,Ohio,39043,erie
+USA.20.16_1,York,ME,Maine,23031,york
+USA.19.20_1,Evangeline,LA,Louisiana,22039,evangeline
+USA.17.100_1,Wallace,KS,Kansas,20199,wallace
+USA.16.61_1,Madison,IA,Iowa,19121,madison
+USA.40.3_1,Newport,RI,Rhode Island,44005,newport
+USA.1.10_1,Cherokee,AL,Alabama,01019,cherokee
+USA.48.19_1,Kittitas,WA,Washington,53037,kittitas
+USA.44.33_1,Carson,TX,Texas,48065,carson
+USA.1.21_1,Crenshaw,AL,Alabama,01041,crenshaw
+USA.28.52_1,Keya Paha,NE,Nebraska,31103,keya paha
+USA.6.62_1,Washington,CO,Colorado,08121,washington
+USA.35.29_1,Mercer,ND,North Dakota,38057,mercer
+USA.41.10_1,Charleston,SC,South Carolina,45019,charleston
+USA.3.2_1,Cochise,AZ,Arizona,04003,cochise
+USA.21.4_1,Calvert,MD,Maryland,24009,calvert
+USA.22.13_1,Suffolk,MA,Massachusetts,25025,suffolk
+USA.26.76_1,Osage,MO,Missouri,29151,osage
+USA.29.12_1,Mineral,NV,Nevada,32021,mineral
+USA.16.78_1,Pottawattamie,IA,Iowa,19155,pottawattamie
+USA.28.15_1,Chase,NE,Nebraska,31029,chase
+USA.21.14_1,Kent,MD,Maryland,24029,kent
+USA.41.7_1,Beaufort,SC,South Carolina,45013,beaufort
+USA.33.21_1,Hamilton,NY,New York,36041,hamilton
+USA.16.46_1,Humboldt,IA,Iowa,19091,humboldt
+USA.44.4_1,Aransas,TX,Texas,48007,aransas
+USA.50.42_1,Menominee,WI,Wisconsin,55078,menominee
+USA.17.21_1,Dickinson,KS,Kansas,20041,dickinson
+USA.10.33_1,Lafayette,FL,Florida,12067,lafayette
+USA.36.26_1,Fulton,OH,Ohio,39051,fulton
+USA.15.93_1,Whitley,IN,Indiana,18183,whitley
+USA.42.64_1,Walworth,SD,South Dakota,46129,walworth
+USA.18.115_1,Washington,KY,Kentucky,21229,washington
+USA.23.54_1,Macomb,MI,Michigan,26099,macomb
+USA.23.80_1,Sanilac,MI,Michigan,26151,sanilac
+USA.13.40_1,Shoshone,ID,Idaho,16079,shoshone
+USA.28.72_1,Polk,NE,Nebraska,31143,polk
+USA.36.28_1,Geauga,OH,Ohio,39055,geauga
+USA.16.67_1,Monona,IA,Iowa,19133,monona
+USA.43.80_1,Smith,TN,Tennessee,47159,smith
+USA.13.30_1,Lemhi,ID,Idaho,16059,lemhi
+USA.31.21_1,Warren,NJ,New Jersey,34041,warren
+USA.27.32_1,Missoula,MT,Montana,30063,missoula
+USA.18.54_1,Hopkins,KY,Kentucky,21107,hopkins
+USA.39.59_1,Tioga,PA,Pennsylvania,42117,tioga
+USA.25.80_1,Winston,MS,Mississippi,28159,winston
+USA.11.4_1,Baker,GA,Georgia,13007,baker
+USA.28.82_1,Sherman,NE,Nebraska,31163,sherman
+USA.25.22_1,Grenada,MS,Mississippi,28043,grenada
+USA.37.75_1,Washita,OK,Oklahoma,40149,washita
+USA.49.35_1,Ohio,WV,West Virginia,54069,ohio
+USA.17.26_1,Ellis,KS,Kansas,20051,ellis
+USA.43.65_1,Morgan,TN,Tennessee,47129,morgan
+USA.50.12_1,Crawford,WI,Wisconsin,55023,crawford
+USA.32.24_1,San Juan,NM,New Mexico,35045,san juan
+USA.17.8_1,Butler,KS,Kansas,20015,butler
+USA.5.34_1,Sacramento,CA,California,06067,sacramento
+USA.16.87_1,Taylor,IA,Iowa,19173,taylor
+USA.42.58_1,Stanley,SD,South Dakota,46117,stanley
+USA.11.1_1,Appling,GA,Georgia,13001,appling
+USA.15.49_1,Madison,IN,Indiana,18095,madison
+USA.44.157_1,Mason,TX,Texas,48319,mason
+USA.23.1_1,Alcona,MI,Michigan,26001,alcona
+USA.28.43_1,Hayes,NE,Nebraska,31085,hayes
+USA.6.16_1,Delta,CO,Colorado,08029,delta
+USA.16.3_1,Allamakee,IA,Iowa,19005,allamakee
+USA.18.22_1,Carter,KY,Kentucky,21043,carter
+USA.34.52_1,Jones,NC,North Carolina,37103,jones
+USA.24.31_1,Itasca,MN,Minnesota,27061,itasca
+USA.49.49_1,Upshur,WV,West Virginia,54097,upshur
+USA.44.29_1,Calhoun,TX,Texas,48057,calhoun
+USA.14.67_1,Mercer,IL,Illinois,17131,mercer
+USA.11.131_1,Taliaferro,GA,Georgia,13265,taliaferro
+USA.15.55_1,Montgomery,IN,Indiana,18107,montgomery
+USA.47.24_1,Charlotte,VA,Virginia,51037,charlotte
+USA.50.30_1,Kenosha,WI,Wisconsin,55059,kenosha
+USA.45.15_1,Morgan,UT,Utah,49029,morgan
+USA.37.11_1,Cherokee,OK,Oklahoma,40021,cherokee
+USA.44.152_1,Lubbock,TX,Texas,48303,lubbock
+USA.33.26_1,Lewis,NY,New York,36049,lewis
+USA.37.64_1,Pushmataha,OK,Oklahoma,40127,pushmataha
+USA.44.38_1,Childress,TX,Texas,48075,childress
+USA.36.44_1,Lake Erie,OH,,,lake erie
+USA.44.166_1,Milam,TX,Texas,48331,milam
+USA.25.12_1,Clarke,MS,Mississippi,28023,clarke
+USA.41.42_1,Spartanburg,SC,South Carolina,45083,spartanburg
+USA.11.69_1,Hall,GA,Georgia,13139,hall
+USA.13.15_1,Caribou,ID,Idaho,16029,caribou
+USA.28.80_1,Seward,NE,Nebraska,31159,seward
+USA.47.78_1,Manassas Park,VA,Virginia,51685,manassas park
+USA.28.42_1,Harlan,NE,Nebraska,31083,harlan
+USA.39.3_1,Armstrong,PA,Pennsylvania,42005,armstrong
+USA.47.28_1,Clarke,VA,Virginia,51043,clarke
+USA.35.6_1,Bowman,ND,North Dakota,38011,bowman
+USA.41.38_1,Orangeburg,SC,South Carolina,45075,orangeburg
+USA.11.7_1,Barrow,GA,Georgia,13013,barrow
+USA.41.11_1,Cherokee,SC,South Carolina,45021,cherokee
+USA.34.89_1,Tyrrell,NC,North Carolina,37177,tyrrell
+USA.44.17_1,Borden,TX,Texas,48033,borden
+USA.23.33_1,Ingham,MI,Michigan,26065,ingham
+USA.16.66_1,Mitchell,IA,Iowa,19131,mitchell
+USA.22.1_1,Barnstable,MA,Massachusetts,25001,barnstable
+USA.16.69_1,Montgomery,IA,Iowa,19137,montgomery
+USA.6.1_1,Adams,CO,Colorado,08001,adams
+USA.18.41_1,Grant,KY,Kentucky,21081,grant
+USA.44.213_1,Somervell,TX,Texas,48425,somervell
+USA.41.37_1,Oconee,SC,South Carolina,45073,oconee
+USA.35.51_1,Ward,ND,North Dakota,38101,ward
+USA.47.74_1,Lunenburg,VA,Virginia,51111,lunenburg
+USA.19.1_1,Acadia,LA,Louisiana,22001,acadia
+USA.14.53_1,Lee,IL,Illinois,17103,lee
+USA.34.61_1,Mitchell,NC,North Carolina,37121,mitchell
+USA.43.73_1,Roane,TN,Tennessee,47145,roane
+USA.37.34_1,Jefferson,OK,Oklahoma,40067,jefferson
+USA.16.62_1,Mahaska,IA,Iowa,19123,mahaska
+USA.26.110_1,Washington,MO,Missouri,29221,washington
+USA.51.11_1,Laramie,WY,Wyoming,56021,laramie
+USA.5.52_1,Tehama,CA,California,06103,tehama
+USA.10.54_1,Putnam,FL,Florida,12107,putnam
+USA.24.60_1,Pipestone,MN,Minnesota,27117,pipestone
+USA.44.79_1,Fort Bend,TX,Texas,48157,fort bend
+USA.39.37_1,Lawrence,PA,Pennsylvania,42073,lawrence
+USA.44.36_1,Chambers,TX,Texas,48071,chambers
+USA.18.32_1,Elliott,KY,Kentucky,21063,elliott
+USA.43.78_1,Sevier,TN,Tennessee,47155,sevier
+USA.25.18_1,Forrest,MS,Mississippi,28035,forrest
+USA.23.4_1,Alpena,MI,Michigan,26007,alpena
+USA.6.38_1,Lincoln,CO,Colorado,08073,lincoln
+USA.17.80_1,Rice,KS,Kansas,20159,rice
+USA.21.6_1,Carroll,MD,Maryland,24013,carroll
+USA.16.22_1,Clayton,IA,Iowa,19043,clayton
+USA.47.37_1,Dinwiddie,VA,Virginia,51053,dinwiddie
+USA.44.129_1,Kaufman,TX,Texas,48257,kaufman
+USA.28.62_1,Morrill,NE,Nebraska,31123,morrill
+USA.47.101_1,Prince George,VA,Virginia,51149,prince george
+USA.27.20_1,Granite,MT,Montana,30039,granite
+USA.28.58_1,Loup,NE,Nebraska,31115,loup
+USA.4.34_1,Jackson,AR,Arkansas,05067,jackson
+USA.17.51_1,Lane,KS,Kansas,20101,lane
+USA.37.2_1,Alfalfa,OK,Oklahoma,40003,alfalfa
+USA.43.1_1,Anderson,TN,Tennessee,47001,anderson
+USA.47.95_1,Petersburg,VA,Virginia,51730,petersburg
+USA.19.34_1,Morehouse,LA,Louisiana,22067,morehouse
+USA.1.1_1,Autauga,AL,Alabama,01001,autauga
+USA.24.57_1,Otter Tail,MN,Minnesota,27111,otter tail
+USA.26.84_1,Polk,MO,Missouri,29167,polk
+USA.44.128_1,Karnes,TX,Texas,48255,karnes
+USA.23.8_1,Barry,MI,Michigan,26015,barry
+USA.1.28_1,Etowah,AL,Alabama,01055,etowah
+USA.18.43_1,Grayson,KY,Kentucky,21085,grayson
+USA.44.62_1,Dewitt,TX,Texas,48123,dewitt
+USA.19.42_1,Richland,LA,Louisiana,22083,richland
+USA.11.66_1,Greene,GA,Georgia,13133,greene
+USA.36.25_1,Franklin,OH,Ohio,39049,franklin
+USA.44.220_1,Tarrant,TX,Texas,48439,tarrant
+USA.29.11_1,Lyon,NV,Nevada,32019,lyon
+USA.38.31_1,Union,OR,Oregon,41061,union
+USA.43.48_1,Lake,TN,Tennessee,47095,lake
+USA.43.76_1,Scott,TN,Tennessee,47151,scott
+USA.38.12_1,Grant,OR,Oregon,41023,grant
+USA.47.64_1,Isle of Wight,VA,Virginia,51093,isle of wight
+USA.14.17_1,Crawford,IL,Illinois,17033,crawford
+USA.38.24_1,Marion,OR,Oregon,41047,marion
+USA.18.16_1,Butler,KY,Kentucky,21031,butler
+USA.10.51_1,Pasco,FL,Florida,12101,pasco
+USA.50.33_1,Lafayette,WI,Wisconsin,55065,lafayette
+USA.36.19_1,Darke,OH,Ohio,39037,darke
+USA.18.90_1,Nelson,KY,Kentucky,21179,nelson
+USA.37.24_1,Garfield,OK,Oklahoma,40047,garfield
+USA.24.45_1,Marshall,MN,Minnesota,27089,marshall
+USA.36.59_1,Morgan,OH,Ohio,39115,morgan
+USA.10.63_1,Union,FL,Florida,12125,union
+USA.50.50_1,Pierce,WI,Wisconsin,55093,pierce
+USA.18.71_1,Logan,KY,Kentucky,21141,logan
+USA.18.12_1,Bracken,KY,Kentucky,21023,bracken
+USA.47.45_1,Fluvanna,VA,Virginia,51065,fluvanna
+USA.13.23_1,Gem,ID,Idaho,16045,gem
+USA.48.23_1,Mason,WA,Washington,53045,mason
+USA.18.18_1,Calloway,KY,Kentucky,21035,calloway
+USA.44.145_1,Leon,TX,Texas,48289,leon
+USA.44.252_1,Young,TX,Texas,48503,young
+USA.37.66_1,Rogers,OK,Oklahoma,40131,rogers
+USA.37.77_1,Woodward,OK,Oklahoma,40153,woodward
+USA.21.17_1,Queen Anne's,MD,Maryland,24035,queen annes
+USA.50.48_1,Ozaukee,WI,Wisconsin,55089,ozaukee
+USA.39.8_1,Bradford,PA,Pennsylvania,42015,bradford
+USA.34.56_1,Macon,NC,North Carolina,37113,macon
+USA.11.50_1,Echols,GA,Georgia,13101,echols
+USA.11.74_1,Heard,GA,Georgia,13149,heard
+USA.43.31_1,Grundy,TN,Tennessee,47061,grundy
