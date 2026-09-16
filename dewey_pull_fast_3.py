@@ -32,43 +32,33 @@ Usage:
     python dewey_pull_fast_3.py
 
 Requires: deweypy, duckdb (readability check), and curl (>=7.66) on PATH.
+
+Configuration (dataset IDs, output path, date range, retry knobs, and the
+API key) lives in config.py. Set the DEWEY_API_KEY environment variable
+before running -- see config.py for details.
 """
 
 import os
 import sys
 import time
 import subprocess
-from datetime import date, timedelta
+from datetime import timedelta
 
 from deweypy.auth import set_api_key
 from deweypy.download.synchronous import get_dataset_files
 
-# --------------------------------------------------------------------------
-# CONFIG -- fill these in (same as you're swapping the API key)
-# --------------------------------------------------------------------------
-API_KEY = "akv1_WtpWYlvVvUFARlTxwRPpaVFq2DSgIeImQSr"
-
-# The datasets. Each is a different Dewey dataset/folder, so each gets its
-# own ID.
-DATASETS = {
-    "work_visits":  "prj_xo9czjhu__fldr_gfv4qahxiwsd4dwy",
-    "other_visits": "prj_xo9czjhu__fldr_8zme9bwbekydvezq",
-    "home_visits":  "prj_xo9czjhu__fldr_d7cqgtcj3nyi4usp",
-}
-
-# Where everything lands. Point this at a real, non-synced local drive.
-OUT_ROOT = r"E:\dewey-apr2025"   # use the actual letter DATA mounted as
-
-# Inclusive date range: Apr 11-14 2025.
-START_DATE = date(2025, 4, 11)
-END_DATE   = date(2025, 4, 14)
-
-# Retry / validation knobs.
-MIN_BYTES        = 1024   # anything smaller is treated as a failed download
-MAX_SIZE_PASSES  = 12     # passes for the size-based download loop
-MAX_READ_PASSES  = 6      # extra passes to re-fetch corrupt-but-present files
-CURL_TIMEOUT     = 300    # per-file curl max time (seconds)
-NUM_WORKERS      = 8      # parallel transfers within one curl process
+from config import (
+    API_KEY,
+    DATASETS,
+    OUT_ROOT,
+    START_DATE,
+    END_DATE,
+    MIN_BYTES,
+    MAX_SIZE_PASSES,
+    MAX_READ_PASSES,
+    CURL_TIMEOUT,
+    NUM_WORKERS,
+)
 
 # --------------------------------------------------------------------------
 
@@ -287,11 +277,11 @@ def download_day(name, data_id, day, con):
 
 
 def main():
-    # Guard against running with the placeholder key still in place.
-    if API_KEY in ("", "filler") or "PUT_" in API_KEY:
+    # Guard against running without a real API key configured.
+    if not API_KEY or API_KEY == "filler" or "PUT_" in API_KEY:
         sys.exit(
-            "Refusing to run: set a real API_KEY at the top of this script "
-            "(still set to the 'filler' placeholder)."
+            "Refusing to run: set the DEWEY_API_KEY environment variable "
+            "to a real API key (see config.py)."
         )
     if any("PUT_" in v for v in DATASETS.values()):
         sys.exit("Refusing to run: fill in all dataset IDs first.")
