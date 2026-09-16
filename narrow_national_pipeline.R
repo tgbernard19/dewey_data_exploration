@@ -44,17 +44,18 @@ suppressPackageStartupMessages({
   library(glue)
 })
 
-# ---- config ----------------------------------------------------------------
-DATA_DIR <- "E:/dewey-june2025"
-OUT_DIR  <- file.path(DATA_DIR, "narrow10")
-CACHE    <- file.path(OUT_DIR, "cache")
+# ---- config -----------------------------------------------------------------
+source("config.R")
+
+OUT_DIR <- file.path(DATA_DIR, "narrow10")
+CACHE   <- file.path(OUT_DIR, "cache")
 
 dir.create(OUT_DIR, showWarnings = FALSE, recursive = TRUE)
 dir.create(CACHE,   showWarnings = FALSE, recursive = TRUE)
 
-home_dir  <- file.path(DATA_DIR, "home_visits")
-work_dir  <- file.path(DATA_DIR, "work_visits")
-other_dir <- file.path(DATA_DIR, "other_visits")
+home_dir  <- HOME_VISITS_DIR
+work_dir  <- WORK_VISITS_DIR
+other_dir <- OTHER_VISITS_DIR
 
 home_glob <- file.path(home_dir, "*", "*.parquet")
 
@@ -63,9 +64,8 @@ flow_parts <- file.path(CACHE, "flow_parts")
 dir.create(dest_parts, showWarnings = FALSE)
 dir.create(flow_parts, showWarnings = FALSE)
 
-home_lookup   <- file.path(DATA_DIR, "home_lookup.parquet")
-BENCHMARK_CSV <- "E:/meta_movement_dist/benchmark_counties_gid2.csv"
-CENTROID_CSV  <- file.path(DATA_DIR, "county_centroids.csv")
+home_lookup   <- HOME_LOOKUP_PQ
+# BENCHMARK_CSV and CENTROID_CSV come from config.R
 
 # --- origin selection -------------------------------------------------------
 N_RUCC1  <- 3     # counties drawn from rucc == 1

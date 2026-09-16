@@ -65,18 +65,16 @@ suppressPackageStartupMessages({
   library(DBI); library(duckdb); library(dplyr); library(readr); library(stringr)
 })
 
-# ---- paths (edit for this machine) ----------------------------------------
-KERNEL_DIR  <- "E:/dewey-june2025/kernel"
-DEVDAY_GLOB <- file.path(KERNEL_DIR, "devday_parts_v2", "*.parquet")
-HOMERES_PQ  <- file.path(KERNEL_DIR, "trackB", "device_home_resolution.parquet")
-OUT_PAIRS   <- file.path(KERNEL_DIR, "trackB", "veraset_observed_pairs.csv")
-OUT_PANEL   <- file.path(KERNEL_DIR, "trackB", "veraset_observed_panel.csv")
+# ---- paths / shared constants (see config.R; edit there for this machine) --
+source("config.R")
 
-TMP_DIR   <- "E:/duckdb-tmp"
-N_THREADS <- 32
-MEM_LIMIT <- "400GB"
+OUT_PAIRS <- file.path(TRACKB_DIR, "veraset_observed_pairs.csv")
+OUT_PANEL <- file.path(TRACKB_DIR, "veraset_observed_panel.csv")
 
-D_MAX <- 500   # km. must match D_MAX in absolute_flows_compare.R
+TMP_DIR <- DUCKDB_TMP_DIR
+
+# D_MAX. km. must match D_MAX in absolute_flows_compare.R -- both come from
+# config.R so they cannot drift apart.
 
 # Minutes credited to a single-ping visit. minimum_dwell is last-ping minus
 # first-ping, so a zero is a visit of unknown duration, not zero duration --

@@ -84,16 +84,16 @@ stopifnot(isTRUE(all.equal(pi, 3.141592653589793)))
 # 1. CONFIGURATION
 # ===========================================================================
 
-# ---- paths (edit for this machine) ----------------------------------------
-TRACKB_DIR <- "E:/dewey-june2025/kernel/trackB"
-META_DIR <- "E:/meta_movement_dist"
-CACHE_DIR <- "E:/dewey-june2025/kernel/flow_cache"
+source("config.R")
+
+# ---- paths (see config.R for the shared bases; edit there for this machine)
+CACHE_DIR <- file.path(KERNEL_DIR, "flow_cache")
 OUT_DIR <- file.path(CACHE_DIR, "county_flows")
 
 VERASET_PARAMS <- file.path(TRACKB_DIR, "veraset_lognormal_params.csv")
-META_PARAMS <- file.path("E:/meta_lognormal_kernel-fit.csv")
-XWALK <- file.path(META_DIR, "county_gid2_crosswalk.csv")
-CENTROIDS <- "E:/dewey-june2025/county_centroids.csv" # fips, lat, lon, cen_pop
+META_PARAMS <- META_LOGNORMAL_FIT
+XWALK <- XWALK_FILE
+CENTROIDS <- CENTROID_CSV
 GEODATA_CACHE <- file.path(CACHE_DIR, "geodata")
 
 dir.create(OUT_DIR, showWarnings = FALSE, recursive = TRUE)
@@ -101,8 +101,9 @@ dir.create(GEODATA_CACHE, showWarnings = FALSE, recursive = TRUE)
 
 # ---- modelling window ------------------------------------------------------
 D_MIN <- 0 # km. Home is inside the kernel, so no distance floor
-D_MAX <- 500 # km. domain radius and kernel support, kept identical so the
-# spatial cut and the probabilistic cut are the same cut
+# D_MAX comes from config.R -- domain radius and kernel support, kept
+# identical to build_veraset_observed.R so the spatial cut and the
+# probabilistic cut are the same cut
 
 # ---- grid ------------------------------------------------------------------
 GRID_KM <- 5 # matches the geohash-5 resolution floor; the slice width is

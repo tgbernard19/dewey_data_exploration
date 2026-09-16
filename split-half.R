@@ -46,14 +46,13 @@ library(duckdb)
 
 ### CONSTANTS ###
 
-DEVDAY_DIR <- "E:/dewey-june2025/kernel/devday_parts_v2"
-HOMERES <- "E:/dewey-june2025/kernel/trackB/device_home_resolution.parquet"
-PROFILE_FILE <- "E:/dewey-june2025/kernel/trackB/county_profile_cbghome_national_all_dwell_tau60.csv"
-OUT_FILE <- "E:/dewey-june2025/kernel/trackB/county_profile_cbghome_splithalf_tau60.csv"
+source("config.R")
+
+HOMERES <- HOMERES_PQ
+OUT_FILE <- file.path(TRACKB_DIR, "county_profile_cbghome_splithalf_tau60.csv")
 
 TAU <- 60 # minutes credited to a single-ping visit
-N_THREADS <- 32
-MEM_LIMIT <- "400GB"
+# N_THREADS / MEM_LIMIT come from config.R
 
 # One salt per replicate split. hash(did || salt) is deterministic, so reruns
 # reproduce the same splits without needing a seed. Start with two to check
