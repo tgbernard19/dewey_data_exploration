@@ -98,7 +98,9 @@ FITS_FILE    <- file.path(OUT_DIR, sprintf("veraset_band_fits_%s.csv", SCOPE))
 
 # Optional: fips, rucc. The 40-county benchmark file has it; a national RUCC
 # file is better if one is to hand. Phase 3 degrades gracefully without it.
-RUCC_FILE <- file.path("C:/Users/PETAL_WS_2/Downloads/Ruralurbancontinuumcodes2023.csv")
+# Same file, same path, as RUCC_FILE in kernel_gen-PPC-check.R -- keep them in
+# sync if this ever moves.
+RUCC_FILE <- "E:/rural_continuum/Ruralurbancontinuumcodes2023.csv"
 
 say <- function(...) cat("[", format(Sys.time(), "%H:%M:%S"), "] ", ..., "\n",
                          sep = "")

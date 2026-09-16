@@ -46,7 +46,7 @@ from deweypy.download.synchronous import get_dataset_files
 # --------------------------------------------------------------------------
 # CONFIG -- fill these in (same as you're swapping the API key)
 # --------------------------------------------------------------------------
-API_KEY = "STICK YOURS IN HERE :)"
+API_KEY = "PUT_YOUR_API_KEY_HERE"
 
 # The datasets. Each is a different Dewey dataset/folder, so each gets its
 # own ID.
