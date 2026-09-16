@@ -1,0 +1,857 @@
+---
+title: "kernel-exercises"
+output: html_document
+date: "2026-09-07"
+---
+
+```{r setup, include=FALSE}
+### =====================================================================
+### Cross-validation for kernel families
+###
+### A worked exercise. Each section opens with the context you need, then
+### asks you to write the code. Sections build on each other, so run the
+### checkpoints as you go rather than saving them all for the end.
+###
+### By the end you will have three different cross-validation mechanisms,
+### answering three different questions:
+###
+### §3 held-out devices does the fit survive new devices from the
+### same county?
+### §4 held-out band does the fit survive being asked about a
+### distance range it never saw?
+### §5 held-out county does the Meta-to-Veraset transfer survive
+### being asked about a county it never saw?
+###
+### These are not interchangeable, and a family can pass one and fail
+### another. Keeping them separate is most of the point.
+### =====================================================================
+
+library(tidyverse)
+
+### ---------------------------------------------------------------------
+### §0. SETUP - provided, nothing to fill in
+### ---------------------------------------------------------------------
+
+TRUNC_KM <- 500
+MIN_TRUST <- 10000 # applied to the HALF, not the county - see §3
+
+DIR <- "E:/dewey-june2025/kernel/trackB"
+SPLITHALF <- file.path(DIR, "county_profile_cbghome_splithalf_tau60.csv")
+FULL_PROFILE <- file.path(DIR, "county_profile_cbghome_national_all_tau60.csv")
+FITS_FOLDED <- file.path(DIR, "kernel_family_fits_long_folded.csv")
+
+# The three families, in the same structure the fitting script uses. Each
+# carries its parameter count, a starting point, the map from optimiser
+# scale to natural scale, and its survival and density functions.
+families <- list(
+lognormal = list(
+npar = 2,
+par0 = c(-3, log(4)),
+unpack = function(par) list(mu = par[1], sigma = exp(par[2])),
+surv = function(d, th) 1 - pnorm((log(d) - th$mu) / th$sigma),
+dens = function(d, th) dlnorm(d, th$mu, th$sigma)
+),
+exp2 = list(
+npar = 3,
+par0 = c(1, -1, -2),
+unpack = function(par) {
+a1 <- exp(par[2])
+list(p = plogis(par[1]), a1 = a1, a2 = a1 * plogis(par[3]))
+},
+surv = function(d, th) th$p * exp(-th$a1 * d) + (1 - th$p) * exp(-th$a2 * d),
+dens = function(d, th) th$p * th$a1 * exp(-th$a1 * d) +
+(1 - th$p) * th$a2 * exp(-th$a2 * d)
+),
+exp3 = list(
+npar = 5,
+par0 = c(0, 0, 0, -1, -1),
+unpack = function(par) {
+e <- exp(c(0, par[1], par[2]))
+wt <- e / sum(e)
+a3 <- exp(par[3])
+a2 <- a3 * plogis(par[4])
+list(w1 = wt[1], w2 = wt[2], w3 = wt[3],
+a1 = a2 * plogis(par[5]), a2 = a2, a3 = a3)
+},
+surv = function(d, th) th$w1 * exp(-th$a1 * d) + th$w2 * exp(-th$a2 * d) +
+th$w3 * exp(-th$a3 * d),
+dens = function(d, th) th$w1 * th$a1 * exp(-th$a1 * d) +
+th$w2 * th$a2 * exp(-th$a2 * d) +
+th$w3 * th$a3 * exp(-th$a3 * d)
+)
+)
+
+sh <- read_csv(SPLITHALF, show_col_types = FALSE) |>
+mutate(home_county = str_pad(as.character(home_county), 5, pad = "0"))
+
+message("split-half file: ", nrow(sh), " rows, ",
+n_distinct(sh$salt), " salts, ",
+n_distinct(sh$home_county), " counties")
+
+
+### ---------------------------------------------------------------------
+### §1. WHY IN-SAMPLE FIT CANNOT ARBITRATE
+###
+### Your three families have 2, 3 and 5 parameters and are fitted to 9
+### bands, of which 8 are free (the shares sum to 1). So exp3 has 5
+### parameters chasing 8 numbers, and lognormal has 2.
+###
+### More parameters always fit better in sample. That is arithmetic, not
+### evidence. Your existing TVs say exactly this: exp3 at 1.7%, lognormal
+### at 4.2%, and exp3 "wins".
+###
+### The usual instinct is an information criterion. AIC penalises by 2k,
+### which is 4, 6 and 10 here. But your effective sample size is around
+### 900,000 devices. Log-likelihood differences at that scale run into the
+### thousands, so a penalty of 4 versus 10 is numerically invisible: AIC
+### would select exp3 with great confidence.
+###
+### That is why you are doing cross-validation instead. Holding data out
+### and predicting it makes the extra parameters pay their own way -
+### a spare parameter that absorbs noise helps in sample and hurts out of
+### sample, and CV is what makes that visible.
+###
+
+### EXERCISE 1. Convince yourself of the degrees-of-freedom problem before
+### writing any modelling code.
+###
+### a) Build a small tibble with one row per family: name, npar, and
+### the number of free bands (8). Add a column for residual degrees
+### of freedom.
+### b) Read kernel_family_fits_long_folded.csv, take the best start per
+### county x source x family (filter convergence == 0, then
+### slice_min on nll_value), and compute median tv_all per family on
+### the Veraset rows with n_devices >= MIN_TRUST.
+### c) Join the two. You should see TV falling monotonically as npar
+### rises. Write one sentence in a comment saying why that ordering
+### is not evidence for exp3.
+### ---------------------------------------------------------------------
+
+# YOUR CODE HERE
+
+kern <- read_csv("E:/dewey-june2025/kernel/trackB/kernel_family_fits_long_folded.csv")
+kern
+
+kern %>%
+  filter(convergence == 0) %>%
+  group_by(fips, source, family) %>%
+  slice_min(nll_value) %>%
+  ungroup() %>%
+  group_by(family) %>%
+  summarise(median_tv_all = median(tv_all))
+
+
+kern
+?slice_min
+```
+
+
+```{r setup, include=FALSE}
+### ---------------------------------------------------------------------
+### §2. THE MACHINERY
+###
+### Everything below needs three pieces, and it is worth writing them
+### yourself once rather than importing them, because the truncation
+### convention is where these go wrong silently.
+###
+### predict_bands(fam, th, bands)
+### Band probabilities under a family. A survival function gives
+### P(D > d), so the probability of landing in [lo, hi) is
+### S(lo) - S(hi). Dividing the resulting vector by its own sum applies
+### the truncation implied by the band edges - your bands stop at 500 km,
+### so the mass beyond 500 is redistributed rather than ignored.
+###
+### Watch: S(0) needs to be 1. For the lognormal, log(0) is -Inf and
+### pnorm(-Inf) is 0, so it works out. Check it rather than assume it.
+###
+### nll(par, bands, fam)
+### Negative multinomial log-likelihood: -n * sum(w * log(q)), where w
+### are observed shares, q are predicted probabilities, and n is the
+### device count. Return a large finite number if q goes non-positive or
+### non-finite, or the optimiser will crash on a bad step rather than
+### backing away from it.
+###
+### tv(w, q)
+### Total variation: 0.5 * sum(abs(w - q)). Reads as the share of
+### probability mass sitting in the wrong band. The 0.5 is what makes
+### that interpretation exact - mass removed from one band lands in
+### another, so without it you count every error twice.
+###
+### EXERCISE 2. Write all three. Then check:
+### - predict_bands on the lognormal with mu = 0, sigma = 2 sums to 1
+### - tv(w, w) is 0 for any w
+### - tv of two disjoint distributions is 1
+### ---------------------------------------------------------------------
+
+# YOUR CODE HERE
+veraset_bands <- emp |>
+  filter(edge_high <= TRUNC_KM) |>
+  group_by(home_county) |>
+  arrange(edge_low, .by_group = TRUE) |>
+  mutate(w = share / sum(share)) |>
+  ungroup()
+
+veraset_bands_pooled_flat <- emp |>
+  filter(edge_high <= TRUNC_KM) |>
+  mutate(
+    # Collapse 0-1, 1-2.5, and 2.5-5 km into 0-5 km
+    edge_low  = if_else(edge_high <= 5.0, 0.0, edge_low),
+    edge_high = if_else(edge_high <= 5.0, 5.0, edge_high)
+  ) |>
+  # Combine trip shares for the pooled 0-5 km band per county
+  group_by(home_county, edge_low, edge_high) |>
+  summarise(
+    share = sum(share),
+    n_devices = first(n_devices),
+    .groups = "drop"
+  ) |>
+  # Re-index bands 1..7 and re-normalize shares (w) to sum to 1.0
+  group_by(home_county) |>
+  arrange(edge_low, .by_group = TRUE) |>
+  mutate(
+    band_idx = row_number(),
+    w = share / sum(share)
+  ) |>
+  ungroup()
+
+# 2. Nest into 1 row per county (each containing a 7-row tibble)
+veraset_nested_pooled <- veraset_bands_pooled_flat |>
+  dplyr::select(home_county, band_idx, edge_low, edge_high, w, n_devices) |>
+  nest(veraset_bands = -home_county)
+
+# Sanity Check: Should show 7 bands for county 1
+message("Bands per county: ", nrow(veraset_nested_pooled$veraset_bands[[1]]))
+stopifnot(nrow(veraset_nested_pooled$veraset_bands[[1]]) == 7)
+
+
+predict_bands<- function(fam, th, bands){
+  q <- fam$surv(bands$edge_low, th) - fam$surv(bands$edge_high, th)
+  q / sum(q)
+}
+
+par_vec <- c(0, log(2))
+th <- families$lognormal$unpack(par_vec)
+
+predict_bands(families$lognormal, th, veraset_bands)
+
+nll <- function(par, bands, fam, n = 1) {
+  th <- fam$unpack(par)
+  q <- predict_bands(fam, th, bands)
+  
+  if (any(is.na(q)) || any(q <= 0)) {
+    return(1e10)
+  }
+  
+  -n * sum(bands$w * log(q))
+}
+
+nll(th, veraset_bands, families$lognormal)
+
+tv <- function(w, q){
+  
+  .5 * sum(abs(w-q))
+  
+}
+
+w_test <- veraset_bands %>%
+  filter(home_county == "01001") %>%
+  select(w)
+w_test
+
+tv(predict_bands(families$lognormal, th, veraset_bands), w_test)
+```
+
+
+```{r setup, include=FALSE}
+### ---------------------------------------------------------------------
+### §3. HELD-OUT DEVICES
+###
+### The first and easiest form of held-out validation, because you already
+### built the data for it. Fit each family to half 0 of a county, then
+### score the fitted kernel against half 1. The two halves are disjoint
+### device samples from the same county, so half 1 is genuinely unseen.
+###
+### WHAT THIS TESTS, PRECISELY. Whether a fit generalises to new devices
+### from the same place. It does NOT test whether the family transports
+### across counties, and it does NOT test extrapolation into unobserved
+### distance ranges. Name it carefully in the write-up or a reader will
+### over-claim it.
+###
+### WHAT TO EXPECT. Every family will score worse out of sample than in.
+### The question is the SIZE of the gap. A family that is capturing real
+### structure loses little; a family whose spare parameters are absorbing
+### noise loses a lot, because the noise it memorised in half 0 is not
+### present in half 1. If exp3's in-sample advantage over lognormal
+### shrinks or reverses here, that is the crossover argument in a form
+### that needs no appeal to panel size.
+###
+### TWO DESIGN POINTS.
+###
+### 1. Apply MIN_TRUST to the half, not the county. A county with 12,000
+### devices splits into two 6,000-device panels, both below the
+### threshold. Including them drags the result down for reasons that
+### have nothing to do with the family.
+###
+### 2. Fit on half 0 and score on half 1, then ALSO fit on half 1 and
+### score on half 0. Averaging the two directions uses all the data and
+### removes any accident of which half got called 0. This is exactly
+### 2-fold cross-validation.
+###
+
+library(numDeriv)
+
+
+SPLITHALF <- file.path(DIR, "county_profile_cbghome_splithalf_tau60.csv")
+splithalf <- read_csv(SPLITHALF)
+splithalf
+s1
+s1 <- splithalf %>%
+  filter(salt == "s01")
+
+get_nll_gradient <- function(par, bands, fam, n = 1) {
+  
+      grad(func = nll, x = par, bands = bands, fam = fam, n = n)
+  
+}
+
+county_grads_2 <- list()
+par0 <- c(0, log(2))
+par_start <- par_init <- families$lognormal$par0
+
+for (curr_county in unique(s1$home_county)) {
+  
+  
+  t <- s1 %>%
+    filter(home_county == curr_county,
+           half == 1,
+           edge_high <= TRUNC_KM) %>%
+    mutate(w = w_band/sum(w_band))
+  
+  devs <- unique(t$n_devices[1])
+  
+  t <- t %>%
+    select(share, w, edge_high, edge_low)
+  
+  county_grads_2[[curr_county]] <- get_nll_gradient(
+    par = par_start, 
+    bands = t, 
+    fam = families$lognormal, 
+    n = as.numeric(devs)
+  )
+
+}
+
+df_comparison <- enframe(county_grads, name = "home_county", value = "grad_half0") %>%
+  inner_join(
+    enframe(county_grads_2, name = "home_county", value = "grad_half1"),
+    by = "home_county"
+  ) %>%
+  mutate(
+    # --- mu gradients (Index 1) ---
+    g_mu_h0 = map_dbl(grad_half0, 1),
+    g_mu_h1 = map_dbl(grad_half1, 1),
+    diff_mu = g_mu_h0 - g_mu_h1,
+    
+    # --- log(sigma) gradients (Index 2) ---
+    g_log_sigma_h0 = map_dbl(grad_half0, 2),
+    g_log_sigma_h1 = map_dbl(grad_half1, 2),
+    diff_log_sigma = g_log_sigma_h0 - g_log_sigma_h1
+  ) %>%
+  select(-grad_half0, -grad_half1)
+df_comparison %>%
+  ggplot(aes(x=diff_log_sigma)) +
+  geom_histogram()
+df_comparison
+```
+
+
+```{r setup, include=FALSE}
+# 1. Helper function to compute gradients for any family and split half
+compute_county_grads <- function(data_split, half_val, fam) {
+  county_grads <- list()
+  
+  for (curr_county in unique(data_split$home_county)) {
+    t <- data_split %>%
+      filter(
+        home_county == curr_county,
+        half == half_val,
+        edge_high <= TRUNC_KM
+      ) %>%
+      mutate(w = w_band / sum(w_band))
+    
+    if (nrow(t) == 0) next
+    
+    devs <- t$n_devices[1]
+    t_clean <- select(t, share, w, edge_high, edge_low)
+    
+    county_grads[[curr_county]] <- get_nll_gradient(
+      par = fam$par0,
+      bands = t_clean,
+      fam = fam,
+      n = devs
+    )
+  }
+  
+  return(county_grads)
+}
+
+# 2. Run gradient calculation for exp2 across half 0 and half 1
+exp2_grads_h0 <- compute_county_grads(s1, half_val = 0, fam = families$exp2)
+exp2_grads_h1 <- compute_county_grads(s1, half_val = 1, fam = families$exp2)
+
+# 3. Create comparison data frame mapping all 3 exp2 parameters
+exp2_comparison <- enframe(exp2_grads_h0, name = "home_county", value = "grad_h0") %>%
+  inner_join(
+    enframe(exp2_grads_h1, name = "home_county", value = "grad_h1"),
+    by = "home_county"
+  ) %>%
+  mutate(
+    # --- Parameter 1 (logit mixture weight) ---
+    g_par1_h0 = map_dbl(grad_h0, 1),
+    g_par1_h1 = map_dbl(grad_h1, 1),
+    diff_par1 = g_par1_h0 - g_par1_h1,
+    
+    # --- Parameter 2 (log decay rate 1) ---
+    g_par2_h0 = map_dbl(grad_h0, 2),
+    g_par2_h1 = map_dbl(grad_h1, 2),
+    diff_par2 = g_par2_h0 - g_par2_h1,
+    
+    # --- Parameter 3 (logit multiplier for decay rate 2) ---
+    g_par3_h0 = map_dbl(grad_h0, 3),
+    g_par3_h1 = map_dbl(grad_h1, 3),
+    diff_par3 = g_par3_h0 - g_par3_h1
+  ) %>%
+  select(-grad_h0, -grad_h1)
+
+exp2_comparison
+
+exp2_comparison %>%
+  ggplot(aes(x=diff_par3)) +
+  geom_histogram()
+```
+
+
+```{r setup, include=FALSE}
+###
+### a) Reshape sh: drop band_idx 10 (edge_high is Inf), renormalise
+### share within salt x county x half, and confirm the shares sum to
+### 1. Keep edge_low, edge_high, n_devices.
+###
+### b) Write fit_and_score(fam, fit_bands, score_bands): optimise nll on
+### fit_bands, then return a one-row tibble with the in-sample TV
+### (against fit_bands) and the out-of-sample TV (against
+### score_bands), plus the convergence code.
+###
+### Do not define this inside another function.
+###
+### c) Run it for one salt, one county, all three families, both
+### directions. Print the result. Sanity check: in-sample TV should
+### be close to your existing whole-county numbers, since a half is
+### still a large panel.
+###
+### d) Scale up across counties above MIN_TRUST for a single salt, and
+### summarise median in-sample and out-of-sample TV by family, plus
+### the gap between them. Which family loses the most?
+###
+### e) Now repeat across all salts and report the range of the median
+### out-of-sample TV per family. A single split is one random draw;
+### the range is what tells you whether the ordering is stable.
+### ---------------------------------------------------------------------
+
+
+
+
+```
+
+```{r}
+
+```
+
+
+
+```{r}
+compute_family_grads <- function(data, family_obj) {
+  data %>%
+    filter(edge_high <= TRUNC_KM) %>%
+    group_by(salt, home_county, half) %>%
+    mutate(w = w_band / sum(w_band)) %>%
+    summarise(
+      grad = list(grad(
+        func = nll, 
+        x = family_obj$par0, 
+        bands = pick(share, w, edge_high, edge_low), 
+        fam = family_obj, 
+        n = n_devices[1]
+      )),
+      .groups = "drop"
+    ) %>%
+    unnest_wider(grad, names_sep = "_p") %>%
+    pivot_wider(
+      names_from = half, 
+      values_from = starts_with("grad_p"), 
+      names_glue = "{.value}_h{half}"
+    )
+}
+
+# Example usage:
+lognormal_comp <- compute_family_grads(sh, families$lognormal)
+lognormal_comp
+exp2_comp      <- compute_family_grads(sh, families$exp2)
+exp3_comp      <- compute_family_grads(sh, families$exp3)
+
+
+```
+
+```{r}
+library(tidyverse)
+
+# Define Total Variation distance function
+tv_dist <- function(w, q) 0.5 * sum(abs(w - q))
+
+# Helper to fit on one half and predict on the other half
+fit_and_predict_tv <- function(train_data, test_data, fam) {
+  # 1. Fit parameters on training half
+  fit <- optim(
+    par = fam$par0,
+    fn = nll,
+    bands = train_data,
+    fam = fam,
+    n = train_data$n_devices[1],
+    method = "BFGS"
+  )
+  
+  # Skip if optimizer failed to converge
+  if (fit$convergence != 0) return(NA_real_)
+  
+  # 2. Predict probabilities on test half using fitted parameters
+  th_hat <- fam$unpack(fit$par)
+  q_pred <- predict_bands(fam, th_hat, test_data)
+  
+  # 3. Score against observed test shares
+  tv_dist(test_data$w, q_pred)
+}
+
+# Run 2-Fold CV per county x salt for a given family
+evaluate_family_cv <- function(data, fam) {
+  data %>%
+    filter(edge_high <= TRUNC_KM) %>%
+    group_by(salt, home_county, half) %>%
+    mutate(w = w_band / sum(w_band)) %>%
+    ungroup() %>%
+    group_by(salt, home_county) %>%
+    filter(n_distinct(half) == 2) %>% # Ensure both halves exist
+    summarise(
+      tv_0to1 = fit_and_predict_tv(
+        train_data = pick(share, w, edge_high, edge_low, n_devices)[half == 0, ],
+        test_data  = pick(share, w, edge_high, edge_low, n_devices)[half == 1, ],
+        fam = fam
+      ),
+      tv_1to0 = fit_and_predict_tv(
+        train_data = pick(share, w, edge_high, edge_low, n_devices)[half == 1, ],
+        test_data  = pick(share, w, edge_high, edge_low, n_devices)[half == 0, ],
+        fam = fam
+      ),
+      .groups = "drop"
+    ) %>%
+    mutate(tv_oos = (tv_0to1 + tv_1to0) / 2)
+}
+
+# Example evaluation:
+results_lognormal <- evaluate_family_cv(sh, families$lognormal)
+results_exp2      <- evaluate_family_cv(sh, families$exp2)
+results_exp3      <- evaluate_family_cv(sh, families$exp3)
+
+```
+```{r}
+results_exp2 %>%
+  group_by(salt) %>%
+  drop_na() %>%
+  summarise(med_tv = median(tv_oos),
+            iqr_tv = IQR(tv_oos),
+            p90_tv = quantile(tv_oos, .9))
+
+```
+```{r}
+###getting and cleaning meta
+
+META_ORDER <- c("(0, 10)", "[10, 100)", "100+")
+META_SCOPE <- "folded"
+XWALK_FILE   <- "E:/meta_movement_dist/county_gid2_crosswalk.csv"
+xwalk <- read_csv(XWALK_FILE, show_col_types = FALSE) |>
+  mutate(fips = str_pad(as.character(fips), 5, pad = "0")) |>
+  distinct(gid_2, fips)
+
+ambiguous <- xwalk |> count(fips) |> filter(n > 1) |> pull(fips)
+message(length(ambiguous), " counties map to multiple GADM units - dropping")
+xwalk_ok <- xwalk |> filter(!fips %in% ambiguous)
+META_OBS_WEIGHT <- 1
+meta_raw <- read_csv("E:/meta_movement_dist/movement-distribution-1-june-2026_15-june-2026.csv")
+
+
+meta_periods <- meta_raw |>
+  inner_join(xwalk_ok, by = join_by(gadm_id == gid_2)) |>
+  group_by(fips, ds) |>
+  filter(n() == 4) |>
+  mutate(frac = distance_category_ping_fraction /
+           sum(distance_category_ping_fraction, na.rm = TRUE)) |>
+  ungroup()
+
+meta_shares <- meta_periods |>
+  group_by(fips, home_to_ping_distance_category) |>
+  summarise(frac = mean(frac, na.rm = TRUE), .groups = "drop") |>
+  pivot_wider(names_from = home_to_ping_distance_category, values_from = frac) |>
+  rename(f0 = `0`, g1 = `(0, 10)`, g2 = `[10, 100)`, g3 = `100+`) |>
+  drop_na(f0, g1, g2, g3)
+
+meta_shares <- if (META_SCOPE == "folded") {
+  # Home tile folded into (0, 10). Shares already sum to 1, no renormalising.
+  meta_shares |> mutate(o1 = f0 + g1, o2 = g2, o3 = g3)
+} else {
+  # Conditional on having left home.
+  meta_shares |> mutate(o1 = g1 / (1 - f0),
+                        o2 = g2 / (1 - f0),
+                        o3 = g3 / (1 - f0))
+}
+
+stopifnot(all(abs(meta_shares$o1 + meta_shares$o2 + meta_shares$o3 - 1) < 1e-8))
+
+message("META_SCOPE = ", META_SCOPE,
+        " | f0 median ",  signif(median(meta_shares$f0), 4),
+        ", sd ",          signif(sd(meta_shares$f0), 3))
+message("  o1 median ",   signif(median(meta_shares$o1), 4),
+        ", sd ",          signif(sd(meta_shares$o1), 3))
+
+meta_bands_all <- meta_shares |>
+  select(fips, o1, o2, o3) |>
+  pivot_longer(c(o1, o2, o3), names_to = "cat", values_to = "w") |>
+  mutate(edge_low  = rep(c(0,  10,  100), length.out = n()),
+         edge_high = rep(c(10, 100, Inf), length.out = n()),
+         n_devices = META_OBS_WEIGHT) |>
+  select(fips, edge_low, edge_high, w, n_devices)
+
+meta_bands_all
+
+fit_meta_all <- function(meta_df, fam) {
+  meta_df %>%
+    group_by(fips) %>%
+    group_modify(~ {
+      # Prepare band data (ensuring both 'share' and 'w' exist)
+      bands_data <- .x %>% 
+        mutate(share = w, w = w / sum(w))
+      
+      devs <- .x$n_devices[1]
+      
+      # Fit model with Hessian matrix calculation
+      fit <- tryCatch(
+        optim(
+          par = fam$par0,
+          fn = nll,
+          bands = bands_data,
+          fam = fam,
+          n = devs,
+          method = "BFGS",
+          hessian = TRUE
+        ),
+        error = function(e) NULL
+      )
+      
+      # Guard against optimization failure
+      if (is.null(fit) || fit$convergence != 0) {
+        return(tibble(par = list(NULL), cov = list(NULL), converged = FALSE))
+      }
+      
+      # Invert Hessian to get parameter variance-covariance matrix
+      cov_mat <- tryCatch(solve(fit$hessian), error = function(e) NULL)
+      
+      tibble(
+        par = list(fit$par),
+        cov = list(cov_mat),
+        converged = !is.null(cov_mat)
+      )
+    }) %>%
+    ungroup()
+}
+
+# Run across all Meta counties for Lognormal
+meta_lognorm <- fit_meta_all(meta_bands_all, families$lognormal)
+meta_lognorm %>%
+  filter(converged) %>%
+  mutate(
+    mu = map_dbl(par, 1),
+    log_sigma = map_dbl(par, 2),
+    sigma = exp(log_sigma)
+  )
+
+meta_param_summary <- meta_lognorm %>%
+  filter(converged) %>%
+  mutate(
+    mu = map_dbl(par, 1),
+    log_sigma = map_dbl(par, 2),
+    sigma = exp(log_sigma)
+  )
+
+meta_param_summary
+```
+```{r}
+library(MASS)
+?mvrnorm
+
+```
+
+```{r setup, include=FALSE}
+### ---------------------------------------------------------------------
+### §4. HELD-OUT BAND
+###
+### A different question: does the family extrapolate into a distance
+### range it was not shown?
+###
+### This matters here for a specific reason. Meta's three categories give
+### you one number for everything under 10 km. When you push a
+### Meta-identified kernel onto your nine bands, the sub-10 km shape is
+### pure extrapolation - the data never constrained it. Your folded run
+### puts most of the transfer loss exactly there.
+###
+### Leave-one-band-out is the controlled version of that situation. Drop
+### band k, refit on the remaining 8, renormalise, and predict band k's
+### share. A family that is genuinely describing the shape recovers the
+### dropped band; a family that is interpolating between points does not.
+###
+### ONE SUBTLETY. When you drop a band, the remaining shares no longer sum
+### to 1. Renormalise them before fitting, and make sure predict_bands is
+### called on the FULL nine-band edge set when you score, not the
+### eight-band set you fitted on. Otherwise you are comparing a
+### renormalised prediction to an unrenormalised observation.
+###
+### EXERCISE 4.
+###
+### a) Write loo_band(fam, bands, k): drop row k, renormalise, fit,
+### predict all nine bands, and return the predicted and observed
+### share for band k alone.
+###
+### b) Run it for all k on a large county and plot predicted against
+### observed. Which bands are hardest to recover, for which families?
+###
+### c) Focus on k = 1, the [0, 1) band. This is the one Meta cannot
+### constrain. Report the absolute error on band 1 by family, across
+### counties. State in a comment what this implies about the
+### Meta transfer.
+###
+### d) OPTIONAL. Drop all four sub-10 km bands at once, fit on the five
+### remaining, and predict the sub-10 km shape. That is a direct
+### simulation of Meta's information set, using Veraset data on both
+### sides so the estimand is held fixed. Compare the result to your
+### actual Meta transfer TV - if they are similar, the transfer loss
+### is a coarseness problem; if the Meta loss is much worse, Meta
+### differs from Veraset in some other way too.
+### ---------------------------------------------------------------------
+
+# YOUR CODE HERE
+
+
+### ---------------------------------------------------------------------
+### §5. HELD-OUT COUNTY
+###
+### The third question, and the one that bears on the deliverable: does a
+### relationship learned on some counties predict a county it never saw?
+###
+### The structure is different from §3 and §4 because the unit is now the
+### county, not the device or the band. For each county i:
+###
+### 1. Fit whatever cross-county object you are proposing on all
+### counties EXCEPT i.
+### 2. Use it to predict county i's kernel.
+### 3. Score that prediction against county i's observed nine bands.
+###
+### With 630 counties, doing this 630 times is cheap because step 1 is a
+### summary statistic, not a refit of every county.
+###
+### WHAT TO PUT IN STEP 1. Start with the simplest thing that could work:
+### the mean of (mu, log sigma) across the other counties. That is a
+### pooled kernel, and it is the honest baseline. Any more elaborate
+### proposal has to beat it.
+###
+### Then the comparison that matters:
+###
+### baseline pooled kernel from the other counties
+### meta the county's own Meta-identified kernel
+### ceiling the county's own Veraset fit (in-sample, so not a fair
+### competitor - it is the floor on achievable TV)
+###
+### If meta beats baseline, Meta's three categories carry county-specific
+### information worth having. If it does not, Meta is adding nothing over
+### simply using the national average kernel everywhere - which would be a
+### genuine and reportable finding, and it would change what Map 2 can
+### claim.
+###
+### EXERCISE 5.
+###
+### a) Build the per-county Veraset lognormal parameter table from your
+### fits file (source == "veraset", family == "lognormal", best
+### start, n_devices >= MIN_TRUST).
+###
+### b) Write loo_county(i, params): return the mean mu and mean log
+### sigma over all counties except i. Vectorise it if you like - the
+### leave-one-out mean has a closed form given the total sum.
+###
+### c) For every county, score three predictions against its observed
+### bands: baseline, meta, ceiling. Report median TV for each.
+###
+### d) Plot baseline TV against meta TV per county, with a unit line.
+### Points below the line are counties where Meta helps. Is it most
+### of them?
+###
+### e) Split (d) by log(area_km2) from us_county_kernels.csv. Your
+### August work found Meta's variation tracks admin unit area rather
+### than rurality; if Meta only beats baseline in certain size
+### classes, that is the same finding arriving from a new direction.
+### ---------------------------------------------------------------------
+
+# YOUR CODE HERE
+
+
+### ---------------------------------------------------------------------
+### §6. PUTTING IT TOGETHER
+###
+### EXERCISE 6. One table, three rows per family, one column per
+### cross-validation type: held-out devices, held-out band 1, held-out
+### county. Then write a short paragraph answering:
+###
+### - Does any family win all three? If not, which trade-offs appear?
+### - Does exp3's in-sample advantage survive any of them?
+### - Does the held-out-county result support using Meta per county, or
+### does a pooled kernel do as well?
+###
+### That last question is the one Charlie will ask, so answer it in one
+### sentence with a number attached.
+###
+### A caution worth writing into the notes. All three of these hold out
+### data from the same June fortnight, the same panel, and the same
+### vendor. None of them tests whether the kernel transports to another
+### month, another country, or another data source. Cross-validation
+### bounds generalisation error within the population you sampled from -
+### it says nothing about the population you did not.
+### ---------------------------------------------------------------------
+
+# YOUR CODE HERE
+
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

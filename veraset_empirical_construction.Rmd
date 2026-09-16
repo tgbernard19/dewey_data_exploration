@@ -1,0 +1,1233 @@
+---
+title: "Building the displacement kernel — a walkthrough"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: false
+---
+
+> **Before you start:** this file is meant to be stepped through chunk by chunk with
+> the green "run current chunk" button (or Cmd/Ctrl+Enter), not Knit-ed top to bottom —
+> several chunks loop over 30 day-partitions and write real files to `E:/`. Knitting
+> is fine once everything downstream is stable and you want a rendered report.
+
+
+
+A click-through build of the new pipeline, in order, with a short SQL lesson before
+each chunk and checkpoints that print something you can look at. Exercise answers are
+in the appendix.
+
+Read the lesson, run the chunk, look at the checkpoint, do the exercise. If a
+checkpoint looks wrong, stop there — every later stage inherits it.
+
+---
+
+## What we are building, in one paragraph
+
+One table. For every device-day, a row per place the device was, carrying the distance
+of that place from the device's home and a weight. Everything downstream — the
+diagonal, the distance bands, the 250 km cutoff, the kernel — is a way of grouping
+that one table. Nothing about bin edges or cutoffs gets baked in; they are all filters
+applied at the end.
+
+Stages: work out where each device lives (§1), put every visit on the map (§2),
+measure how far each visit is from that device's home (§3), decide what each visit
+weighs (§4), give every device one vote (§5), then bin (§6) and check (§7).
+
+---
+
+## Two decisions settled before we start
+
+**Post-hoc binning: yes, and that's the point.** You asked whether we can decide later
+what counts as "zero movement". We can, because `d_km` stays on the table as a
+continuous number and never gets collapsed into a category. Choosing a home threshold
+becomes one line in a `mutate()` at the very end, and you can produce the profile at
+0.5 km, 2 km and 5 km side by side for the cost of running that line three times.
+
+One caveat, and it's a real one. Post-hoc freedom does not create resolution that
+isn't there. Where a visit's position came from a geohash-5 cell, the position is only
+good to about 5 km, so a threshold below that is measuring cell-boundary luck rather
+than behaviour. That's why §2 carries a `loc_src` flag — so you can restrict to
+block-group-resolved rows when you want to look below 5 km, and report how much of the
+sample that leaves you.
+
+**Trip weighting versus dwell weighting.** Your point about the single visit is right,
+and it's a genuine fork rather than a detail. A device-day with seven hours at home and
+one twenty-minute stop at *j* is, under dwell weighting, 95% "at home" — the trip
+barely registers. Under trip weighting it's a trip to *j*.
+
+These answer different questions, and neither is wrong:
+
+- **Dwell weighting** estimates *where people spend time*. It is the like-for-like
+  match to Meta, whose `distance_category_ping_fraction` is a share of pings, which is
+  a time share.
+- **Trip weighting** estimates *where people go*. Arguably the more interesting
+  quantity, and much less sensitive to the dwell censoring we found — but it is not
+  what Meta reports, so an offset fitted on trip-weighted Veraset against
+  ping-weighted Meta would absorb the definitional gap into the parameter.
+
+So we carry both. The weight is a column, the choice is a switch at the end, and §7
+shows you how far apart they land. My suggestion is to fit the Meta mapping on dwell
+weighting and report trip weighting as the substantive result, but see the numbers
+first.
+
+**One user, one vote.** You confirmed Meta normalises by users, so we do the same: a
+visit's weight is normalised within its device-day, device-days are averaged within
+device, devices are averaged within county. §5 does this in three steps.
+
+---
+
+# §0 — Setup
+
+## SQL lesson 1: what DuckDB is doing here
+
+DuckDB is not a database you load data into. It's a query engine that reads parquet
+files off disk where they lie. `read_parquet('E:/.../*.parquet')` is the table — the
+files never move.
+
+Two consequences worth internalising:
+
+**Naming your columns is a performance decision.** Parquet stores each column
+separately, so `SELECT caid, minimum_dwell FROM ...` physically reads two columns and
+skips sixteen. `SELECT *` reads all eighteen. On `other_visits` that's most of the
+difference between minutes and an afternoon.
+
+**`DESCRIBE` is free.** `DESCRIBE SELECT * FROM read_parquet('...') LIMIT 0` reads
+only the file footers. Use it before every new scan.
+
+## SQL lesson 2: how to read a query
+
+SQL is *written* with `SELECT` first but *evaluated* in roughly dplyr's order:
+
+```
+FROM  →  WHERE  →  GROUP BY  →  SELECT  →  HAVING  →  ORDER BY  →  LIMIT
+```
+
+So when you read a query, skip to `FROM`, then `WHERE`, then `GROUP BY`, and read the
+`SELECT` list *last*. It's a `summarise()` that someone moved to the top of the pipe.
+
+The translation table:
+
+| dplyr | SQL |
+|---|---|
+| the data | `FROM read_parquet('...')` |
+| `select()` | the column list after `SELECT` |
+| `mutate()` | an expression in the `SELECT` list, named with `AS` |
+| `filter()` before grouping | `WHERE` |
+| `group_by()` | `GROUP BY` |
+| `summarise()` | aggregate functions in the `SELECT` list |
+| `filter()` after summarising | `HAVING` |
+| `arrange()` | `ORDER BY` |
+| `bind_rows()` | `UNION ALL` |
+| piping into a named step | `WITH name AS (...)` |
+
+And the one behavioural difference that will bite you: **NULL is not `NA`**. `x = NULL`
+is never true — use `x IS NULL`. Aggregates *skip* NULLs silently, so `SUM(dwell)`
+needs no `na.rm` and gives no warning about what it dropped.
+
+```{r chunk-01}
+library(DBI)
+library(duckdb)
+library(dplyr)
+library(tidyr)
+library(readr)
+library(stringr)
+library(glue)
+
+
+# --- Paths -----------------------------------------------------------------
+
+ROOT    <- "E:/dewey-june2025"
+TMP_DIR <- "E:/duckdb-tmp"
+OUT     <- file.path(ROOT, "kernel")
+
+dir.create(file.path(OUT, "home_parts"),   showWarnings = FALSE, recursive = TRUE)
+dir.create(file.path(OUT, "visit_parts"),  showWarnings = FALSE, recursive = TRUE)
+dir.create(file.path(OUT, "devday_parts"), showWarnings = FALSE, recursive = TRUE)
+
+
+# --- Settings --------------------------------------------------------------
+
+SOURCES   <- c("home_visits", "work_visits", "other_visits")
+MEM_LIMIT <- "24GB"
+N_THREADS <- 32
+
+CBG_AREA_MAX <- 25      # km^2; above this we prefer the geohash cell
+TAU_MINUTES  <- 15      # weight given to a zero-dwell (single-ping) visit
+
+
+# --- Connection ------------------------------------------------------------
+
+con <- dbConnect(duckdb::duckdb(), dbdir = ":memory:")
+
+dbExecute(con, glue("SET temp_directory = '{TMP_DIR}'"))
+dbExecute(con, glue("SET memory_limit = '{MEM_LIMIT}'"))
+dbExecute(con, glue("SET threads = {N_THREADS}"))
+dbExecute(con, "SET preserve_insertion_order = false")
+
+
+# --- Two small helpers, defined once at the top ----------------------------
+
+day_glob <- function(src, day) {
+  glue("{ROOT}/{src}/{day}/*.parquet")
+}
+
+list_days <- function(src) {
+  sort(list.dirs(file.path(ROOT, src), recursive = FALSE, full.names = FALSE))
+}
+```
+```{r}
+
+```
+
+## Checkpoint 0b — how many threads actually help
+
+64 physical cores, 128 logical (hyperthreaded). The hash-aggregation stages in this
+pipeline (§1, §5) are memory-bound, pointer-chasing work — the two logical threads on
+one physical core share cache and execution ports, so the hyperthread sibling often
+adds little to that kind of workload. Rather than assume, benchmark it on one real day
+of `other_visits` before picking `N_THREADS` for the full month.
+
+Memory is not the constraint on this machine — with hundreds of GB free, set
+`MEM_LIMIT` generously and hold it fixed across the whole benchmark so you're reading
+off thread count alone, not confounding it with memory pressure.
+
+```{r chunk-00b, eval=FALSE}
+BENCH_DAY     <- list_days("other_visits")[1]
+THREAD_GRID   <- c(8, 16, 32, 64, 96, 128)
+BENCH_MEM_GB  <- "400GB"   # generous and fixed across every run
+
+bench_sql <- glue("
+  SELECT
+    hash(caid)                                                        AS did,
+    substr(lpad(CAST(census_block_group AS VARCHAR), 12, '0'), 1, 12) AS cbg,
+    SUM(GREATEST(TRY_CAST(minimum_dwell AS DOUBLE), 0))                AS dwell
+  FROM read_parquet('{day_glob(\"other_visits\", BENCH_DAY)}')
+  WHERE census_block_group IS NOT NULL
+  GROUP BY did, cbg
+")
+
+# One fresh connection per setting, so no state or cache carries over.
+thread_bench <- map_dfr(THREAD_GRID, function(n_threads) {
+  bench_con <- dbConnect(duckdb::duckdb(), dbdir = ":memory:")
+  dbExecute(bench_con, glue("SET temp_directory = '{TMP_DIR}'"))
+  dbExecute(bench_con, glue("SET memory_limit = '{BENCH_MEM_GB}'"))
+  dbExecute(bench_con, glue("SET threads = {n_threads}"))
+  dbExecute(bench_con, "SET preserve_insertion_order = false")
+
+  elapsed <- system.time(dbGetQuery(bench_con, bench_sql))[["elapsed"]]
+  dbDisconnect(bench_con, shutdown = TRUE)
+
+  tibble(n_threads = n_threads, seconds = elapsed)
+})
+
+thread_bench |>
+  mutate(speedup = seconds[n_threads == min(n_threads)] / seconds)
+```
+
+Read it as a curve, not a single number: look for where `seconds` stops dropping.
+Also worth a glance — `DESCRIBE` won't tell you this, but row-group count caps how
+finely a scan can be split. If `other_visits` files are written with only a few
+hundred row groups per day, that's a second ceiling independent of thread count:
+
+```{r chunk-00c, eval=FALSE}
+dbGetQuery(con, glue("
+  SELECT file_name, COUNT(*) AS n_row_groups
+  FROM parquet_metadata('{day_glob(\"other_visits\", BENCH_DAY)}')
+  GROUP BY file_name
+"))
+```
+
+> **Exercise 0b.** If the curve in `thread_bench` flattens at, say, 32 threads, is
+> that evidence the workload is memory-bandwidth-bound, row-group-limited, or both?
+> What second query from this section would you run to tell them apart?
+### Checkpoint 0
+
+```{r chunk-02}
+days <- list_days("home_visits")
+
+tibble(src = SOURCES) |>
+  mutate(n_days = map_int(src, ~ length(list_days(.x))))
+```
+
+Expect 30 for each. If the day names aren't `2025-06-01` style, everything downstream
+still works — `day_glob()` just pastes whatever `list_days()` returns.
+
+> **Exercise 0.** Run `DESCRIBE SELECT * FROM read_parquet(...) LIMIT 0` against one
+> day of `other_visits` and confirm `minimum_dwell` comes back as `DOUBLE`. Then time
+> it. It should be effectively instant on 240M rows — convince yourself the footer
+> claim is true.
+
+---
+
+# §1 — Where each device lives
+
+## SQL lesson 3: `GROUP BY`, and picking the argmax without a window function
+
+We want, per device, the block group where it accumulated the most home dwell. In
+dplyr you'd `group_by(caid, cbg) |> summarise(d = sum(dwell)) |> slice_max(d)`.
+
+The first half is a plain `GROUP BY` on two keys. The second half — "which group had
+the max" — is where people reach for a window function (`ROW_NUMBER() OVER (PARTITION
+BY ...)`), and your notes are right that window functions over huge tables are
+dangerous, because they need a full sort and sorts spill worse than aggregates.
+
+DuckDB gives you `arg_max(a, b)`: the value of `a` at the row where `b` is largest.
+It's an ordinary aggregate, so it streams.
+
+```sql
+SELECT
+  did,
+  arg_max(cbg, dwell) AS home_cbg,   -- the cbg with the most dwell
+  MAX(dwell)          AS home_dwell, -- how much dwell that was
+  SUM(dwell)          AS total_dwell -- across all cbgs
+FROM per_device_cbg
+GROUP BY did
+```
+
+The ratio `home_dwell / total_dwell` is the concentration flag — a device 95%
+concentrated at one address is a different animal from one split evenly across three,
+and that ratio is what should catch the Shelby County long-haul drivers.
+
+Two other things in this chunk you've met before: `hash(caid)` turns a 36-character
+string into an 8-byte integer that sorts and spills far cheaper, and the day loop with
+`.tmp`-then-rename means a crash costs one day rather than everything.
+
+_This chunk loops over all 30 days and writes to `E:/`. Set `eval=FALSE` above so a "Run All" or Knit can't trigger it by accident — run it deliberately with the green triangle._
+
+```{r chunk-03, eval=FALSE}
+# --- 1a. Per-day partial sums: device x block group ------------------------
+
+home_day_sql <- function(day) {
+  glue("
+    SELECT
+      hash(caid)                                                        AS did,
+      substr(lpad(CAST(census_block_group AS VARCHAR), 12, '0'), 1, 12) AS cbg,
+      SUM(GREATEST(TRY_CAST(minimum_dwell AS DOUBLE), 0))               AS dwell,
+      COUNT(*)                                                          AS n_rows
+    FROM read_parquet('{day_glob(\"home_visits\", day)}')
+    WHERE census_block_group IS NOT NULL
+    GROUP BY did, cbg
+  ")
+}
+
+for (day in list_days("home_visits")) {
+  out_path <- file.path(OUT, "home_parts", glue("{day}.parquet"))
+  if (file.exists(out_path)) next
+
+  message(glue("home {day} ..."))
+  tmp_path <- paste0(out_path, ".tmp")
+
+  dbExecute(con, glue("
+    COPY ({home_day_sql(day)}) TO '{tmp_path}' (FORMAT PARQUET)
+  "))
+
+  file.rename(tmp_path, out_path)
+}
+
+
+# --- 1b. Roll the month up into one home assignment ------------------------
+
+home_parts_glob <- glue("{OUT}/home_parts/*.parquet")
+
+dbExecute(con, glue("
+  COPY (
+    WITH monthly AS (
+      SELECT
+        did,
+        cbg,
+        SUM(dwell)  AS dwell,
+        SUM(n_rows) AS n_rows
+      FROM read_parquet('{home_parts_glob}')
+      GROUP BY did, cbg
+    )
+    SELECT
+      did,
+      arg_max(cbg, dwell)  AS home_cbg,
+      MAX(dwell)           AS home_dwell,
+      SUM(dwell)           AS total_home_dwell,
+      SUM(n_rows)          AS n_home_rows,
+      COUNT(*)             AS n_home_cbgs
+    FROM monthly
+    GROUP BY did
+  ) TO '{OUT}/home_assignment.parquet.tmp' (FORMAT PARQUET)
+"))
+
+file.rename(
+  file.path(OUT, "home_assignment.parquet.tmp"),
+  file.path(OUT, "home_assignment.parquet")
+)
+```
+
+A wrinkle worth noticing. `arg_max(cbg, dwell)` breaks ties arbitrarily, and after the
+dwell audit we know a third of home rows have zero dwell. A device whose home dwell is
+*all* zero gets an essentially random block group. Count those and decide what to do
+with them — the checkpoint below surfaces the number.
+
+### Checkpoint 1
+
+```{r chunk-04}
+home_summary <- dbGetQuery(con, glue("
+  SELECT
+    COUNT(*)                                                     AS n_devices,
+    SUM(CASE WHEN total_home_dwell = 0 THEN 1 ELSE 0 END)        AS n_zero_dwell,
+    SUM(CASE WHEN n_home_cbgs = 1 THEN 1 ELSE 0 END)             AS n_single_cbg,
+    AVG(n_home_cbgs)                                             AS mean_cbgs,
+    approx_quantile(home_dwell / NULLIF(total_home_dwell, 0), 0.10) AS conc_p10,
+    approx_quantile(home_dwell / NULLIF(total_home_dwell, 0), 0.50) AS conc_p50
+  FROM read_parquet('{OUT}/home_assignment.parquet')
+")) |>
+  as_tibble()
+
+home_summary |>
+  mutate(
+    zero_dwell_share = n_zero_dwell / n_devices,
+    single_cbg_share = n_single_cbg / n_devices
+  )
+```
+
+`n_devices` should land near 42.5M — that's the home panel from your coverage audit,
+and it's the check that this stage reproduces what you already know. `NULLIF(x, 0)`
+turns a zero denominator into NULL rather than an error, which is the SQL idiom for
+"don't divide by zero".
+
+> **Exercise 1a.** What share of devices have their home dwell spread across more than
+> three block groups? Write it as one `dbGetQuery()` using `SUM(CASE WHEN ... THEN 1
+> ELSE 0 END)`.
+>
+> **Exercise 1b.** Rewrite the 1b query using `MAX(dwell)` and a join back to
+> `monthly` instead of `arg_max`. Then say in one sentence why `arg_max` is preferable
+> at this scale.
+>
+> **Exercise 1c.** The concentration ratio uses dwell. Build the alternative using
+> `n_rows` instead, and check whether the two disagree for many devices. If they do,
+> which would you trust given what we learned about single-ping visits?
+
+---
+```{r}
+try_1 <- dbGetQuery(con, glue("
+SELECT
+COUNT(*) AS n_devices,
+SUM(CASE WHEN total_home_dwell = 0 THEN 1 ELSE 0 END) AS n_zero_dwell,
+SUM(CASE WHEN n_home_cbgs = 1 THEN 1 ELSE 0 END) as n_trip,
+  FROM read_parquet('{OUT}/home_assignment.parquet')
+")) |>
+  as_tibble()
+
+
+##exercise B 
+
+
+dbExecute(con, glue("
+  COPY (
+    WITH monthly AS (
+      SELECT
+        did,
+        cbg,
+        SUM(dwell)  AS dwell,
+        SUM(n_rows) AS n_rows
+      FROM read_parquet('{home_parts_glob}')
+      GROUP BY did, cbg
+    )
+    SELECT
+      did,
+      arg_max(cbg, dwell)  AS home_cbg,
+      MAX(dwell)           AS home_dwell,
+      SUM(dwell)           AS total_home_dwell,
+      SUM(n_rows)          AS n_home_rows,
+      COUNT(*)             AS n_home_cbgs
+    FROM monthly
+    GROUP BY did
+  ) 
+"))
+
+```
+
+
+# §2 — Putting every visit on the map
+
+## SQL lesson 4: knowing when to leave the database
+
+The rule for this project: SQL for anything that touches the billion-row scans,
+R for anything small. The geography lookup is small — a few hundred thousand rows —
+so we build it in dplyr and *hand it to* DuckDB with `dbWriteTable()`, which copies an
+R data frame in as a real table the SQL can join against.
+
+(`duckdb_register()` does the same thing without copying, as a view over the R object.
+Fine for a one-off query; `dbWriteTable()` is better here because we join against it
+inside a thirty-iteration loop.)
+
+Geohash decoding is pure arithmetic and belongs in R. A geohash is base-32: each
+character carries 5 bits, and the bits alternate longitude, latitude, longitude, …
+starting with longitude. Five characters is 25 bits — 13 for longitude, 12 for
+latitude — which is why the cells are about 4.9 km square at the equator and narrower
+as you go north.
+
+```{r chunk-05}
+GEOHASH_ALPHABET <- str_split("0123456789bcdefghjkmnpqrstuvwxyz", "")[[1]]
+
+# The one place in this script that uses matrix indexing. Bit arithmetic has no
+# tidy idiom and wrapping it would obscure it.
+decode_geohash5 <- function(geohash) {
+  digits <- str_split_fixed(str_to_lower(geohash), "", 5)
+  values <- matrix(match(digits, GEOHASH_ALPHABET) - 1, ncol = 5)
+
+  packed <- values[, 1] * 32^4 + values[, 2] * 32^3 + values[, 3] * 32^2 +
+            values[, 4] * 32   + values[, 5]
+
+  lon_bits <- 0
+  lat_bits <- 0
+
+  for (i in 1:25) {
+    bit <- (packed %/% 2^(25 - i)) %% 2
+    if (i %% 2 == 1) {
+      lon_bits <- lon_bits * 2 + bit
+    } else {
+      lat_bits <- lat_bits * 2 + bit
+    }
+  }
+
+  tibble(
+    geohash_5 = geohash,
+    gh_lon    = -180 + (lon_bits + 0.5) * 360 / 2^13,
+    gh_lat    =  -90 + (lat_bits + 0.5) * 180 / 2^12
+  )
+}
+```
+
+Now the block group centroids. You need the 2020 Census block group gazetteer or the
+TIGER shapefiles; the columns we want are the 12-digit GEOID, latitude, longitude and
+land area.
+
+```{r chunk-06}
+
+cbg_centroids <- read_csv(file.path(ROOT, "cbg_centroids.csv"),
+                          col_types = cols(cbg = col_character())) |>
+  select(cbg, cbg_lat, cbg_lon, area_km2) |>
+  filter(!is.na(cbg_lat), !is.na(cbg_lon))
+
+
+dbWriteTable(con, "cbg_lookup", cbg_centroids, overwrite = TRUE)
+
+
+```
+
+And the distinct geohashes actually present in the data — pull the list out of SQL,
+decode in R, push the decoded table back.
+
+```{r chunk-07}
+
+geohash_list <- dbGetQuery(con, glue("
+  SELECT DISTINCT geohash_5
+  FROM read_parquet([
+    '{ROOT}/home_visits/*/*.parquet',
+    '{ROOT}/work_visits/*/*.parquet',
+    '{ROOT}/other_visits/*/*.parquet'
+  ], union_by_name = true)
+  WHERE geohash_5 IS NOT NULL
+")) |>
+  as_tibble()
+
+geohash_lookup <- decode_geohash5(geohash_list$geohash_5)
+
+dbWriteTable(con, "geohash_lookup", geohash_lookup, overwrite = TRUE)
+```
+
+That `DISTINCT` over the whole month is one of the few places a distinct is safe: it's
+a single ungrouped distinct over one narrow column, not a distinct *per group* across
+hundreds of millions of groups. Different animal entirely — the thing that killed
+`other_visits` was needing a separate hash set for every one of half a billion groups.
+
+### Checkpoint 2
+
+```{r chunk-08}
+geohash_lookup |>
+  summarise(
+    n_cells = n(),
+    lat_min = min(gh_lat), lat_max = max(gh_lat),
+    lon_min = min(gh_lon), lon_max = max(gh_lon)
+  )
+
+geohash_lookup |>
+  summarise(
+    n_positive_lon = sum(gh_lon > 0),
+    n_southern     = sum(gh_lat < 0),
+    n_far_north    = sum(gh_lat > 60)
+  )
+```
+
+Expect a few hundred thousand cells, latitudes roughly 18–72 (Puerto Rico to Alaska)
+and longitudes roughly -180 to -65. Anything outside that means the decoder is wrong.
+
+The better validation is self-consistency: a row's geohash centre and its block group
+centroid describe the same visit, so they should agree to within the coarser of the two
+resolutions.
+
+```{r chunk-09}
+agreement <- dbGetQuery(con, glue("
+  WITH sample AS (
+    SELECT
+      substr(lpad(CAST(census_block_group AS VARCHAR), 12, '0'), 1, 12) AS cbg,
+      geohash_5
+    FROM read_parquet('{day_glob(\"other_visits\", \"2025-06-03\")}')
+    WHERE hash(caid) % 1000 = 0
+      AND census_block_group IS NOT NULL
+      AND geohash_5 IS NOT NULL
+  )
+  SELECT
+    c.area_km2,
+    2 * 6371.0088 * asin(sqrt(
+      pow(sin(radians(g.gh_lat - c.cbg_lat) / 2), 2) +
+      cos(radians(c.cbg_lat)) * cos(radians(g.gh_lat)) *
+      pow(sin(radians(g.gh_lon - c.cbg_lon) / 2), 2)
+    )) AS gap_km
+  FROM sample s
+  JOIN cbg_lookup     c ON s.cbg       = c.cbg
+  JOIN geohash_lookup g ON s.geohash_5 = g.geohash_5
+")) |>
+  as_tibble()
+
+agreement |>
+  mutate(size_class = if_else(area_km2 <= CBG_AREA_MAX, "small cbg", "large cbg")) |>
+  group_by(size_class) |>
+  summarise(
+    n      = n(),
+    p50    = median(gap_km),
+    p90    = quantile(gap_km, 0.9),
+    p99    = quantile(gap_km, 0.99),
+    .groups = "drop"
+  )
+```
+
+For small block groups the gap should mostly be under ~3.5 km, which is the worst case
+within a geohash cell. For large ones it can be much bigger, and that's the whole
+argument for the size rule. If small block groups show large gaps, the join is
+misaligned — check leading zeros first, since that's the classic failure.
+
+> **Exercise 2a.** Decode `9q8yy` by hand-ish: run `decode_geohash5("9q8yy")` and check
+> the result is in the San Francisco Bay Area. Then decode `dhwux`, which appears in
+> your home sample, and confirm it lands in south Florida.
+>
+> **Exercise 2b.** The `JOIN`s above are inner joins, so rows with no matching block
+> group vanish silently. Change one to a `LEFT JOIN` and count how many rows have no
+> centroid. Should that number worry us?
+>
+> **Exercise 2c.** `CBG_AREA_MAX` is set to 25 km². Recompute the agreement table at
+> 5, 25 and 100 and argue for a value.
+
+---
+
+# §3 — How far each visit is from home
+
+## SQL lesson 5: joins, and why we don't build a pair table
+
+A `JOIN` matches rows between two tables on a key. `INNER JOIN` keeps only matches;
+`LEFT JOIN` keeps every row of the left table, filling NULL where there's no match.
+This is `inner_join()` and `left_join()`, same semantics.
+
+The temptation at this point is to precompute a distance table for every pair of block
+groups. Don't: 240,000 block groups is 29 billion pairs. Instead we join the home
+coordinates and the visit coordinates onto each row and compute the distance *inline*.
+Trigonometry on a row is nanoseconds; a 29-billion-row lookup is a research project.
+
+This also keeps distance continuous and per-row, which is precisely what makes the
+post-hoc binning in §6 possible.
+
+The location rule from §2 becomes a `COALESCE` with a `CASE`: use the block group
+centroid when the block group is small, otherwise the geohash centre, otherwise
+whichever exists.
+
+_Same as above — 30-day loop, writes to disk. Run deliberately._
+
+```{r chunk-10, eval=FALSE}
+visit_day_sql <- function(day) {
+  home_glob  <- day_glob("home_visits",  day)
+  work_glob  <- day_glob("work_visits",  day)
+  other_glob <- day_glob("other_visits", day)
+
+  glue("
+    WITH stacked AS (
+      SELECT hash(caid) AS did, utc_timestamp, census_block_group, geohash_5,
+             TRY_CAST(minimum_dwell AS DOUBLE) AS dwell, 1 AS is_home
+      FROM read_parquet('{home_glob}')
+      UNION ALL
+      SELECT hash(caid), utc_timestamp, census_block_group, geohash_5,
+             TRY_CAST(minimum_dwell AS DOUBLE), 0
+      FROM read_parquet('{work_glob}')
+      UNION ALL
+      SELECT hash(caid), utc_timestamp, census_block_group, geohash_5,
+             TRY_CAST(minimum_dwell AS DOUBLE), 0
+      FROM read_parquet('{other_glob}')
+    ),
+
+    tagged AS (
+      SELECT
+        s.did,
+        CAST(CAST(to_timestamp(s.utc_timestamp) AS TIMESTAMP) AS DATE) AS day,
+        substr(lpad(CAST(s.census_block_group AS VARCHAR), 12, '0'), 1, 12) AS cbg,
+        s.geohash_5,
+        s.dwell,
+        s.is_home
+      FROM stacked s
+    ),
+
+    placed AS (
+      SELECT
+        t.did,
+        t.day,
+        t.cbg,
+        substr(t.cbg, 1, 5) AS county,
+        t.dwell,
+        t.is_home,
+        CASE WHEN c.cbg IS NOT NULL AND c.area_km2 <= {CBG_AREA_MAX}
+             THEN 'cbg' ELSE 'geohash' END AS loc_src,
+        COALESCE(
+          CASE WHEN c.area_km2 <= {CBG_AREA_MAX} THEN c.cbg_lat END,
+          g.gh_lat, c.cbg_lat
+        ) AS lat,
+        COALESCE(
+          CASE WHEN c.area_km2 <= {CBG_AREA_MAX} THEN c.cbg_lon END,
+          g.gh_lon, c.cbg_lon
+        ) AS lon
+      FROM tagged t
+      LEFT JOIN cbg_lookup     c ON t.cbg       = c.cbg
+      LEFT JOIN geohash_lookup g ON t.geohash_5 = g.geohash_5
+    )
+
+    SELECT
+      p.did,
+      p.day,
+      p.cbg,
+      p.county,
+      p.loc_src,
+      p.is_home,
+      p.dwell,
+      2 * 6371.0088 * asin(sqrt(
+        pow(sin(radians(p.lat - hc.cbg_lat) / 2), 2) +
+        cos(radians(hc.cbg_lat)) * cos(radians(p.lat)) *
+        pow(sin(radians(p.lon - hc.cbg_lon) / 2), 2)
+      )) AS d_km
+    FROM placed p
+    JOIN read_parquet('{OUT}/home_assignment.parquet') h ON p.did = h.did
+    JOIN cbg_lookup hc ON h.home_cbg = hc.cbg
+    WHERE p.lat IS NOT NULL
+  ")
+}
+
+for (day in list_days("home_visits")) {
+  out_path <- file.path(OUT, "visit_parts", glue("{day}.parquet"))
+  if (file.exists(out_path)) next
+
+  message(glue("visits {day} ..."))
+  tmp_path <- paste0(out_path, ".tmp")
+
+  dbExecute(con, glue("COPY ({visit_day_sql(day)}) TO '{tmp_path}' (FORMAT PARQUET)"))
+  file.rename(tmp_path, out_path)
+}
+```
+
+The `JOIN` against `home_assignment` is doing double duty: it attaches the home
+coordinates *and* restricts to the home panel, because a device with no home row has no
+matching row and drops out. That's the semi-join-inside-the-scan pattern from your
+performance notes, and it's why this stage is tractable — it discards 91.5% of devices
+during the scan rather than after it.
+
+### Checkpoint 3
+
+```{r chunk-11}
+one_day <- dbGetQuery(con, glue("
+  SELECT
+    loc_src,
+    is_home,
+    COUNT(*)                                    AS n,
+    approx_quantile(d_km, 0.50)                 AS p50_km,
+    approx_quantile(d_km, 0.90)                 AS p90_km,
+    SUM(CASE WHEN d_km < 1   THEN 1 ELSE 0 END) AS n_under_1km,
+    SUM(CASE WHEN d_km > 250 THEN 1 ELSE 0 END) AS n_over_250km
+  FROM read_parquet('{OUT}/visit_parts/2025-06-03.parquet')
+  GROUP BY loc_src, is_home
+")) |>
+  as_tibble()
+
+one_day |>
+  mutate(
+    under_1km_share = n_under_1km / n,
+    over_250km_share = n_over_250km / n
+  ) |>
+  arrange(desc(is_home), loc_src)
+```
+
+What to look for: home rows (`is_home = 1`) should be overwhelmingly at `d_km` near
+zero, because a device's home visit should be at its own home block group. If a large
+fraction of home rows sit far from home, the modal assignment in §1 is picking the
+wrong place and nothing downstream will make sense. This is the single most diagnostic
+number in the whole build.
+
+> **Exercise 3a.** What share of home rows have `d_km > 50`? Given that these are
+> devices whose *own* home visits are 50 km from their assigned home, propose a rule
+> for what to do with them.
+>
+> **Exercise 3b.** The haversine expression appears twice in this document. Rather
+> than repeat it, DuckDB lets you define a macro:
+> `CREATE MACRO hav(lat1, lon1, lat2, lon2) AS ...`. Write it and substitute it in.
+>
+> **Exercise 3c.** Why does `WHERE p.lat IS NOT NULL` appear at the end rather than
+> inside `placed`? Would putting it earlier change the answer, or only the speed?
+
+---
+
+# §4 — What each visit weighs
+
+## SQL lesson 6: carrying alternatives rather than choosing
+
+Nothing new syntactically — this is `CASE WHEN` again. The idea is the discipline:
+every time you face a weighting choice, add a column instead of making the choice.
+Storage isn't a constraint here and the alternative is re-running §3.
+
+Three weights per row:
+
+- `w_dwell` — dwell in minutes, with zero-dwell (single-ping) visits given `TAU_MINUTES`
+  rather than nothing, and negatives clipped. Recall that dwell is last-ping minus
+  first-ping, so every value is a lower bound and zeros mean "seen once", not "stayed
+  no time".
+- `w_trip` — one per visit, home included.
+- `w_trip_nonhome` — one per visit, home excluded.
+
+```{r chunk-12}
+weight_sql <- function(day) {
+  glue("
+    SELECT
+      did, day, cbg, county, loc_src, is_home, d_km, dwell,
+      CASE
+        WHEN dwell IS NULL  THEN {TAU_MINUTES}
+        WHEN dwell <  0     THEN {TAU_MINUTES}
+        WHEN dwell =  0     THEN {TAU_MINUTES}
+        ELSE dwell
+      END                                      AS w_dwell,
+      1                                        AS w_trip,
+      CASE WHEN is_home = 1 THEN 0 ELSE 1 END  AS w_trip_nonhome
+    FROM read_parquet('{OUT}/visit_parts/{day}.parquet')
+  ")
+}
+```
+
+### Checkpoint 4
+
+```{r chunk-13}
+weight_check <- dbGetQuery(con, glue("
+  SELECT
+    is_home,
+    COUNT(*)                    AS n,
+    SUM(w_dwell)                AS total_dwell,
+    AVG(w_dwell)                AS mean_dwell,
+    approx_quantile(w_dwell, 0.5) AS p50_dwell
+  FROM ({weight_sql('2025-06-03')})
+  GROUP BY is_home
+")) |>
+  as_tibble()
+
+weight_check |>
+  mutate(share_of_weight = total_dwell / sum(total_dwell))
+```
+
+The number to stare at is `share_of_weight` for home. Under dwell weighting home is
+going to take most of it — median home dwell was 411 minutes per device-day against
+about 20 minutes for a typical other visit. If home comes out above ~90% of total
+weight, that's your warning that the dwell-weighted diagonal will be very high and the
+trip weighting is doing the substantive work.
+
+> **Exercise 4a.** Recompute the table at `TAU_MINUTES` of 1, 15 and 60. How much does
+> home's share of weight move? That range is your sensitivity, and it should go in the
+> write-up.
+>
+> **Exercise 4b.** The `CASE` has three branches that all return `TAU_MINUTES`.
+> Collapse them into one condition. (Careful with NULL — `dwell < 0` is not TRUE when
+> `dwell` is NULL, and `COALESCE` is your friend.)
+>
+> **Exercise 4c.** Argue for or against a fourth weight: dwell, but with home capped at
+> some ceiling to stop it swamping everything. What would that quantity mean?
+
+---
+
+# §5 — One user, one vote
+
+## SQL lesson 7: grouping twice instead of counting distinct
+
+Meta normalises by user, so we do too, in three steps:
+
+1. within a device-day, weights sum to 1;
+2. within a device, device-days average to 1;
+3. within a county, devices average to 1.
+
+Step 1 needs each row's weight divided by its device-day total. In dplyr that's
+`group_by(did, day) |> mutate(share = w / sum(w))`. In SQL the direct translation is a
+window function, which we're avoiding — so instead we aggregate to get the totals and
+join them back. Two passes, both streaming, no sort.
+
+This is also where the distinct-destination count comes from, and it's the pattern
+worth remembering: **group to the finer key first, then count rows at the coarser key.**
+The first grouping deduplicates as a side effect, so the second only has to count. That
+gets you a distinct count without `COUNT(DISTINCT)`, which is what stalled
+`other_visits` at 10%.
+
+_Same as above — 30-day loop, writes to disk. Run deliberately._
+
+```{r chunk-14, eval=FALSE}
+devday_sql <- function(day) {
+  glue("
+    WITH w AS ({weight_sql(day)}),
+
+    -- collapse to one row per device-day per location
+    loc AS (
+      SELECT
+        did, day, cbg, county, loc_src,
+        MAX(is_home)         AS is_home,
+        MIN(d_km)            AS d_km,
+        SUM(w_dwell)         AS w_dwell,
+        SUM(w_trip)          AS w_trip,
+        SUM(w_trip_nonhome)  AS w_trip_nonhome
+      FROM w
+      GROUP BY did, day, cbg, county, loc_src
+    ),
+
+    -- device-day totals (COUNT(*) here IS the distinct location count)
+    totals AS (
+      SELECT
+        did, day,
+        COUNT(*)                AS n_locations,
+        SUM(w_dwell)            AS tot_dwell,
+        SUM(w_trip)             AS tot_trip,
+        SUM(w_trip_nonhome)     AS tot_trip_nonhome
+      FROM loc
+      GROUP BY did, day
+    )
+
+    SELECT
+      l.did, l.day, l.cbg, l.county, l.loc_src, l.is_home, l.d_km,
+      t.n_locations,
+      l.w_dwell        / t.tot_dwell                       AS s_dwell,
+      l.w_trip         / t.tot_trip                        AS s_trip,
+      CASE WHEN t.tot_trip_nonhome > 0
+           THEN l.w_trip_nonhome / t.tot_trip_nonhome END  AS s_trip_nonhome
+    FROM loc l
+    JOIN totals t ON l.did = t.did AND l.day = t.day
+  ")
+}
+
+for (day in list_days("home_visits")) {
+  out_path <- file.path(OUT, "devday_parts", glue("{day}.parquet"))
+  if (file.exists(out_path)) next
+
+  message(glue("devday {day} ..."))
+  tmp_path <- paste0(out_path, ".tmp")
+
+  dbExecute(con, glue("COPY ({devday_sql(day)}) TO '{tmp_path}' (FORMAT PARQUET)"))
+  file.rename(tmp_path, out_path)
+}
+```
+
+`s_trip_nonhome` is NULL for home-only device-days — the `CASE` with no `ELSE` gives
+NULL, aggregates skip it, and those device-days simply don't contribute to that
+variant. That's the honest behaviour: a device-day with no observed trip has no opinion
+about trip distances.
+
+Steps 2 and 3 — averaging device-days within device, then devices within county — are
+small enough to do after binning, in dplyr, in §6.
+
+### Checkpoint 5
+
+```{r chunk-15}
+devday_check <- dbGetQuery(con, glue("
+  SELECT
+    n_locations,
+    COUNT(*) AS n_rows
+  FROM read_parquet('{OUT}/devday_parts/2025-06-03.parquet')
+  GROUP BY n_locations
+")) |>
+  as_tibble()
+
+devday_check |>
+  arrange(n_locations) |>
+  mutate(share = n_rows / sum(n_rows))
+```
+
+`n_locations = 1` should be a large share, but *smaller* than the 87% single-destination
+figure from the fallback test — because that was counting distinct counties and this
+counts distinct block groups, which is finer. If it isn't smaller, the location
+resolution isn't buying us anything and that's worth understanding before going on.
+
+Also worth a direct check that the normalisation worked:
+
+```{r chunk-16}
+dbGetQuery(con, glue("
+  WITH sums AS (
+    SELECT did, day, SUM(s_dwell) AS total
+    FROM read_parquet('{OUT}/devday_parts/2025-06-03.parquet')
+    GROUP BY did, day
+  )
+  SELECT MIN(total) AS min_total, MAX(total) AS max_total FROM sums
+"))
+```
+
+Both should be 1 to within floating-point noise.
+
+> **Exercise 5a.** `loc` groups by `cbg`, so two visits to different POIs in the same
+> block group merge into one location. Is that right? What would change if we grouped
+> by `safegraph_place_id` instead?
+>
+> **Exercise 5b.** `MIN(d_km)` in `loc` should be redundant — every row with the same
+> `cbg` and `loc_src` has the same distance. Verify that with a query, and say what a
+> violation would imply.
+>
+> **Exercise 5c.** Write the step-2 aggregation (device-days averaged within device) in
+> dplyr, given a binned table with columns `did`, `day`, `band`, `share`.
+
+---
+
+# §6 — Binning, at the very end
+
+Nothing here is SQL. The device-day table is now small enough per day to work with in
+dplyr, and this is deliberately the stage where all the arbitrary choices live.
+
+```{r chunk-17}
+# Read the month, restricted to the ten benchmark origins to keep it quick.
+selected <- read_csv(file.path(ROOT, "narrow10", "selected_origins.csv"),
+                     col_types = cols(fips = col_character()))
+
+devday <- list.files(file.path(OUT, "devday_parts"), full.names = TRUE) |>
+  map(~ dbGetQuery(con, glue("SELECT * FROM read_parquet('{.x}')"))) |>
+  bind_rows() |>
+  as_tibble()
+
+home_county <- devday |>
+  filter(is_home == 1) |>
+  distinct(did, day, home_county = county)
+
+profiles <- devday |>
+  inner_join(home_county, by = c("did", "day")) |>
+  filter(home_county %in% selected$fips)
+```
+
+Now the choices, all in one place, all reversible:
+
+```{r chunk-18}
+HOME_KM   <- 2      # what counts as "at home"
+BAND_EDGE <- c(0, 1, 2.5, 5, 10, 25, 50, 100, 250, 500, 1000, Inf)
+
+banded <- profiles |>
+  mutate(
+    at_home = d_km <= HOME_KM,
+    band    = cut(d_km, breaks = BAND_EDGE, right = FALSE, include.lowest = TRUE)
+  )
+
+# step 2: device-days averaged within device
+per_device <- banded |>
+  group_by(home_county, did, band) |>
+  summarise(share = sum(s_dwell) / n_distinct(day), .groups = "drop")
+
+# step 3: devices averaged within county
+county_profile <- per_device |>
+  group_by(home_county, band) |>
+  summarise(share = mean(share), n_devices = n_distinct(did), .groups = "drop") |>
+  group_by(home_county) |>
+  mutate(share = share / sum(share)) |>
+  ungroup()
+```
+
+### Checkpoint 6
+
+```{r chunk-19}
+county_profile |>
+  filter(home_county %in% c("06037", "30109", "19165")) |>
+  select(home_county, band, share) |>
+  pivot_wider(names_from = home_county, values_from = share) |>
+  print(n = 20)
+
+device_days <- banded |>
+  distinct(home_county, did, day) |>
+  count(home_county, did, name = "n_days")
+
+per_device <- banded |>
+  group_by(home_county, did, band) |>
+  summarise(mass = sum(s_dwell), .groups = "drop") |>
+  left_join(device_days, by = c("home_county", "did")) |>
+  mutate(share = mass / n_days)
+
+
+```
+
+Los Angeles, Wibaux and Shelby side by side. LA should have a fat near-home mass and
+almost nothing beyond 250 km; Wibaux should show mass at 50–250 km that LA doesn't,
+because in Wibaux the shops are that far away. If Wibaux looks like LA, the home
+assignment or the distance is wrong.
+
+> **Exercise 6a.** Produce `county_profile` at `HOME_KM` of 0.5, 2 and 5 and put the
+> three "at home" shares side by side. How much of the headline number is the threshold?
+>
+> **Exercise 6b.** Swap `s_dwell` for `s_trip` and rerun. Which counties move most, and
+> is there a pattern by RUCC?
+>
+> **Exercise 6c.** Restrict to `loc_src == "cbg"` and rerun at `HOME_KM = 0.5`. How
+> much of the sample survives, and is the sub-kilometre band now believable?
+
+---
+
+# §7 — Things to check before believing any of it
+
+Six diagnostics, roughly in order of how likely they are to catch something.
+
+1. **Home rows far from home.** From checkpoint 3. If more than a percent or two of
+   home visits are far from the assigned home block group, §1 is misassigning.
+2. **The 1000+ km bump.** Split the far tail by `n_locations` and by whether the
+   device-day's weights were all τ. If the bump concentrates in single-ping device-days,
+   it was the fallback all along.
+3. **τ sensitivity.** The whole profile at τ = 1, 15, 60. Report the range, not a point.
+4. **Dwell versus trip.** The same profile under `s_dwell` and `s_trip`. If they agree,
+   the weighting debate is moot and you can say so. If they diverge, that divergence is
+   a finding.
+5. **Day trend.** `other_visits` coverage grows through June, so anything daily inherits
+   a trend. Compute the profile for the first and last weeks separately; if they differ,
+   pool the month and say why.
+6. **Effective sample size.** About thirteen device-days per device, so the independent
+   unit is the device. `n_devices` in `county_profile` is your real n, and Wibaux's will
+   be small.
+   
+## Writing the profile out
+
+`county_profile` is the handoff to Track B — the Stan fits and the Meta comparison run
+on the analysis machine, so this needs to exist as a file, not just an object in the
+session.
+
+Two things travel with it. **The settings**, because a profile is meaningless without
+knowing which `HOME_KM`, `TAU_MINUTES` and weighting produced it, and you will produce
+several. **The device counts**, because Wibaux's profile rests on far fewer devices
+than LA's and the Stan fit needs to know that — remember the independent unit is the
+device, not the device-day.
+
+```{r chunk-19b}
+RUN_TAG <- glue("home{HOME_KM}km_tau{TAU_MINUTES}_dwell")
+
+profile_out <- county_profile |>
+  mutate(
+    run_tag     = RUN_TAG,
+    home_km     = HOME_KM,
+    tau_minutes = TAU_MINUTES,
+    weighting   = "s_dwell",
+    built_on    = as.character(Sys.Date())
+  ) |>
+  relocate(run_tag, home_county, band, share, n_devices)
+
+out_path <- file.path(OUT, glue("county_profile_{RUN_TAG}.csv"))
+tmp_path <- paste0(out_path, ".tmp")
+
+write_csv(profile_out, tmp_path)
+file.rename(tmp_path, out_path)
+
+out_path
+```
+
+The `RUN_TAG` in the filename is what stops you overwriting the dwell-weighted profile
+with the trip-weighted one and then wondering months later which is which. Rerun §6
+with different settings and each lands in its own file.
+
+Worth also saving the band edges, since `cut()` labels are a fragile way to recover
+them and Stan needs the numeric edges to condition the likelihood on the observed
+range:
+
+```{r chunk-19c}
+tibble(
+  run_tag   = RUN_TAG,
+  band      = levels(cut(0, breaks = BAND_EDGE, right = FALSE, include.lowest = TRUE)),
+  edge_low  = head(BAND_EDGE, -1),
+  edge_high = tail(BAND_EDGE, -1)
+) |>
+  write_csv(file.path(OUT, glue("band_edges_{RUN_TAG}.csv")))
+```
+
+> **Exercise 6d.** Wrap §6 in a loop over `HOME_KM` of 0.5, 2 and 5, writing one file
+> per setting. Then read all three back with `list.files()` and `read_csv()` and plot
+> the at-home share against the threshold. That plot is a slide.
+
+```{r}
+
+```
+
+
+```{r chunk-20}
+dbDisconnect(con, shutdown = TRUE)
+```
+
+---
+
+# Appendix — exercise answers
+
+**0.** The `DESCRIBE` returns instantly because parquet stores schema in a footer at
+the end of each file; DuckDB seeks to it and stops. No row data is touched.
+
+**1a.** `SUM(CASE WHEN n_home_cbgs > 3 THEN 1 ELSE 0 END) / COUNT(*)`.
+
+**1b.** `SELECT m.did, m.cbg FROM monthly m JOIN (SELECT did, MAX(dwell) AS mx FROM
+monthly GROUP BY did) t ON m.did = t.did AND m.dwell = t.mx`. Worse because it reads
+`monthly` twice, and because ties produce duplicate rows that then need deduplicating.
+
+**1c.** Row counts and dwell will disagree for devices with many zero-dwell home rows
+at one place and one long stay elsewhere. Trust the dwell version, but note that dwell
+is a lower bound, so a place with many single-ping visits may be genuinely important
+and look weightless.
+
+**2a.** `9q8yy` decodes near 37.7°N, 122.4°W. `dhwux` should land near Fort Lauderdale,
+matching the `city` field in the sample row.
+
+**2b.** Rows without a centroid are ones whose block group isn't in the gazetteer —
+usually water block groups or a vintage mismatch between the 2020 gazetteer and
+whatever vintage Veraset used. A small share is fine; more than a percent means
+checking vintages.
+
+**2c.** No single right answer. Smaller thresholds use the geohash more often, which is
+uniform but coarse; larger ones trust block groups that may be huge. The agreement
+table tells you where block groups stop being more precise than 5 km.
+
+**3a.** Suggested rule: flag devices where more than half their home dwell is more than
+50 km from the assigned home block group, and exclude them. These are likely devices
+with two residences, or ID recycling.
+
+**3b.** `CREATE MACRO hav(lat1, lon1, lat2, lon2) AS 2 * 6371.0088 * asin(sqrt(
+pow(sin(radians(lat2 - lat1) / 2), 2) + cos(radians(lat1)) * cos(radians(lat2)) *
+pow(sin(radians(lon2 - lon1) / 2), 2)));`
+
+**3c.** Only the speed, and probably not even that — DuckDB's optimiser pushes filters
+down. Putting it earlier is clearer to a reader, which is a good enough reason.
+
+**4a.** Home's share will move very little, because home dwell is in the hundreds of
+minutes and τ is in the tens. The place τ matters is device-days with *no* home visit,
+where it sets the relative weight of several short stops.
+
+**4b.** `COALESCE(NULLIF(GREATEST(dwell, 0), 0), {TAU_MINUTES})`.
+
+**4c.** A cap makes home comparable to a long stay rather than to a whole day, which
+is closer to "where did this person spend discretionary time". It is a different
+estimand and not the one Meta reports, so it belongs in the sensitivity section rather
+than the headline.
+
+**5a.** Grouping by `cbg` is right for a distance-based kernel — two POIs in one block
+group are at the same distance, so they're the same observation for our purposes.
+Grouping by `safegraph_place_id` would count them separately, which inflates trip
+weighting for dense retail areas.
+
+**5b.** `SELECT COUNT(*) FROM (SELECT did, day, cbg, loc_src, COUNT(DISTINCT d_km) AS
+k FROM ... GROUP BY did, day, cbg, loc_src) WHERE k > 1` — safe here because it's one
+day and a narrow group. A violation would mean the same block group resolved to two
+different coordinates, i.e. a duplicated row in `cbg_lookup`.
+
+**5c.** `banded |> group_by(did, band) |> summarise(share = sum(share) /
+n_distinct(day), .groups = "drop")`.
+
+**6a.** Expect the threshold to matter enormously in rural counties and little in
+urban ones, because urban devices genuinely cluster within a block group of home.
+
+**6b.** Rural counties should move most: a Wibaux device-day is home plus one long
+trip, which is ~99% home by dwell and 50% by trip.
+
+**6c.** In LA nearly all rows will be block-group-resolved and the sub-kilometre band
+is meaningful. In Wibaux almost none will be, and it isn't.
