@@ -56,8 +56,11 @@ DATASETS = {
     "home_visits":  "prj_xo9czjhu__fldr_d7cqgtcj3nyi4usp",
 }
 
-# Where everything lands. Point this at a real, non-synced local drive.
-OUT_ROOT = r"E:\dewey-apr2025"   # use the actual letter DATA mounted as
+# Where everything lands. DATA_ROOT should point at a real, non-synced local
+# drive; every other script in this repo derives its paths from the same
+# DATA_ROOT, so raw pulls always land under DATA_ROOT/raw.
+DATA_ROOT = r"E:\dewey-data"     # use the actual letter DATA mounted as
+OUT_ROOT = os.path.join(DATA_ROOT, "raw")
 
 # Inclusive date range: Apr 11-14 2025.
 START_DATE = date(2025, 4, 11)

@@ -3,7 +3,10 @@
 library(tidyverse)
 library(dplyr)
 
-veraset_profile <- read_csv("E:/dewey-june2025/kernel/trackB/county_profile_cbghome_national_all_dwell_tau60.csv") %>%
+DATA_ROOT <- "E:/dewey-data"
+TRACKB_DIR <- file.path(DATA_ROOT, "kernel", "trackB")
+
+veraset_profile <- read_csv(file.path(TRACKB_DIR, "county_profile_cbghome_national_all_dwell_tau60.csv")) %>%
   mutate(w = share)
 
 n_draws <- 1000
@@ -193,7 +196,8 @@ ppc_eval_2 <- ppc_results_pooled %>%
 overall_coverage <- mean(ppc_eval_2$covered)
 message(sprintf("National 95%% PPC Coverage Rate: %.2f%%", overall_coverage * 100))
 
-rucc <- read_csv("E:/rural_continuum/Ruralurbancontinuumcodes2023.csv") %>%
+rucc <- read_csv(file.path(DATA_ROOT, "external", "rural_continuum",
+                           "Ruralurbancontinuumcodes2023.csv")) %>%
   mutate(fips = FIPS)
 
 rucc
@@ -349,7 +353,7 @@ meta_export <- meta_lognorm %>%
 
 
 # Ensure output directory exists and write CSV
-dir.create("data/processed", recursive = TRUE, showWarnings = FALSE)
-write_csv(meta_export, "E:/meta_lognormal_kernel-fit.csv")
+dir.create(TRACKB_DIR, recursive = TRUE, showWarnings = FALSE)
+write_csv(meta_export, file.path(TRACKB_DIR, "meta_lognormal_kernel-fit.csv"))
 
 message("Successfully saved ", nrow(meta_export), " county fits to meta_lognormal_kernel-fit.csv")

@@ -66,15 +66,16 @@ suppressPackageStartupMessages({
 
 # ---- configuration ----------------------------------------------------------
 
-KERNEL_DIR <- "E:/dewey-june2025/kernel"
-DEVDAY_DIR <- file.path(KERNEL_DIR, "devday_parts_v2")
+DATA_ROOT  <- "E:/dewey-data"
+KERNEL_DIR <- file.path(DATA_ROOT, "kernel")
+DEVDAY_DIR <- file.path(KERNEL_DIR, "devday_parts")
 OUT_DIR    <- file.path(KERNEL_DIR, "trackB")
-TMP_DIR    <- "E:/duckdb-tmp"
+TMP_DIR    <- file.path(DATA_ROOT, "tmp")
 
 SCOPE <- "all"
 TAU   <- 60
 RUN_TAG  <- sprintf("national_%s_dwell_tau%d", SCOPE, TAU)
-PART_DIR <- file.path(KERNEL_DIR, sprintf("profile_parts_%s", RUN_TAG))
+PART_DIR <- file.path(OUT_DIR, sprintf("profile_parts_%s", RUN_TAG))
 
 CBG_LABEL <- "cbg"          # confirmed from the loc_src vocabulary
 GEO_LABEL <- "geohash"
@@ -100,7 +101,8 @@ FITS_FILE    <- file.path(OUT_DIR, sprintf("veraset_band_fits_%s.csv", SCOPE))
 # file is better if one is to hand. Phase 3 degrades gracefully without it.
 # Same file, same path, as RUCC_FILE in kernel_gen-PPC-check.R -- keep them in
 # sync if this ever moves.
-RUCC_FILE <- "E:/rural_continuum/Ruralurbancontinuumcodes2023.csv"
+RUCC_FILE <- file.path(DATA_ROOT, "external", "rural_continuum",
+                       "Ruralurbancontinuumcodes2023.csv")
 
 say <- function(...) cat("[", format(Sys.time(), "%H:%M:%S"), "] ", ..., "\n",
                          sep = "")

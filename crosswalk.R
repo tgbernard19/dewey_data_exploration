@@ -21,10 +21,12 @@ suppressPackageStartupMessages({
 })
 
 # ---- config ----------------------------------------------------------------
-MD_PATH    <- "E:/meta_movement_dist/movement-distribution-1-june-2026_15-june-2026.csv"
-BENCH_PATH <- "E:/pandora-out"                                   # the benchmark file itself
-OUT_XWALK  <- "E:/meta_movement_dist/county_gid2_crosswalk.csv"
-OUT_BENCH  <- "E:/meta_movement_dist/benchmark_counties_gid2.csv"
+DATA_ROOT  <- "E:/dewey-data"
+META_DIR   <- file.path(DATA_ROOT, "external", "meta_movement_dist")
+MD_PATH    <- file.path(META_DIR, "movement-distribution-1-june-2026_15-june-2026.csv")
+BENCH_PATH <- file.path(DATA_ROOT, "external", "pandora-out")    # the benchmark file itself
+OUT_XWALK  <- file.path(META_DIR, "county_gid2_crosswalk.csv")
+OUT_BENCH  <- file.path(META_DIR, "benchmark_counties_gid2.csv")
 
 # ---- name normalisation ----------------------------------------------------
 # Aggressive but reversible-in-spirit: the goal is that "St. Louis City",

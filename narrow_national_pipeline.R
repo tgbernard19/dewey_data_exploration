@@ -45,16 +45,19 @@ suppressPackageStartupMessages({
 })
 
 # ---- config ----------------------------------------------------------------
-DATA_DIR <- "E:/dewey-june2025"
-OUT_DIR  <- file.path(DATA_DIR, "narrow10")
+DATA_ROOT  <- "E:/dewey-data"
+RAW_DIR    <- file.path(DATA_ROOT, "raw")
+KERNEL_DIR <- file.path(DATA_ROOT, "kernel")
+TMP_DIR    <- file.path(DATA_ROOT, "tmp")
+OUT_DIR  <- file.path(KERNEL_DIR, "narrow10")
 CACHE    <- file.path(OUT_DIR, "cache")
 
 dir.create(OUT_DIR, showWarnings = FALSE, recursive = TRUE)
 dir.create(CACHE,   showWarnings = FALSE, recursive = TRUE)
 
-home_dir  <- file.path(DATA_DIR, "home_visits")
-work_dir  <- file.path(DATA_DIR, "work_visits")
-other_dir <- file.path(DATA_DIR, "other_visits")
+home_dir  <- file.path(RAW_DIR, "home_visits")
+work_dir  <- file.path(RAW_DIR, "work_visits")
+other_dir <- file.path(RAW_DIR, "other_visits")
 
 home_glob <- file.path(home_dir, "*", "*.parquet")
 
@@ -63,9 +66,10 @@ flow_parts <- file.path(CACHE, "flow_parts")
 dir.create(dest_parts, showWarnings = FALSE)
 dir.create(flow_parts, showWarnings = FALSE)
 
-home_lookup   <- file.path(DATA_DIR, "home_lookup.parquet")
-BENCHMARK_CSV <- "E:/meta_movement_dist/benchmark_counties_gid2.csv"
-CENTROID_CSV  <- file.path(DATA_DIR, "county_centroids.csv")
+home_lookup   <- file.path(KERNEL_DIR, "home_lookup.parquet")
+BENCHMARK_CSV <- file.path(DATA_ROOT, "external", "meta_movement_dist",
+                           "benchmark_counties_gid2.csv")
+CENTROID_CSV  <- file.path(DATA_ROOT, "external", "county_centroids.csv")
 
 # --- origin selection -------------------------------------------------------
 N_RUCC1  <- 3     # counties drawn from rucc == 1
@@ -94,7 +98,7 @@ con <- dbConnect(duckdb(), dbdir = file.path(CACHE, "narrow10.duckdb"))
 
 dbExecute(con, "PRAGMA threads=8;")
 dbExecute(con, "SET memory_limit='48GB';")
-dbExecute(con, "SET temp_directory='E:/duckdb-tmp';")
+dbExecute(con, sprintf("SET temp_directory='%s';", TMP_DIR))
 dbExecute(con, "SET preserve_insertion_order=false;")
 dbExecute(con, "PRAGMA enable_progress_bar;")
 

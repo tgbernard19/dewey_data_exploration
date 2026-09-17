@@ -8,7 +8,7 @@
 #
 # Phase 0 Preflight. Checks packages, compiles Stan, validates the parquet
 # schema. Fails here rather than at 4am.
-# Phase 1 Builds a national device x band profile from devday_parts_v2, one
+# Phase 1 Builds a national device x band profile from devday_parts, one
 # day partition at a time. Resumable.
 # Phase 1b QC REPORT after the first day. This is the gate. Read it before
 # letting the rest run.
@@ -116,10 +116,11 @@ SMOKE_TEST <- TRUE
 
 # ---- paths ------------------------------------------------------------------
 
-KERNEL_DIR <- "E:/dewey-june2025/kernel"
-DEVDAY_DIR <- file.path(KERNEL_DIR, "devday_parts_v2")
+DATA_ROOT <- "E:/dewey-data"
+KERNEL_DIR <- file.path(DATA_ROOT, "kernel")
+DEVDAY_DIR <- file.path(KERNEL_DIR, "devday_parts")
 OUT_DIR <- file.path(KERNEL_DIR, "trackB")
-TMP_DIR <- "E:/duckdb-tmp"
+TMP_DIR <- file.path(DATA_ROOT, "tmp")
 
 # ---- estimand and weighting -------------------------------------------------
 
@@ -179,7 +180,7 @@ PPC_N_CAP <- 50000L
 MIN_REPORT <- 500
 
 RUN_TAG <- sprintf("national_%s_dwell_tau%d", SCOPE, TAU)
-PART_DIR <- file.path(KERNEL_DIR, sprintf("profile_parts_%s", RUN_TAG))
+PART_DIR <- file.path(OUT_DIR, sprintf("profile_parts_%s", RUN_TAG))
 FIT_DIR <- file.path(OUT_DIR, sprintf("fit_parts_%s", RUN_TAG))
 
 dir.create(PART_DIR, showWarnings = FALSE, recursive = TRUE)
@@ -362,7 +363,7 @@ needed <- c("did", "day", "home_county", "d_km", "is_home",
 missing <- setdiff(needed, schema$column_name)
 
 if (length(missing)) {
-  stop("Missing columns in devday_parts_v2: ", paste(missing, collapse = ", "),
+  stop("Missing columns in devday_parts: ", paste(missing, collapse = ", "),
        "\nPresent: ", paste(schema$column_name, collapse = ", "))
 }
 say("Schema OK. ", nrow(schema), " columns.")

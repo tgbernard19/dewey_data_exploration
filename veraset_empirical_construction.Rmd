@@ -138,9 +138,16 @@ library(glue)
 
 # --- Paths -----------------------------------------------------------------
 
-ROOT    <- "E:/dewey-june2025"
-TMP_DIR <- "E:/duckdb-tmp"
-OUT     <- file.path(ROOT, "kernel")
+# DATA_ROOT is the one thing to change per machine. Every subtree below is
+# derived from it: raw pulls live in raw/, external reference data (Meta,
+# RUCC, crosswalks) in external/, everything this notebook builds in kernel/,
+# and duckdb's spill space in tmp/. Every other script in this repo uses the
+# same DATA_ROOT and the same subtree names.
+DATA_ROOT <- "E:/dewey-data"
+RAW_DIR      <- file.path(DATA_ROOT, "raw")
+EXTERNAL_DIR <- file.path(DATA_ROOT, "external")
+TMP_DIR      <- file.path(DATA_ROOT, "tmp")
+OUT          <- file.path(DATA_ROOT, "kernel")
 
 dir.create(file.path(OUT, "home_parts"),   showWarnings = FALSE, recursive = TRUE)
 dir.create(file.path(OUT, "visit_parts"),  showWarnings = FALSE, recursive = TRUE)
@@ -170,11 +177,11 @@ dbExecute(con, "SET preserve_insertion_order = false")
 # --- Two small helpers, defined once at the top ----------------------------
 
 day_glob <- function(src, day) {
-  glue("{ROOT}/{src}/{day}/*.parquet")
+  glue("{RAW_DIR}/{src}/{day}/*.parquet")
 }
 
 list_days <- function(src) {
-  sort(list.dirs(file.path(ROOT, src), recursive = FALSE, full.names = FALSE))
+  sort(list.dirs(file.path(RAW_DIR, src), recursive = FALSE, full.names = FALSE))
 }
 ```
 ```{r}
@@ -502,7 +509,7 @@ land area.
 
 ```{r chunk-06}
 
-cbg_centroids <- read_csv(file.path(ROOT, "cbg_centroids.csv"),
+cbg_centroids <- read_csv(file.path(EXTERNAL_DIR, "cbg_centroids.csv"),
                           col_types = cols(cbg = col_character())) |>
   select(cbg, cbg_lat, cbg_lon, area_km2) |>
   filter(!is.na(cbg_lat), !is.na(cbg_lon))
@@ -521,9 +528,9 @@ decode in R, push the decoded table back.
 geohash_list <- dbGetQuery(con, glue("
   SELECT DISTINCT geohash_5
   FROM read_parquet([
-    '{ROOT}/home_visits/*/*.parquet',
-    '{ROOT}/work_visits/*/*.parquet',
-    '{ROOT}/other_visits/*/*.parquet'
+    '{RAW_DIR}/home_visits/*/*.parquet',
+    '{RAW_DIR}/work_visits/*/*.parquet',
+    '{RAW_DIR}/other_visits/*/*.parquet'
   ], union_by_name = true)
   WHERE geohash_5 IS NOT NULL
 ")) |>
@@ -992,7 +999,7 @@ dplyr, and this is deliberately the stage where all the arbitrary choices live.
 
 ```{r chunk-17}
 # Read the month, restricted to the ten benchmark origins to keep it quick.
-selected <- read_csv(file.path(ROOT, "narrow10", "selected_origins.csv"),
+selected <- read_csv(file.path(OUT, "narrow10", "selected_origins.csv"),
                      col_types = cols(fips = col_character()))
 
 devday <- list.files(file.path(OUT, "devday_parts"), full.names = TRUE) |>

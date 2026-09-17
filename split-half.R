@@ -16,7 +16,7 @@
 ### both halves and inflate reliability.
 ###
 ### PERFORMANCE. An earlier version ran the whole scan once per salt, so ten
-### replicates meant ten passes over devday_parts_v2. This version does one
+### replicates meant ten passes over devday_parts. This version does one
 ### pass:
 ###
 ### 1. Scan, join and band ONCE, aggregating to home_county x did x
@@ -46,10 +46,13 @@ library(duckdb)
 
 ### CONSTANTS ###
 
-DEVDAY_DIR <- "E:/dewey-june2025/kernel/devday_parts_v2"
-HOMERES <- "E:/dewey-june2025/kernel/trackB/device_home_resolution.parquet"
-PROFILE_FILE <- "E:/dewey-june2025/kernel/trackB/county_profile_cbghome_national_all_dwell_tau60.csv"
-OUT_FILE <- "E:/dewey-june2025/kernel/trackB/county_profile_cbghome_splithalf_tau60.csv"
+DATA_ROOT <- "E:/dewey-data"
+KERNEL_DIR <- file.path(DATA_ROOT, "kernel")
+TRACKB_DIR <- file.path(KERNEL_DIR, "trackB")
+DEVDAY_DIR <- file.path(KERNEL_DIR, "devday_parts")
+HOMERES <- file.path(TRACKB_DIR, "device_home_resolution.parquet")
+PROFILE_FILE <- file.path(TRACKB_DIR, "county_profile_cbghome_national_all_dwell_tau60.csv")
+OUT_FILE <- file.path(TRACKB_DIR, "county_profile_cbghome_splithalf_tau60.csv")
 
 TAU <- 60 # minutes credited to a single-ping visit
 N_THREADS <- 32

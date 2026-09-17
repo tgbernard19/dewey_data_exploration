@@ -65,14 +65,16 @@ suppressPackageStartupMessages({
   library(DBI); library(duckdb); library(dplyr); library(readr); library(stringr)
 })
 
-# ---- paths (edit for this machine) ----------------------------------------
-KERNEL_DIR  <- "E:/dewey-june2025/kernel"
-DEVDAY_GLOB <- file.path(KERNEL_DIR, "devday_parts_v2", "*.parquet")
-HOMERES_PQ  <- file.path(KERNEL_DIR, "trackB", "device_home_resolution.parquet")
-OUT_PAIRS   <- file.path(KERNEL_DIR, "trackB", "veraset_observed_pairs.csv")
-OUT_PANEL   <- file.path(KERNEL_DIR, "trackB", "veraset_observed_panel.csv")
+# ---- paths (edit DATA_ROOT for this machine; every other path derives from it) ----
+DATA_ROOT   <- "E:/dewey-data"
+KERNEL_DIR  <- file.path(DATA_ROOT, "kernel")
+TRACKB_DIR  <- file.path(KERNEL_DIR, "trackB")
+DEVDAY_GLOB <- file.path(KERNEL_DIR, "devday_parts", "*.parquet")
+HOMERES_PQ  <- file.path(TRACKB_DIR, "device_home_resolution.parquet")
+OUT_PAIRS   <- file.path(TRACKB_DIR, "veraset_observed_pairs.csv")
+OUT_PANEL   <- file.path(TRACKB_DIR, "veraset_observed_panel.csv")
 
-TMP_DIR   <- "E:/duckdb-tmp"
+TMP_DIR   <- file.path(DATA_ROOT, "tmp")
 N_THREADS <- 32
 MEM_LIMIT <- "400GB"
 
@@ -128,7 +130,7 @@ dbExecute(con, sprintf("SET temp_directory='%s'", TMP_DIR))
 dbExecute(con, "SET preserve_insertion_order=false")
 
 # ---- 0. schema, footers only ----------------------------------------------
-message("[schema] devday_parts_v2")
+message("[schema] devday_parts")
 print(dbGetQuery(con, sprintf(
   "DESCRIBE SELECT * FROM read_parquet('%s') LIMIT 0", DEVDAY_GLOB)))
 message("[schema] device_home_resolution")

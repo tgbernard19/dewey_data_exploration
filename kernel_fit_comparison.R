@@ -37,10 +37,13 @@ library(tidyverse)
 
 META_SCOPE <- "folded"    # "folded" or "away" - see header
 
-OUT_DIR      <- "E:/dewey-june2025/kernel/trackB"
+DATA_ROOT    <- "E:/dewey-data"
+OUT_DIR      <- file.path(DATA_ROOT, "kernel", "trackB")
 PROFILE_FILE <- file.path(OUT_DIR, "county_profile_cbghome_national_all_dwell_tau60.csv")
-META_FILE    <- "E:/meta_movement_dist/movement-distribution-1-june-2026_15-june-2026.csv"
-XWALK_FILE   <- "E:/meta_movement_dist/county_gid2_crosswalk.csv"
+META_FILE    <- file.path(DATA_ROOT, "external", "meta_movement_dist",
+                          "movement-distribution-1-june-2026_15-june-2026.csv")
+XWALK_FILE   <- file.path(DATA_ROOT, "external", "meta_movement_dist",
+                          "county_gid2_crosswalk.csv")
 FIT_FILE     <- file.path(OUT_DIR, paste0("kernel_family_fits_long_", META_SCOPE, ".csv"))
 
 TRUNC_KM        <- 500

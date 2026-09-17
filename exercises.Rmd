@@ -35,7 +35,8 @@ library(tidyverse)
 TRUNC_KM <- 500
 MIN_TRUST <- 10000 # applied to the HALF, not the county - see §3
 
-DIR <- "E:/dewey-june2025/kernel/trackB"
+DATA_ROOT <- "E:/dewey-data"
+DIR <- file.path(DATA_ROOT, "kernel", "trackB")
 SPLITHALF <- file.path(DIR, "county_profile_cbghome_splithalf_tau60.csv")
 FULL_PROFILE <- file.path(DIR, "county_profile_cbghome_national_all_tau60.csv")
 FITS_FOLDED <- file.path(DIR, "kernel_family_fits_long_folded.csv")
@@ -129,7 +130,7 @@ n_distinct(sh$home_county), " counties")
 
 # YOUR CODE HERE
 
-kern <- read_csv("E:/dewey-june2025/kernel/trackB/kernel_family_fits_long_folded.csv")
+kern <- read_csv(file.path(DIR, "kernel_family_fits_long_folded.csv"))
 kern
 
 kern %>%
@@ -576,7 +577,8 @@ results_exp2 %>%
 
 META_ORDER <- c("(0, 10)", "[10, 100)", "100+")
 META_SCOPE <- "folded"
-XWALK_FILE   <- "E:/meta_movement_dist/county_gid2_crosswalk.csv"
+XWALK_FILE   <- file.path(DATA_ROOT, "external", "meta_movement_dist",
+                          "county_gid2_crosswalk.csv")
 xwalk <- read_csv(XWALK_FILE, show_col_types = FALSE) |>
   mutate(fips = str_pad(as.character(fips), 5, pad = "0")) |>
   distinct(gid_2, fips)
@@ -585,7 +587,8 @@ ambiguous <- xwalk |> count(fips) |> filter(n > 1) |> pull(fips)
 message(length(ambiguous), " counties map to multiple GADM units - dropping")
 xwalk_ok <- xwalk |> filter(!fips %in% ambiguous)
 META_OBS_WEIGHT <- 1
-meta_raw <- read_csv("E:/meta_movement_dist/movement-distribution-1-june-2026_15-june-2026.csv")
+meta_raw <- read_csv(file.path(DATA_ROOT, "external", "meta_movement_dist",
+                               "movement-distribution-1-june-2026_15-june-2026.csv"))
 
 
 meta_periods <- meta_raw |>
