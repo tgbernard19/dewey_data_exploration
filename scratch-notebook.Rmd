@@ -224,6 +224,18 @@ newly_generated %>%
   select("o1.x", "o2.x", "o1.y", "o2.y") %>%
   mutate(diff = o1.x - o1.y) %>%
   filter(diff > 0) #we're good 
+
+
+new <- read_csv("E:/dewey-june2025/kernel/trackB/meta_lognormal_kernel-fit.csv.new")
+old <- read_csv("E:/dewey-june2025/kernel/trackB/meta_lognormal_kernel-fit.csv")
+
+new %>%
+  left_join(old, by = "fips") %>%
+  select(mu.x, log_sigma.x, mu.y, log_sigma.y) %>%
+  mutate(diff_mu = mu.x - mu.y,
+         diff_sigma = log_sigma.x - log_sigma.y) %>%
+  filter(diff_mu > 0.1 | diff_sigma > .1) # good here
+
 ```
 
 ## R Markdown
