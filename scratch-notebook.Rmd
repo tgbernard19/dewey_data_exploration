@@ -8,16 +8,11 @@ date: "2026-09-17"
 # ===========================================================================
 # scratch.R  --  a scrap pad, not part of the pipeline
 # ---------------------------------------------------------------------------
-# Paths are hardcoded on purpose: this file is for poking at things, and it
-# should keep working even while config.R is being rearranged. Nothing here
-# writes anything.
-#
-# Run it top to bottom once, then use the cheat sheet at the bottom.
 # ===========================================================================
 
 library(tidyverse)
 
-REPO <- "~/Desktop/dewey_data_exploration"   # edit if it moves
+REPO <- "~/dewey_data_exploration"   # edit if it moves
 
 TRACKB <- "E:/dewey-june2025/kernel/trackB"
 META   <- "E:/meta_movement_dist"
@@ -39,8 +34,8 @@ D_MIN           <- 0
 D_MAX           <- 500
 META_OBS_WEIGHT <- 1000
 
-source(file.path(REPO, "R/01_utils.R"))
-source(file.path(REPO, "R/04_lognormal.R"))
+source(file.path(REPO, "01_utils.R"))
+source(file.path(REPO, "04_lognormal.R"))
 ```
 
 
@@ -82,6 +77,9 @@ meta_shares <- read_csv(META_MD, show_col_types = FALSE) |>
   mutate(o1 = f0 + g1, o2 = g2, o3 = g3)
 
 
+profile  %>%
+  summarise(tot = length(unique(home_county))) #good
+
 # ---- two small helpers for pulling one county out -------------------------
 
 # Veraset bands for one county, in the shape every fitting function wants:
@@ -93,6 +91,9 @@ veraset_bands <- function(f) {
     transmute(edge_low, edge_high, w = share / sum(share), n_devices)
 }
 
+veraset_bands(36061)
+
+
 # Meta's three folded categories for one county, same shape.
 meta_bands <- function(f) {
   r <- meta_shares |> filter(fips == pad_fips(f))
@@ -101,6 +102,11 @@ meta_bands <- function(f) {
          w         = c(r$o1, r$o2, r$o3))
 }
 
+meta_bands
+```
+
+
+```{r setup, include=FALSE}
 LA <- "06037"      # big, dense, well sampled
 WIBAUX <- "30109"  # tiny, rural, thin panel
 
@@ -111,7 +117,7 @@ WIBAUX <- "30109"  # tiny, rural, thin panel
 # What each function is for, and a line you can run.
 # ===========================================================================
 
-# ln_surv(d, mu, sigma)
+#   ln_surv(d, mu, sigma)
 #   Probability a displacement exceeds d km. S(0) = 1, S(Inf) = 0.
 #   ln_surv(c(0, 1, 10, 100), mu = -1.2, sigma = 3.1)
 
@@ -168,22 +174,47 @@ WIBAUX <- "30109"  # tiny, rural, thin panel
 # ===========================================================================
 
 # 1. Does the new fitter reproduce the old parameters?
-#    fit_lognormal(veraset_bands(LA), seed = 1)
-#    ver_params |> filter(fips == LA, scope == "all") |> select(mu, sigma, tv)
+fit_lognormal(veraset_bands(LA), seed = 1) # agrees to many decimals
+ver_params |> filter(fips == LA, scope == "all") |> select(mu, sigma, tv)
 
+```
+
+
+```{r setup, include=FALSE}
 # 2. Does the closed form agree with the stored Meta fit?
-#    r <- meta_shares |> filter(fips == LA)
-#    ln_closed_form(r$o1, r$o2)
-#    meta_params |> filter(fips == LA) |> mutate(sigma = exp(log_sigma))
+r <- meta_shares |> filter(fips == LA)
+ln_closed_form(r$o1, r$o2)
+meta_params |> filter(fips == LA) |> mutate(sigma = exp(log_sigma))
+
+meta_pararms <- meta_params %>%
+mutate(sigma = exp(log_sigma))
 
 # 3. Where does Meta's kernel miss Veraset's bands?
-#    b <- veraset_bands(LA)
-#    m <- meta_params |> filter(fips == LA)
-#    tibble(lo = b$edge_low, obs = b$w,
-#           meta = predict_bands(m$mu, exp(m$log_sigma), b$edge_low, b$edge_high)) |>
-#      mutate(gap = meta - obs)
-#    # expect most of the disagreement below 10 km, which is the range Meta's
+b <- veraset_bands(LA)
+m <- meta_params |> filter(fips == LA)
+tibble(lo = b$edge_low, obs = b$w,
+           meta = predict_bands(m$mu, exp(m$log_sigma), b$edge_low, b$edge_high)) |>
+      mutate(gap = meta - obs)
+    # expect most of the disagreement below 10 km, which is the range Meta's
 #    # (0, 10) category cannot constrain
+
+
+meta_shares_new <- meta_shares %>%
+  mutate(parms = ln_closed_form(o1, o2)) %>%
+  unnest(parms) %>%
+  mutate(mu_2 = mu,
+         sigma_2 = sigma) %>%
+  select(mu_2, sigma_2, fips) %>%
+  left_join(meta_params, by = "fips")
+
+meta_shares_new
+
+meta_shares_new %>%
+  drop_na() %>%
+  mutate(diff_sigma = sigma_2 - exp(log_sigma)) %>%#,
+      #      diff_sigma = sigma_2 - sigma) %>%
+  filter(diff_sigma > .05) #| sigma_mu > .05)
+#we are in business
 ```
 
 ## R Markdown
