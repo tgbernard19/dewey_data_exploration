@@ -215,6 +215,15 @@ meta_shares_new %>%
       #      diff_sigma = sigma_2 - sigma) %>%
   filter(diff_sigma > .05) #| sigma_mu > .05)
 #we are in business
+
+newly_generated <- read_csv(META_SHARES_FILE)
+old <- read_csv("E:/dewey-june2025/kernel/trackB/meta_conty_shares.csv")
+old
+newly_generated %>%
+  left_join(old, by = "fips") %>%
+  select("o1.x", "o2.x", "o1.y", "o2.y") %>%
+  mutate(diff = o1.x - o1.y) %>%
+  filter(diff > 0) #we're good 
 ```
 
 ## R Markdown
