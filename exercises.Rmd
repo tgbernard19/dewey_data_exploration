@@ -38,7 +38,7 @@ MIN_TRUST <- 10000 # applied to the HALF, not the county - see §3
 DATA_ROOT <- "E:/dewey-data"
 DIR <- file.path(DATA_ROOT, "kernel", "trackB")
 SPLITHALF <- file.path(DIR, "county_profile_cbghome_splithalf_tau60.csv")
-FULL_PROFILE <- file.path(DIR, "county_profile_cbghome_national_all_tau60.csv")
+FULL_PROFILE <- file.path(DIR, "county_profile_cbghome_national_all_dwell_tau60.csv")
 FITS_FOLDED <- file.path(DIR, "kernel_family_fits_long_folded.csv")
 
 # The three families, in the same structure the fitting script uses. Each
