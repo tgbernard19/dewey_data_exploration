@@ -92,7 +92,7 @@ CACHE_DIR <- file.path(DATA_ROOT, "kernel", "flow_cache")
 OUT_DIR <- file.path(CACHE_DIR, "county_flows")
 
 VERASET_PARAMS <- file.path(TRACKB_DIR, "veraset_lognormal_params.csv")
-META_PARAMS <- file.path(TRACKB_DIR, "meta_lognormal_kernel-fit.csv")
+META_PARAMS <- file.path(TRACKB_DIR, "meta_lognormal_kernel-fit.csv") # produced by kernel_gen-PPC-check.R; run that script first
 XWALK <- file.path(META_DIR, "county_gid2_crosswalk.csv")
 CENTROIDS <- file.path(DATA_ROOT, "external", "county_centroids.csv") # fips, lat, lon, cen_pop
 GEODATA_CACHE <- file.path(CACHE_DIR, "geodata")

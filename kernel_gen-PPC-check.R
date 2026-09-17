@@ -353,6 +353,9 @@ meta_export <- meta_lognorm %>%
 
 
 # Ensure output directory exists and write CSV
+# This fitted-kernel export (derived from the raw Meta movement-distribution CSV
+# under external/meta_movement_dist) lives under trackB/ alongside the other
+# derived kernel artifacts; absolute_flows_compare.R reads it from here.
 dir.create(TRACKB_DIR, recursive = TRUE, showWarnings = FALSE)
 write_csv(meta_export, file.path(TRACKB_DIR, "meta_lognormal_kernel-fit.csv"))
 
