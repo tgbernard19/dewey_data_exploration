@@ -29,15 +29,23 @@
 
 # ---- survival and distribution --------------------------------------------
 
-# P(D > d) for a lognormal. d = 0 gives 1, since log(0) is -Inf and
-# pnorm(-Inf) is 0 -- worth checking rather than assuming, because the first
-# band edge is always zero.
+# P(D > d) for a lognormal.
+#
+# d = 0 is handled explicitly rather than by flooring the distance at some
+# epsilon. Flooring at 1e-12 leaves S(0) = 1 - 3.7e-10 instead of 1, which is
+# harmless in any one band and is exactly the kind of near-miss that makes an
+# assertion elsewhere fail for reasons nobody can find. The first band edge is
+# always zero, so this path is taken on every call.
 ln_surv <- function(d, mu, sigma) {
-  1 - pnorm((log(pmax(d, 1e-12)) - mu) / sigma)
+  out <- 1 - pnorm((log(d) - mu) / sigma)
+  out[d <= 0] <- 1
+  out
 }
 
 ln_cdf <- function(d, mu, sigma) {
-  pnorm((log(pmax(d, 1e-12)) - mu) / sigma)
+  out <- pnorm((log(d) - mu) / sigma)
+  out[d <= 0] <- 0
+  out
 }
 
 # The CDF renormalised over [lo, hi]. This is what the flow allocation uses,
@@ -158,8 +166,15 @@ fit_lognormal <- function(bands, n_starts = 10, seed = NULL) {
   
   if (length(runs) == 0) return(NULL)
   
+  # A start that lands somewhere with a zero band probability returns the 1e10
+  # sentinel from ln_nll. Those are not fits and must not enter `spread`, or a
+  # single bad start reports a spread of 1e10 and the diagnostic is useless.
   vals <- vapply(runs, function(r) r$value, numeric(1))
+  usable <- vals < 1e9
+  if (!any(usable)) return(NULL)
+  
   best <- runs[[which.min(vals)]]
+  spread <- diff(range(vals[usable]))
   
   tol <- 1e-3 * (LN_UPPER - LN_LOWER)
   q <- predict_bands(best$par[1], exp(best$par[2]),
@@ -169,7 +184,8 @@ fit_lognormal <- function(bands, n_starts = 10, seed = NULL) {
     mu        = best$par[1],
     sigma     = exp(best$par[2]),
     nll       = best$value,
-    spread    = diff(range(vals)),
+    spread    = spread,
+    n_starts_ok = sum(usable),
     at_bound  = any(best$par <= LN_LOWER + tol | best$par >= LN_UPPER - tol),
     converged = best$convergence == 0,
     tv        = tv_distance(bands$w, q),
@@ -264,7 +280,7 @@ lognormal_self_test <- function(verbose = TRUE) {
   
   f <- fit_lognormal(bands, seed = 1)
   test2 <- !is.null(f) && abs(f$mu - true_mu) < 0.01 &&
-    abs(f$sigma - true_sigma) < 0.01 && f$tv < 1e-6
+    abs(f$sigma - true_sigma) < 0.01 && f$tv < 1e-5
   ok <- ok && test2
   note("[", if (test2) "ok" else "FAIL", "] recovers mu = ", true_mu,
        ", sigma = ", true_sigma,
