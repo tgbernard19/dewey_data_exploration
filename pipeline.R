@@ -350,7 +350,7 @@ say("Stan compiled OK -> ", STAN_EXE)
 con <- dbConnect(duckdb(), dbdir = file.path(OUT_DIR, "trackB_build.duckdb"))
 dbExecute(con, sprintf("SET threads = %d", N_THREADS))
 dbExecute(con, sprintf("SET memory_limit = '%s'", MEM_LIMIT))
-dbExecute(con, sprintf("SET temp_directory = '%s'", TMP_DIR))
+dbExecute(con, sprintf("SET temp_directory = '%s'", gsub("\\\\", "/", TMP_DIR)))
 dbExecute(con, "SET preserve_insertion_order = false")
 
 # DESCRIBE ... LIMIT 0 reads only the parquet footers. Instant, and it means a

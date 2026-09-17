@@ -98,7 +98,7 @@ con <- dbConnect(duckdb(), dbdir = file.path(CACHE, "narrow10.duckdb"))
 
 dbExecute(con, "PRAGMA threads=8;")
 dbExecute(con, "SET memory_limit='48GB';")
-dbExecute(con, sprintf("SET temp_directory='%s';", TMP_DIR))
+dbExecute(con, sprintf("SET temp_directory='%s';", gsub("\\\\", "/", TMP_DIR)))
 dbExecute(con, "SET preserve_insertion_order=false;")
 dbExecute(con, "PRAGMA enable_progress_bar;")
 

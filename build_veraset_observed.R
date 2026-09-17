@@ -126,7 +126,7 @@ stopifnot("Connection did not open." = dbIsValid(con))
 
 dbExecute(con, sprintf("SET threads=%d", N_THREADS))
 dbExecute(con, sprintf("SET memory_limit='%s'", MEM_LIMIT))
-dbExecute(con, sprintf("SET temp_directory='%s'", TMP_DIR))
+dbExecute(con, sprintf("SET temp_directory='%s'", gsub("\\\\", "/", TMP_DIR)))
 dbExecute(con, "SET preserve_insertion_order=false")
 
 # ---- 0. schema, footers only ----------------------------------------------

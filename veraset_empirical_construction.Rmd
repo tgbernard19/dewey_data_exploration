@@ -148,6 +148,9 @@ RAW_DIR      <- file.path(DATA_ROOT, "raw")
 EXTERNAL_DIR <- file.path(DATA_ROOT, "external")
 TMP_DIR      <- file.path(DATA_ROOT, "tmp")
 OUT          <- file.path(DATA_ROOT, "kernel")
+# Forward-slash form of TMP_DIR for embedding in DuckDB SQL strings, since
+# backslashes are meaningful in SQL string literals on Windows paths.
+TMP_DIR_SQL  <- gsub("\\\\", "/", TMP_DIR)
 
 dir.create(file.path(OUT, "home_parts"),   showWarnings = FALSE, recursive = TRUE)
 dir.create(file.path(OUT, "visit_parts"),  showWarnings = FALSE, recursive = TRUE)
@@ -168,7 +171,7 @@ TAU_MINUTES  <- 15      # weight given to a zero-dwell (single-ping) visit
 
 con <- dbConnect(duckdb::duckdb(), dbdir = ":memory:")
 
-dbExecute(con, glue("SET temp_directory = '{TMP_DIR}'"))
+dbExecute(con, glue("SET temp_directory = '{TMP_DIR_SQL}'"))
 dbExecute(con, glue("SET memory_limit = '{MEM_LIMIT}'"))
 dbExecute(con, glue("SET threads = {N_THREADS}"))
 dbExecute(con, "SET preserve_insertion_order = false")
@@ -218,7 +221,7 @@ bench_sql <- glue("
 # One fresh connection per setting, so no state or cache carries over.
 thread_bench <- map_dfr(THREAD_GRID, function(n_threads) {
   bench_con <- dbConnect(duckdb::duckdb(), dbdir = ":memory:")
-  dbExecute(bench_con, glue("SET temp_directory = '{TMP_DIR}'"))
+  dbExecute(bench_con, glue("SET temp_directory = '{TMP_DIR_SQL}'"))
   dbExecute(bench_con, glue("SET memory_limit = '{BENCH_MEM_GB}'"))
   dbExecute(bench_con, glue("SET threads = {n_threads}"))
   dbExecute(bench_con, "SET preserve_insertion_order = false")
