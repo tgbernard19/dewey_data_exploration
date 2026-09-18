@@ -23,7 +23,7 @@ suppressPackageStartupMessages({
 # ---- config ----------------------------------------------------------------
 MD_PATH    <- "E:/meta_movement_dist/movement-distribution-1-june-2026_15-june-2026.csv"
 BENCH_PATH <- "E:/pandora-out"                                   # the benchmark file itself
-OUT_XWALK  <- "E:/meta_movement_dist/county_gid2_crosswalk.csv"
+OUT_XWALK  <- file.path("data", "processed", "county_gid2_crosswalk.csv")
 OUT_BENCH  <- "E:/meta_movement_dist/benchmark_counties_gid2.csv"
 
 # ---- name normalisation ----------------------------------------------------

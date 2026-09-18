@@ -576,7 +576,7 @@ results_exp2 %>%
 
 META_ORDER <- c("(0, 10)", "[10, 100)", "100+")
 META_SCOPE <- "folded"
-XWALK_FILE   <- "E:/meta_movement_dist/county_gid2_crosswalk.csv"
+XWALK_FILE   <- file.path("data", "processed", "county_gid2_crosswalk.csv")
 xwalk <- read_csv(XWALK_FILE, show_col_types = FALSE) |>
   mutate(fips = str_pad(as.character(fips), 5, pad = "0")) |>
   distinct(gid_2, fips)

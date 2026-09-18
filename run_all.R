@@ -35,13 +35,13 @@ ONLY  <- if ("--only" %in% args) as.numeric(args[which(args == "--only") + 1]) e
 # given, the stage is skipped.
 
 STAGES <- list(
-  list(n = 1,  script = "scripts/01_check_inputs.R",
+  list(n = 1,  script = "R/01_check_inputs.R",
        label = "check inputs",     produces = NULL),
-  list(n = 10, script = "scripts/10_meta_shares.R",
+  list(n = 10, script = "R/10_meta_shares.R",
        label = "Meta shares",      produces = META_SHARES_FILE),
-  list(n = 11, script = "scripts/11_fit_meta.R",
+  list(n = 11, script = "R/11_fit_meta.R",
        label = "Meta kernel fits", produces = META_PARAMS_FILE),
-  list(n = 20, script = "scripts/20_flows.R",
+  list(n = 20, script = "R/20_flows.R",
        label = "flows and maps",   produces = file.path(OUT_DIR, "flow_summary.csv"))
 )
 

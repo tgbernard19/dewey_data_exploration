@@ -502,7 +502,7 @@ land area.
 
 ```{r chunk-06}
 
-cbg_centroids <- read_csv(file.path(ROOT, "cbg_centroids.csv"),
+cbg_centroids <- read_csv(file.path(ROOT, "data", "processed", "cbg_centroids.csv"),
                           col_types = cols(cbg = col_character())) |>
   select(cbg, cbg_lat, cbg_lon, area_km2) |>
   filter(!is.na(cbg_lat), !is.na(cbg_lon))
