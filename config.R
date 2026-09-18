@@ -49,7 +49,7 @@ REFERENCE_DIR <- file.path("data", "processed")
 CBG_CENTROIDS_FILE    <- file.path(REFERENCE_DIR, "cbg_centroids.csv")
 COUNTY_CENTROIDS_FILE <- file.path(REFERENCE_DIR, "county_centroids.csv")
 XWALK_FILE            <- file.path(REFERENCE_DIR, "county_gid2_crosswalk.csv")
-
+META_SHARES_FILE      <- file.path(TRACKB_DIR, "meta_conty_shares.csv")
 # The crosswalk also lives under META_ROOT on the Windows box. The repo copy
 # is the one of record; this is checked, not assumed, in 01_check_inputs.R.
 XWALK_FILE_ALT <- file.path(META_ROOT, "county_gid2_crosswalk.csv")
@@ -97,6 +97,10 @@ GEODATA_DIR    <- file.path(FLOW_CACHE_DIR, "geodata")
 FLOW_OUT_DIR   <- file.path(FLOW_CACHE_DIR, "county_flows")
 
 # ---- figures and tables the repo produces ----------------------------------
+
+# ---- mapping ---------------------------------------------------------------
+LOG2_LIM <- 4
+MAP_MIN_FLOW <- 1
 
 OUT_DIR <- "outputs"
 

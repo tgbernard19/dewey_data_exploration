@@ -245,7 +245,28 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
 ```{r cars}
-summary(cars)
+LA <- "06037"
+
+source(file.path(REPO, "07_flows.R"))
+COUNTY <- load_flow_inputs()
+XW <- read_keyed_csv(XWALK, key_cols = "fips")
+OBSERVED <- load_observed(file.path(TRACKB, "veraset_observed_pairs.csv"))
+
+county
+
+"f0" %in% names(county)
+
+r <- county_flows(LA)
+
+r$volume$N; r$diagnostics$under_10km
+
+head(r$flows, 15)
+
+summarise_county(LA)
+
+county %>%
+  filter(fips == "06037")
+
 ```
 
 ## Including Plots
