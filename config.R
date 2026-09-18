@@ -49,7 +49,6 @@ REFERENCE_DIR <- file.path("data", "processed")
 CBG_CENTROIDS_FILE    <- file.path(REFERENCE_DIR, "cbg_centroids.csv")
 COUNTY_CENTROIDS_FILE <- file.path(REFERENCE_DIR, "county_centroids.csv")
 XWALK_FILE            <- file.path(REFERENCE_DIR, "county_gid2_crosswalk.csv")
-META_SHARES_FILE      <- file.path(TRACKB_DIR, "meta_conty_shares.csv")
 # The crosswalk also lives under META_ROOT on the Windows box. The repo copy
 # is the one of record; this is checked, not assumed, in 01_check_inputs.R.
 XWALK_FILE_ALT <- file.path(META_ROOT, "county_gid2_crosswalk.csv")
@@ -72,6 +71,7 @@ DEVDAY_GLOB     <- file.path(DEVDAY_DIR, "*.parquet")
 # ---- Track B outputs -------------------------------------------------------
 
 TRACKB_DIR <- file.path(DERIVED_ROOT, "trackB")
+META_SHARES_FILE      <- file.path(TRACKB_DIR, "meta_conty_shares.csv")
 
 HOMERES_FILE <- file.path(TRACKB_DIR, "device_home_resolution.parquet")
 

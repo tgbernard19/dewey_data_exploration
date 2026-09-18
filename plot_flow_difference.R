@@ -92,8 +92,8 @@ OUT_DIR <- file.path(CACHE_DIR, "county_flows")
 
 VERASET_PARAMS <- file.path(TRACKB_DIR, "veraset_lognormal_params.csv")
 META_PARAMS <- file.path("E:/meta_lognormal_kernel-fit.csv")
-XWALK <- file.path(META_DIR, "county_gid2_crosswalk.csv")
-CENTROIDS <- "E:/dewey-june2025/county_centroids.csv" # fips, lat, lon, cen_pop
+XWALK <- file.path("data", "processed", "county_gid2_crosswalk.csv")
+CENTROIDS <- file.path("data", "processed", "county_centroids.csv") # fips, lat, lon, cen_pop
 GEODATA_CACHE <- file.path(CACHE_DIR, "geodata")
 
 dir.create(OUT_DIR, showWarnings = FALSE, recursive = TRUE)

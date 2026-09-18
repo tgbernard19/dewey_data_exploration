@@ -32,7 +32,7 @@
 #
 # Output: meta_lognormal_kernel-fit.csv -- the file the flow stage reads.
 #
-# Usage:  Rscript scripts/11_fit_meta.R
+# Usage:  Rscript R/11_fit_meta.R
 # ===========================================================================
 
 suppressPackageStartupMessages({

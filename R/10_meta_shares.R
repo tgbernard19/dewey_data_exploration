@@ -13,7 +13,7 @@
 # top of a fitting script, which is where it used to live (in two copies,
 # with different weights).
 #
-# Usage:  Rscript scripts/10_meta_shares.R
+# Usage:  Rscript R/10_meta_shares.R
 # ===========================================================================
 
 suppressPackageStartupMessages({

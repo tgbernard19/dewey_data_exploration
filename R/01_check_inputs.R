@@ -21,7 +21,7 @@
 #   consume the files, where a failure means something about the data rather
 #   than about the setup.
 #
-# Usage:  Rscript scripts/01_check_inputs.R
+# Usage:  Rscript R/01_check_inputs.R
 # ===========================================================================
 
 suppressPackageStartupMessages({

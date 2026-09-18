@@ -14,8 +14,8 @@
 # Writes: outputs/maps/flows_<fips>.png, one per origin county
 #         outputs/flow_summary.csv, one row per origin
 #
-# Usage:  Rscript scripts/20_flows.R
-#         Rscript scripts/20_flows.R 06037 36061      # specific counties
+# Usage:  Rscript R/20_flows.R
+#         Rscript R/20_flows.R 06037 36061      # specific counties
 # ===========================================================================
 
 suppressPackageStartupMessages({
@@ -29,10 +29,10 @@ suppressPackageStartupMessages({
 })
 
 source("config.R")
-source("01_utils.R")
-source("04_lognormal.R")
-source("07_flows.R")
-source("08_maps.R")
+source("R/01_utils.R")
+source("R/04_lognormal.R")
+source("R/07_flows.R")
+source("R/08_maps.R")
 
 banner("FLOWS")
 

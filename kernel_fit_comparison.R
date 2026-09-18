@@ -40,7 +40,7 @@ META_SCOPE <- "folded"    # "folded" or "away" - see header
 OUT_DIR      <- "E:/dewey-june2025/kernel/trackB"
 PROFILE_FILE <- file.path(OUT_DIR, "county_profile_cbghome_national_all_dwell_tau60.csv")
 META_FILE    <- "E:/meta_movement_dist/movement-distribution-1-june-2026_15-june-2026.csv"
-XWALK_FILE   <- "E:/meta_movement_dist/county_gid2_crosswalk.csv"
+XWALK_FILE   <- file.path("data", "processed", "county_gid2_crosswalk.csv")
 FIT_FILE     <- file.path(OUT_DIR, paste0("kernel_family_fits_long_", META_SCOPE, ".csv"))
 
 TRUNC_KM        <- 500

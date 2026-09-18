@@ -21,7 +21,7 @@ PROFILE_CLEAN  <- file.path(TRACKB, "county_profile_cbghome_national_all_dwell_t
 VERASET_PARAMS <- file.path(TRACKB, "veraset_lognormal_params.csv")
 META_PARAMS    <- file.path(TRACKB, "meta_lognormal_kernel-fit.csv")
 META_MD        <- file.path(META, "movement-distribution-1-june-2026_15-june-2026.csv")
-XWALK          <- file.path(META, "county_gid2_crosswalk.csv")
+XWALK          <- file.path(REPO, "data", "processed", "county_gid2_crosswalk.csv")
 
 
 # ---- constants the functions expect ---------------------------------------
@@ -34,8 +34,8 @@ D_MIN           <- 0
 D_MAX           <- 500
 META_OBS_WEIGHT <- 1000
 
-source(file.path(REPO, "01_utils.R"))
-source(file.path(REPO, "04_lognormal.R"))
+source(file.path(REPO, "R", "01_utils.R"))
+source(file.path(REPO, "R", "04_lognormal.R"))
 ```
 
 
@@ -247,7 +247,7 @@ When you click the **Knit** button a document will be generated that includes bo
 ```{r cars}
 LA <- "06037"
 
-source(file.path(REPO, "07_flows.R"))
+source(file.path(REPO, "R", "07_flows.R"))
 COUNTY <- load_flow_inputs()
 XW <- read_keyed_csv(XWALK, key_cols = "fips")
 OBSERVED <- load_observed(file.path(TRACKB, "veraset_observed_pairs.csv"))
