@@ -129,16 +129,23 @@ write_atomic <- function(df, path) {
 # Every CSV read in this project wants its key columns as text. Wrapping it
 # once means no script can forget.
 read_keyed_csv <- function(path, key_cols = character(0)) {
-  spec <- rep(list(readr::col_character()), length(key_cols))
-  names(spec) <- key_cols
+  
+  # key_cols may name columns the file does not have -- callers pass both the
+  # current and the older name for a key. Parsers are intersected with the
+  # real header first, because readr warns (noisily, and deferred to the end
+  # of the run) about named parsers that match nothing.
+  header <- names(readr::read_csv(path, n_max = 0, show_col_types = FALSE,
+                                  progress = FALSE))
+  present <- intersect(key_cols, header)
+  
+  spec <- rep(list(readr::col_character()), length(present))
+  names(spec) <- present
   
   df <- readr::read_csv(path, col_types = do.call(readr::cols, spec),
                         progress = FALSE)
   
-  for (k in intersect(key_cols, names(df))) {
-    if (nchar(k) > 0 && stringr::str_detect(k, "fips|county$")) {
-      df[[k]] <- pad_fips(df[[k]])
-    }
+  for (k in present) {
+    if (stringr::str_detect(k, "fips|county$")) df[[k]] <- pad_fips(df[[k]])
   }
   df
 }
